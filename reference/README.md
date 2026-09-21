@@ -1,12 +1,23 @@
 # Approved reference image
 
-No production reference image has been approved or included yet. Do not use test
-fixture images as production artwork. A maintainer must supply and approve a
-project-owned or safely licensed image, exactly 512 × 512, and record its source,
-licence and approval here before authoring production packages.
+![Filter FabJS reference image v1](filter-fabjs-reference-v1.png)
 
-The reference should cover dark/light and saturated/neutral colours, tonal range,
-gradients, hard/soft edges, texture and organic/geometric detail where practical.
+- **File:** [filter-fabjs-reference-v1.png](filter-fabjs-reference-v1.png)
+- **Dimensions:** 512 × 512 pixels.
+- **Creator:** Anthony Chimming.
+- **Creation:** Created with Krea 2 using ComfyUI.
+- **Source and approval:** Supplied and approved by Anthony Chimming as the
+  production reference image on 2026-09-21.
+- **Usage permission:** Anthony Chimming permits this image to be used for any
+  purpose, including commercial use, modification and redistribution, free of
+  charge. No credit or attribution to the author is required. This permission
+  applies to the reference artwork; the repository's code and filter definitions
+  retain their separately documented licence.
+
+The supplied PNG is preserved byte for byte. Its original filename was
+`filter-fabjs-reference-v1..png`; the duplicate dot was removed for the repository.
+
+## Authoring samples
 
 To produce a sample, load this image in Filter FabJS, import the canonical source
 JSON, reset to its authored defaults, render, then export a portable PNG with

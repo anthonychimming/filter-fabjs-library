@@ -6,7 +6,7 @@ The application remains the primary browser. Built-in filters are not migrated.
 - `registry.json`: only publication ID, revision and date, plus catalogue version.
 - `source/<id>.json`: canonical editable native v2 source.
 - `filters/<id>-r<revision>.png`: exact 512 × 512 portable PNG, sample plus embedded filter.
-- `reference/README.md`: approved reference image policy.
+- `reference/`: approved 512 × 512 reference image and its provenance/usage record.
 - `site/index.html`: minimal landing page.
 - `dist/`: generated Pages output; never commit it.
 
@@ -14,9 +14,10 @@ Target site: https://anthonychimming.github.io/filter-fabjs-library/
 
 Target feed: https://anthonychimming.github.io/filter-fabjs-library/catalogue.json
 
-The initial registry is intentionally empty. No approved production reference image
-or packages were supplied. Automated fixtures live only in the main app's tests.
-The endpoints are usable only after the Pages workflow successfully deploys.
+The registry is intentionally empty until reviewed production packages are supplied.
+The approved reference image and its unrestricted-use permission are documented in
+[reference/README.md](reference/README.md). Automated fixtures live only in the main
+app's tests. The Pages endpoints are deployed through the validated workflow.
 
 ## Validator setup
 
