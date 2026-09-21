@@ -14,8 +14,7 @@
   applies to the reference artwork; the repository's code and filter definitions
   retain their separately documented licence.
 
-The supplied PNG is preserved byte for byte. Its original filename was
-`filter-fabjs-reference-v1..png`; the duplicate dot was removed for the repository.
+The supplied PNG is preserved byte for byte.
 
 ## Authoring samples
 
