@@ -28,6 +28,11 @@ validation is also retained in the app.
 
 Set repository Actions variable `FILTER_FABJS_VALIDATOR_REF` to the full 40-character
 commit SHA containing the completed Stage 5 tool and its Stage 1–4 dependencies.
+Current checkpoint pin: `51ba85c138391edb553eb5538882e73c7e0994f9`
+([application commit](https://github.com/anthonychimming/filter-fabjs/commit/51ba85c138391edb553eb5538882e73c7e0994f9)).
+The Actions variable is set to this exact SHA. This v2.8.7 feature checkpoint is
+not the future v2.9.0 release and has not been merged into application main.
+
 This is a deliberate release pin, not a moving branch. An unset/non-SHA value fails
 CI before checkout. Upgrade it only after reviewing and verifying a new validator
 release. No production fallback to `main` exists.
