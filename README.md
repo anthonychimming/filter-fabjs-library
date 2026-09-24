@@ -14,7 +14,7 @@ Target site: https://anthonychimming.github.io/filter-fabjs-library/
 
 Target feed: https://anthonychimming.github.io/filter-fabjs-library/catalogue.json
 
-The registry is intentionally empty until reviewed production packages are supplied.
+The production registry is libraryVersion 2 with five reviewed revision-1 filters.
 The approved reference image and its unrestricted-use permission are documented in
 [reference/README.md](reference/README.md). Automated fixtures live only in the main
 app's tests. The Pages endpoints are deployed through the validated workflow.
