@@ -1,0 +1,95 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "crt-display",
+  "tags": [
+    "Retro",
+    "Pixelate",
+    "Pattern",
+    "CRT"
+  ],
+  "mathMode": "float",
+  "name": "CRT Display",
+  "description": "Emulates a curved CRT display rather than tape damage: radial screen curvature, horizontal scanlines, a subtle RGB aperture-grille phosphor structure, brightness compensation, rounded-screen corner falloff, and edge darkening. The default treatment is calibrated to preserve image detail while still reading as a CRT; Phosphor Mask can be pushed higher for close-up tube texture. Use Mix to blend with the original.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,clamp(srcLinear(X/2+cx*X/2*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y)))),Y/2+cy*Y/2*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y)))),z)*(val(3,60,160)/100)*(1-(ctl(1)/255)*0.34*(1-smoothstep(max(2,Y/360)*0.06,max(2,Y/360)*0.28,min(repeat(y,max(2,Y/360)),max(2,Y/360)-repeat(y,max(2,Y/360))))))*(1-sqr(ctl(2)/255)*0.35*smoothstep(max(3,X/420)*0.08,max(3,X/420)*0.30,min(abs(repeat(x,max(3,X/420))-z*max(3,X/420)/3),max(3,X/420)-abs(repeat(x,max(3,X/420))-z*max(3,X/420)/3))))*(1-(ctl(4)/255)*0.45*smoothstep(0.72,1.30,sqrt(sqr(cx)+sqr(cy))))*lerp(1,(1-smoothstep(1.55,2.25,(sqr(sqr(cx*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y))))))+sqr(sqr(cy*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y))))))))),ctl(0)/255),0,255),ctl(5))",
+    "lerp(c,clamp(srcLinear(X/2+cx*X/2*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y)))),Y/2+cy*Y/2*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y)))),z)*(val(3,60,160)/100)*(1-(ctl(1)/255)*0.34*(1-smoothstep(max(2,Y/360)*0.06,max(2,Y/360)*0.28,min(repeat(y,max(2,Y/360)),max(2,Y/360)-repeat(y,max(2,Y/360))))))*(1-sqr(ctl(2)/255)*0.35*smoothstep(max(3,X/420)*0.08,max(3,X/420)*0.30,min(abs(repeat(x,max(3,X/420))-z*max(3,X/420)/3),max(3,X/420)-abs(repeat(x,max(3,X/420))-z*max(3,X/420)/3))))*(1-(ctl(4)/255)*0.45*smoothstep(0.72,1.30,sqrt(sqr(cx)+sqr(cy))))*lerp(1,(1-smoothstep(1.55,2.25,(sqr(sqr(cx*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y))))))+sqr(sqr(cy*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y))))))))),ctl(0)/255),0,255),ctl(5))",
+    "lerp(c,clamp(srcLinear(X/2+cx*X/2*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y)))),Y/2+cy*Y/2*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y)))),z)*(val(3,60,160)/100)*(1-(ctl(1)/255)*0.34*(1-smoothstep(max(2,Y/360)*0.06,max(2,Y/360)*0.28,min(repeat(y,max(2,Y/360)),max(2,Y/360)-repeat(y,max(2,Y/360))))))*(1-sqr(ctl(2)/255)*0.35*smoothstep(max(3,X/420)*0.08,max(3,X/420)*0.30,min(abs(repeat(x,max(3,X/420))-z*max(3,X/420)/3),max(3,X/420)-abs(repeat(x,max(3,X/420))-z*max(3,X/420)/3))))*(1-(ctl(4)/255)*0.45*smoothstep(0.72,1.30,sqrt(sqr(cx)+sqr(cy))))*lerp(1,(1-smoothstep(1.55,2.25,(sqr(sqr(cx*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y))))))+sqr(sqr(cy*(1+(ctl(0)/255)*0.07*(sqr(cx*X/min(X,Y))+sqr(cy*Y/min(X,Y))))))))),ctl(0)/255),0,255),ctl(5))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Curvature",
+      "value": 71.4,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Scanlines",
+      "value": 86.7,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Phosphor Mask",
+      "value": 89.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Brightness",
+      "value": 117.30000000000001,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 60,
+        "displayMax": 160,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Edge Darkening",
+      "value": 81.60000000000001,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Mix",
+      "value": 255.0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "tags": [
+    "Color",
+    "Detail",
+    "Glitch",
+    "Edge",
+    "Neon"
+  ],
+  "mathMode": "float",
+  "name": "Chromatic Neon Contour",
+  "description": "Builds bright chromatic contour lines from near- and wider-radius source differences, with adjustable RGB separation, threshold, background retention, line brightness, and final effect mix.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,max(c*val(4,0,35)/100,min(255,clamp((abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+1,y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-1,y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+1,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-1,z)))*val(0,50,500)/100+(abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+val(2,1,6),y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-val(2,1,6),y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+val(2,1,6),z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-val(2,1,6),z)))*val(3,0,250)/100-val(1,0,180),0,255)*val(6,50,250)/100)),ctl(7))",
+    "lerp(c,max(c*val(4,0,35)/100,min(255,clamp((abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+1,y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-1,y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+1,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-1,z)))*val(0,50,500)/100+(abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+val(2,1,6),y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-val(2,1,6),y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+val(2,1,6),z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-val(2,1,6),z)))*val(3,0,250)/100-val(1,0,180),0,255)*val(6,50,250)/100)),ctl(7))",
+    "lerp(c,max(c*val(4,0,35)/100,min(255,clamp((abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+1,y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-1,y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+1,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-1,z)))*val(0,50,500)/100+(abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+val(2,1,6),y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-val(2,1,6),y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+val(2,1,6),z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-val(2,1,6),z)))*val(3,0,250)/100-val(1,0,180),0,255)*val(6,50,250)/100)),ctl(7))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Edge Strength",
+      "value": 115,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 50,
+        "displayMax": 500,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Edge Threshold",
+      "value": 55,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 180,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Glow Radius",
+      "value": 55,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 6,
+        "step": 0.1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Glow Strength",
+      "value": 85,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 250,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Background Detail",
+      "value": 40,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 35,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Color Split",
+      "value": 85,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 6,
+        "step": 0.1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Line Brightness",
+      "value": 105,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 50,
+        "displayMax": 250,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ],
+  "id": "chromatic-neon-contour"
+}

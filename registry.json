@@ -1,6 +1,32 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 1,
-  "filters": []
+  "libraryVersion": 2,
+  "filters": [
+    {
+      "id": "chromatic-neon-contour",
+      "revision": 1,
+      "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "crt-display",
+      "revision": 1,
+      "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "levels-midtone",
+      "revision": 1,
+      "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "turbulent-displace",
+      "revision": 1,
+      "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "lens-distortion",
+      "revision": 1,
+      "publishedAt": "2026-09-23"
+    }
+  ]
 }

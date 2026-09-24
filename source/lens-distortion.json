@@ -1,0 +1,83 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "lens-distortion",
+  "tags": [
+    "Distortion",
+    "Utility",
+    "Lens",
+    "Optical"
+  ],
+  "mathMode": "float",
+  "name": "Lens Distortion",
+  "description": "Aspect-correct radial lens distortion for correction or stylized wide-angle warping. Negative Distortion produces pincushion distortion and positive values produce barrel distortion. The radial model stays monotonic at strong negative settings to avoid foldover. Zoom compensates framing, Center X/Y moves the optical center, and Mix blends the warped result with the original. The authored default uses moderate barrel distortion with slight zoom compensation so the Online Library sample visibly demonstrates the transformation. RGB and alpha are warped together for correct transparent-image geometry. Sampling uses clamped bilinear edges, so strong pincushion or zoom-out settings can stretch boundary pixels.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,srcLinear(x+(cx-val(2,-1,1))*X/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),y+(cy-val(3,-1,1))*Y/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),z),ctl(4))",
+    "lerp(c,srcLinear(x+(cx-val(2,-1,1))*X/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),y+(cy-val(3,-1,1))*Y/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),z),ctl(4))",
+    "lerp(c,srcLinear(x+(cx-val(2,-1,1))*X/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),y+(cy-val(3,-1,1))*Y/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),z),ctl(4))",
+    "lerp(c,srcLinear(x+(cx-val(2,-1,1))*X/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),y+(cy-val(3,-1,1))*Y/2*((((1+max(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y))))/sqrt(1-2*min(val(0,-0.35,0.35),0)*(sqr((cx-val(2,-1,1))*X/max(X,Y))+sqr((cy-val(3,-1,1))*Y/max(X,Y)))))/val(1,0.5,2))-1),z),ctl(4))"
+  ],
+  "controls": [
+    {
+      "label": "Distortion",
+      "value": 165.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Zoom",
+      "value": 98.6,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 50,
+        "displayMax": 200,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Center X",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -50,
+        "displayMax": 50,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Center Y",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -50,
+        "displayMax": 50,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    }
+  ]
+}

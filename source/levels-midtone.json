@@ -1,0 +1,142 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "levels-midtone",
+  "tags": [
+    "Tone",
+    "Utility",
+    "Levels"
+  ],
+  "mathMode": "float",
+  "name": "Levels / Midtone",
+  "description": "Foundational RGB levels adjustment with input black and white points, midtone response, output black and white points, and effect mix. Midtone uses a normalized bias curve where 0.50 is neutral; lower values darken midtones and higher values brighten them. Input and output point pairs are internally ordered to preserve a conventional monotonic levels mapping. If the input black and white points coincide, the mapping becomes a hard threshold at that level. Alpha is preserved.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,scl(bias((ctl(0)==ctl(1)?step(ctl(0),c):clamp(scl(c,min(ctl(0),ctl(1)),max(ctl(0),ctl(1)),0,1),0,1)),val(2,0.05,0.95)),0,1,min(ctl(3),ctl(4)),max(ctl(3),ctl(4))),ctl(5))",
+    "lerp(c,scl(bias((ctl(0)==ctl(1)?step(ctl(0),c):clamp(scl(c,min(ctl(0),ctl(1)),max(ctl(0),ctl(1)),0,1),0,1)),val(2,0.05,0.95)),0,1,min(ctl(3),ctl(4)),max(ctl(3),ctl(4))),ctl(5))",
+    "lerp(c,scl(bias((ctl(0)==ctl(1)?step(ctl(0),c):clamp(scl(c,min(ctl(0),ctl(1)),max(ctl(0),ctl(1)),0,1),0,1)),val(2,0.05,0.95)),0,1,min(ctl(3),ctl(4)),max(ctl(3),ctl(4))),ctl(5))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Black Point",
+      "value": 36,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "White Point",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Midtone",
+      "value": 155.83333333333337,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.05,
+        "displayMax": 0.95,
+        "step": 0.01,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Output Black",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Output White",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 7",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 8",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}
