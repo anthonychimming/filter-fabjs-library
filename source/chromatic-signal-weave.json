@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "chromatic-signal-weave",
+  "tags": [
+    "Pattern",
+    "Procedural",
+    "Halftone",
+    "Print",
+    "Retro"
+  ],
+  "mathMode": "float",
+  "name": "Chromatic Signal Weave",
+  "description": "Alternating colour and grayscale stripe tracks use the measured 12-module sequence, an eight-track stagger matching the reference, and a continuous stripe-density ramp. Module Size sets the square grid; Lines / Module controls stripe frequency; Stripe Contrast reshapes the density ramp; Horizontal and Vertical Shift reframe the repeat; Stripe Phase slides the lines independently; Solid Width adjusts the colour/stripe split; Hue Shift cycles the generated chromatic palette while keeping grayscale stripes, white, and black neutral; Black Transparency reveals the input image through black modules and the black gaps between stripe lines; Effect Mix blends the entire generated pattern back to the source.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(r,(repeat((x+val(3,-8,8)*val(0,24,128))/val(0,24,128),2)<2*val(6,0.25,0.75)?(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<4?gradient4(floor(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))/3,gradient4(repeat(val(8,-0.5,0.5),1),58,182,0,58),gradient4(repeat(val(8,-0.5,0.5),1),0,254,55,0),gradient4(repeat(val(8,-0.5,0.5),1),0,255,199,0),gradient4(repeat(val(8,-0.5,0.5),1),139,255,255,139)):repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<6?255:repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<9?gradient3((floor(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))-6)/2,gradient4(repeat(val(8,-0.5,0.5),1),255,0,226,255),gradient4(repeat(val(8,-0.5,0.5),1),255,5,80,255),gradient4(repeat(val(8,-0.5,0.5),1),151,79,0,151)):c*ctl(9)/255):c*ctl(9)/255+(255-c*ctl(9)/255)*(clamp((clamp(0.5+(clamp(min((repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)+0.5)/5.5,(9.5-repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))/4.5),0,1)-0.5)*val(2,0.5,1.5),0,1)-repeat((y+val(4,-12,12)*val(0,24,128))*val(1,3,12)/val(0,24,128)+val(5,-0.5,0.5),1))*val(0,24,128)/val(1,3,12),0,1))),ctl(7))",
+    "lerp(g,(repeat((x+val(3,-8,8)*val(0,24,128))/val(0,24,128),2)<2*val(6,0.25,0.75)?(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<4?gradient4(floor(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))/3,gradient4(repeat(val(8,-0.5,0.5),1),0,58,182,0),gradient4(repeat(val(8,-0.5,0.5),1),55,0,254,55),gradient4(repeat(val(8,-0.5,0.5),1),199,0,255,199),gradient4(repeat(val(8,-0.5,0.5),1),255,139,255,255)):repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<6?255:repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<9?gradient3((floor(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))-6)/2,gradient4(repeat(val(8,-0.5,0.5),1),226,255,0,226),gradient4(repeat(val(8,-0.5,0.5),1),80,255,5,80),gradient4(repeat(val(8,-0.5,0.5),1),0,151,79,0)):c*ctl(9)/255):c*ctl(9)/255+(255-c*ctl(9)/255)*(clamp((clamp(0.5+(clamp(min((repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)+0.5)/5.5,(9.5-repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))/4.5),0,1)-0.5)*val(2,0.5,1.5),0,1)-repeat((y+val(4,-12,12)*val(0,24,128))*val(1,3,12)/val(0,24,128)+val(5,-0.5,0.5),1))*val(0,24,128)/val(1,3,12),0,1))),ctl(7))",
+    "lerp(b,(repeat((x+val(3,-8,8)*val(0,24,128))/val(0,24,128),2)<2*val(6,0.25,0.75)?(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<4?gradient4(floor(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))/3,gradient4(repeat(val(8,-0.5,0.5),1),182,0,58,182),gradient4(repeat(val(8,-0.5,0.5),1),254,55,0,254),gradient4(repeat(val(8,-0.5,0.5),1),255,199,0,255),gradient4(repeat(val(8,-0.5,0.5),1),255,255,139,255)):repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<6?255:repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)<9?gradient3((floor(repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))-6)/2,gradient4(repeat(val(8,-0.5,0.5),1),0,226,255,0),gradient4(repeat(val(8,-0.5,0.5),1),5,80,255,5),gradient4(repeat(val(8,-0.5,0.5),1),79,0,151,79)):c*ctl(9)/255):c*ctl(9)/255+(255-c*ctl(9)/255)*(clamp((clamp(0.5+(clamp(min((repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12)+0.5)/5.5,(9.5-repeat((y+val(4,-12,12)*val(0,24,128))/val(0,24,128)+(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<5?floor(hash2(floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8)),0,4077)*11.999):floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<6?7:floor(repeat((x+val(3,-8,8)*val(0,24,128))/(val(0,24,128)*2),8))<7?4:6),12))/4.5),0,1)-0.5)*val(2,0.5,1.5),0,1)-repeat((y+val(4,-12,12)*val(0,24,128))*val(1,3,12)/val(0,24,128)+val(5,-0.5,0.5),1))*val(0,24,128)/val(1,3,12),0,1))),ctl(7))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Module Size",
+      "value": 78.46153846153847,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 24,
+        "displayMax": 128,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Lines / Module",
+      "value": 85,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 3,
+        "displayMax": 12,
+        "step": 0.25,
+        "format": "number",
+        "unit": "lines"
+      }
+    },
+    {
+      "label": "Stripe Contrast",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 50,
+        "displayMax": 150,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Horizontal Shift",
+      "value": 103.59375,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -8,
+        "displayMax": 8,
+        "step": 0.25,
+        "format": "number",
+        "unit": "modules"
+      }
+    },
+    {
+      "label": "Vertical Shift",
+      "value": 201.875,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -12,
+        "displayMax": 12,
+        "step": 0.25,
+        "format": "number",
+        "unit": "modules"
+      }
+    },
+    {
+      "label": "Stripe Phase",
+      "value": 132.6,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -0.5,
+        "displayMax": 0.5,
+        "step": 0.01,
+        "format": "number",
+        "unit": "line"
+      }
+    },
+    {
+      "label": "Solid Width",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 25,
+        "displayMax": 75,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Hue Shift",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -180,
+        "displayMax": 180,
+        "step": 1,
+        "format": "integer",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Black Transparency",
+      "value": 204,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}
