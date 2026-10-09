@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "moon-instagram-inspired",
+  "tags": [
+    "Monochrome",
+    "Film",
+    "Portrait",
+    "Retro",
+    "Tone"
+  ],
+  "mathMode": "float",
+  "name": "Moon",
+  "description": "Single-pass approximation of Instagram's classic Moon look, calibrated to the public CSSgram Moon recipe: full grayscale, 110% contrast, 110% brightness, a neutral gray-160 CSS/W3C Soft Light wash, and a gray-56 Lighten shadow floor. Filter Strength mixes the processed result with the original. Contrast, Brightness, Shadow Floor, and Soft-Light Wash allow controlled departures from the reference while preserving source alpha. Independent recreation; not affiliated with Instagram or Meta.",
+  "author": "Anthony",
+  "formulas": [
+    "lerp(c,max(lerp(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255),(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)+65*(((clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)<=0.25?((16*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)-12)*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)+4)*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255):sqrt((clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)))-(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255))),ctl(4)),val(3,0,80)),ctl(0))",
+    "lerp(c,max(lerp(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255),(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)+65*(((clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)<=0.25?((16*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)-12)*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)+4)*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255):sqrt((clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)))-(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255))),ctl(4)),val(3,0,80)),ctl(0))",
+    "lerp(c,max(lerp(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255),(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)+65*(((clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)<=0.25?((16*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)-12)*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)+4)*(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255):sqrt((clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255)))-(clamp(((0.2126*r+0.7152*g+0.0722*b-127.5)*val(1,0.8,1.3)+127.5)*val(2,0.8,1.3),0,255)/255))),ctl(4)),val(3,0,80)),ctl(0))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Filter Strength",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 153,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 80,
+        "displayMax": 130,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Brightness",
+      "value": 153,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 80,
+        "displayMax": 130,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Shadow Floor",
+      "value": 178.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 80,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Soft-Light Wash",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 6",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 7",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 8",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}
