@@ -1,8 +1,13 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 5,
+  "libraryVersion": 6,
   "filters": [
+    {
+      "id": "adaptive-rounded-mosaic",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
     {
       "id": "chromatic-neon-contour",
       "revision": 1,
@@ -12,6 +17,11 @@
       "id": "chromatic-signal-weave",
       "revision": 1,
       "publishedAt": "2026-10-09"
+    },
+    {
+      "id": "gpu-ordered-dither-mono-pixel",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
     },
     {
       "id": "lens-distortion",
