@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "pseudo-thermal-imaging",
+  "tags": [
+    "Color",
+    "Gradient",
+    "Tone",
+    "Thermal"
+  ],
+  "mathMode": "float",
+  "name": "Pseudo Thermal Imaging",
+  "description": "Photographic false-color thermal treatment. Source luminance is windowed with Thermal Level and Thermal Range, reshaped by Thermal Midpoint, optionally clipped at the cool end, then mapped through a multi-stage navy/blue/cyan/green/yellow/orange/red palette with a controlled white-hot rolloff. Palette Steps ranges from pronounced thermal banding to a near-continuous ramp. False-Color Saturation, subtle Sensor Grain, Invert Heat, and Effect Mix provide finishing control. This is a stylized luminance visualization, not a measurement of physical temperature.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,clamp(lerp((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))*255,lerp(((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))<0.5?gradient4((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))*2,0,0,0,24):gradient4(((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))-0.5)*2,24,255,255,255)),255,smoothstep(val(4,0.75,0.99),1,abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))),ctl(6))+(hash2(x,y,1427)-0.5)*val(7,0,12),0,255),ctl(9))",
+    "lerp(c,clamp(lerp((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))*255,lerp(((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))<0.5?gradient4((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))*2,0,16,220,255):gradient4(((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))-0.5)*2,255,255,90,0)),255,smoothstep(val(4,0.75,0.99),1,abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))),ctl(6))+(hash2(x,y,1427)-0.5)*val(7,0,12),0,255),ctl(9))",
+    "lerp(c,clamp(lerp((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))*255,lerp(((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))<0.5?gradient4((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))*2,8,190,255,80):gradient4(((abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))-0.5)*2,80,0,0,0)),255,smoothstep(val(4,0.75,0.99),1,abs(ctl(8)/255-(floor((clamp((bias(clamp(((i-128)*val(1,0.5,3)+128+val(0,-96,96))/255,0,1),val(2,0.25,0.75))-val(5,0,0.25))/(1-val(5,0,0.25)),0,1))*(val(3,16,256)-1))/(val(3,16,256)-1))))),ctl(6))+(hash2(x,y,1427)-0.5)*val(7,0,12),0,255),ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Thermal Level",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -96,
+        "displayMax": 96,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Thermal Range",
+      "value": 76.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.5,
+        "displayMax": 3,
+        "step": 0.05,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Thermal Midpoint",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 25,
+        "displayMax": 75,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Palette Steps",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 16,
+        "displayMax": 256,
+        "step": 1,
+        "format": "integer",
+        "unit": "steps"
+      }
+    },
+    {
+      "label": "White-Hot Point",
+      "value": 201.875,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 75,
+        "displayMax": 99,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Cool Threshold",
+      "value": 20.400000000000002,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 25,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "False-Color Saturation",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Sensor Grain",
+      "value": 21.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 12,
+        "step": 0.5,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Invert Heat",
+      "value": 0,
+      "ui": {
+        "widget": "toggle",
+        "displayMin": 0,
+        "displayMax": 1,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

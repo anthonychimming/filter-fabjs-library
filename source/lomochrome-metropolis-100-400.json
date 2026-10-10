@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "lomochrome-metropolis-100-400",
+  "tags": [
+    "Film",
+    "Color",
+    "Tone",
+    "Retro",
+    "Noise"
+  ],
+  "mathMode": "float",
+  "name": "LomoChrome Metropolis 100-400",
+  "description": "One-pass photographic approximation of Lomography LomoChrome Metropolis 100-400, tuned for muted color, deep black separation, compressed creamy highlights, a restrained cool green/cyan bias, preferential red retention, highlight desaturation, and fine monochrome grain. Film Rating shifts the tonal and color response from pale/whitish ISO 100 toward darker, colder, punchier ISO 400 behavior. Use Color Retention, Contrast, Cool-Green Shift, Crimson Pop, Highlight Bleach, Grain, Grain Seed, and Effect Mix to tune the stock to the source image.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,clamp(255*smoothstep(-0.15,1.15,clamp(((i-128)*(1+(val(2,100,170)-100)/250)+128+(16-(val(0,100,400)-100)*0.09))/255,0,1))+(c-i)*(val(1,10,60)/100)*(0.72+(val(0,100,400)-100)/700)*(1-(val(5,0,65)/100)*smoothstep(0.45,0.95,i/255))*(1+clamp((r-max(g,b)-6)/90,0,1)*(val(4,0,100)/100)*0.9)+val(3,-20,20)*(z==0?-0.55:(z==1?0.5:0.25))*(0.35+0.65*(1-smoothstep(0.72,1,i/255)))*(0.8+(val(0,100,400)-100)/600)+((hash2(x,y,val(7,1,9999))-0.5)*0.75+(hash2(x+37,y+19,val(7,1,9999)+173)-0.5)*0.25)*val(6,0,28)*(0.8+(val(0,100,400)-100)/500)*(0.6+0.4*(1-i/255)),0,255),ctl(8))",
+    "lerp(c,clamp(255*smoothstep(-0.15,1.15,clamp(((i-128)*(1+(val(2,100,170)-100)/250)+128+(16-(val(0,100,400)-100)*0.09))/255,0,1))+(c-i)*(val(1,10,60)/100)*(0.72+(val(0,100,400)-100)/700)*(1-(val(5,0,65)/100)*smoothstep(0.45,0.95,i/255))*(1+clamp((r-max(g,b)-6)/90,0,1)*(val(4,0,100)/100)*0.9)+val(3,-20,20)*(z==0?-0.55:(z==1?0.5:0.25))*(0.35+0.65*(1-smoothstep(0.72,1,i/255)))*(0.8+(val(0,100,400)-100)/600)+((hash2(x,y,val(7,1,9999))-0.5)*0.75+(hash2(x+37,y+19,val(7,1,9999)+173)-0.5)*0.25)*val(6,0,28)*(0.8+(val(0,100,400)-100)/500)*(0.6+0.4*(1-i/255)),0,255),ctl(8))",
+    "lerp(c,clamp(255*smoothstep(-0.15,1.15,clamp(((i-128)*(1+(val(2,100,170)-100)/250)+128+(16-(val(0,100,400)-100)*0.09))/255,0,1))+(c-i)*(val(1,10,60)/100)*(0.72+(val(0,100,400)-100)/700)*(1-(val(5,0,65)/100)*smoothstep(0.45,0.95,i/255))*(1+clamp((r-max(g,b)-6)/90,0,1)*(val(4,0,100)/100)*0.9)+val(3,-20,20)*(z==0?-0.55:(z==1?0.5:0.25))*(0.35+0.65*(1-smoothstep(0.72,1,i/255)))*(0.8+(val(0,100,400)-100)/600)+((hash2(x,y,val(7,1,9999))-0.5)*0.75+(hash2(x+37,y+19,val(7,1,9999)+173)-0.5)*0.25)*val(6,0,28)*(0.8+(val(0,100,400)-100)/500)*(0.6+0.4*(1-i/255)),0,255),ctl(8))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Film Rating",
+      "value": 85,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 100,
+        "displayMax": 400,
+        "step": 50,
+        "format": "integer",
+        "unit": "ISO"
+      }
+    },
+    {
+      "label": "Color Retention",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 10,
+        "displayMax": 60,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 100,
+        "displayMax": 170,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Cool-Green Shift",
+      "value": 178.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -20,
+        "displayMax": 20,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Crimson Pop",
+      "value": 165.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Highlight Bleach",
+      "value": 156.92307692307693,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 65,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Grain",
+      "value": 109.28571428571428,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 28,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Grain Seed",
+      "value": 108.16713342668533,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}

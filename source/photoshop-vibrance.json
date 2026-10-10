@@ -1,0 +1,142 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "photoshop-vibrance",
+  "tags": [
+    "Color",
+    "Portrait",
+    "Utility"
+  ],
+  "mathMode": "float",
+  "name": "Photoshop Style Vibrance",
+  "description": "Photoshop-style approximation of the classic Vibrance adjustment. Saturation applies a uniform chroma scale from -100 to +100 around image luminance, with -100 producing a luminance-preserving monochrome result and +100 attempting to double chroma. Vibrance changes lower-saturation colors more strongly than already-vivid colors, smoothly reduces its effect through the orange/red skin-tone region, and limits chroma expansion to the available RGB gamut to reduce clipping and hue skew. The protection also remains active for negative Vibrance, so skin-like and already-saturated colors retain more color than muted non-skin colors. Source alpha is preserved. This filter targets its observed behavior rather than claiming bit-exact parity.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "clamp(i+(c-i)*min(((1+val(1,-100,100)/100)*(1+val(0,-100,100)/100*(1-clamp(((max(r,max(g,b))-min(r,min(g,b)))==0?0:(max(r,max(g,b))-min(r,min(g,b)))/(255-abs(max(r,max(g,b))+min(r,min(g,b))-255)))*(1+val(1,-100,100)/100),0,1))*(1-0.65*(1-smoothstep(0.2,0.65,abs(wrap(((max(r,max(g,b))-min(r,min(g,b)))==0?0:max(r,max(g,b))==r?wrap((g-b)/(max(r,max(g,b))-min(r,min(g,b))),6):max(r,max(g,b))==g?(b-r)/(max(r,max(g,b))-min(r,min(g,b)))+2:(r-g)/(max(r,max(g,b))-min(r,min(g,b)))+4)+2.5,6)-3)))))),min((r==i?999:r>i?(255-i)/(r-i):i/(i-r)),min((g==i?999:g>i?(255-i)/(g-i):i/(i-g)),(b==i?999:b>i?(255-i)/(b-i):i/(i-b))))),0,255)",
+    "clamp(i+(c-i)*min(((1+val(1,-100,100)/100)*(1+val(0,-100,100)/100*(1-clamp(((max(r,max(g,b))-min(r,min(g,b)))==0?0:(max(r,max(g,b))-min(r,min(g,b)))/(255-abs(max(r,max(g,b))+min(r,min(g,b))-255)))*(1+val(1,-100,100)/100),0,1))*(1-0.65*(1-smoothstep(0.2,0.65,abs(wrap(((max(r,max(g,b))-min(r,min(g,b)))==0?0:max(r,max(g,b))==r?wrap((g-b)/(max(r,max(g,b))-min(r,min(g,b))),6):max(r,max(g,b))==g?(b-r)/(max(r,max(g,b))-min(r,min(g,b)))+2:(r-g)/(max(r,max(g,b))-min(r,min(g,b)))+4)+2.5,6)-3)))))),min((r==i?999:r>i?(255-i)/(r-i):i/(i-r)),min((g==i?999:g>i?(255-i)/(g-i):i/(i-g)),(b==i?999:b>i?(255-i)/(b-i):i/(i-b))))),0,255)",
+    "clamp(i+(c-i)*min(((1+val(1,-100,100)/100)*(1+val(0,-100,100)/100*(1-clamp(((max(r,max(g,b))-min(r,min(g,b)))==0?0:(max(r,max(g,b))-min(r,min(g,b)))/(255-abs(max(r,max(g,b))+min(r,min(g,b))-255)))*(1+val(1,-100,100)/100),0,1))*(1-0.65*(1-smoothstep(0.2,0.65,abs(wrap(((max(r,max(g,b))-min(r,min(g,b)))==0?0:max(r,max(g,b))==r?wrap((g-b)/(max(r,max(g,b))-min(r,min(g,b))),6):max(r,max(g,b))==g?(b-r)/(max(r,max(g,b))-min(r,min(g,b)))+2:(r-g)/(max(r,max(g,b))-min(r,min(g,b)))+4)+2.5,6)-3)))))),min((r==i?999:r>i?(255-i)/(r-i):i/(i-r)),min((g==i?999:g>i?(255-i)/(g-i):i/(i-g)),(b==i?999:b>i?(255-i)/(b-i):i/(i-b))))),0,255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Vibrance",
+      "value": 165.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Saturation",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 3",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 4",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 5",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 6",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 7",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 8",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}
