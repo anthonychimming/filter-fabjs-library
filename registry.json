@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 3,
+  "libraryVersion": 4,
   "filters": [
     {
       "id": "chromatic-neon-contour",
