@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "gpu-ordered-dither-mono-pixel",
+  "tags": [
+    "Dither",
+    "Monochrome",
+    "Pixelate",
+    "Pattern",
+    "Print"
+  ],
+  "mathMode": "float",
+  "name": "Ordered Dither Mono Pixel",
+  "description": "Fast monochrome pixel dithering using a stateless 8x8 Bayer ordered-threshold matrix with 64 tonal levels. Pixel Size controls square logical cells; Exposure and Contrast shape source luminance; Dither Strength blends from a plain binary threshold to the full Bayer matrix; Pattern X and Pattern Y shift the 8x8 matrix phase in logical-cell units for registration and texture alignment; Invert swaps black and white.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "abs((clamp(((299*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),0)+587*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),1)+114*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),2))/1000-128)*val(2,0.5,2.5)+128+val(1,-128,128),0,255)>=lerp(127.5,(((16*(2*((floor(x/round(val(0,1,64)))+round(val(4,0,7)))%2)+3*((floor(y/round(val(0,1,64)))+round(val(5,0,7)))%2)-4*((floor(x/round(val(0,1,64)))+round(val(4,0,7)))%2)*((floor(y/round(val(0,1,64)))+round(val(5,0,7)))%2))+4*(2*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/2)%2)+3*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/2)%2)-4*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/2)%2)*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/2)%2))+(2*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/4)%2)+3*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/4)%2)-4*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/4)%2)*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/4)%2)))+0.5)*255/64),val(3,0,1))?255:0)-ctl(6))",
+    "abs((clamp(((299*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),0)+587*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),1)+114*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),2))/1000-128)*val(2,0.5,2.5)+128+val(1,-128,128),0,255)>=lerp(127.5,(((16*(2*((floor(x/round(val(0,1,64)))+round(val(4,0,7)))%2)+3*((floor(y/round(val(0,1,64)))+round(val(5,0,7)))%2)-4*((floor(x/round(val(0,1,64)))+round(val(4,0,7)))%2)*((floor(y/round(val(0,1,64)))+round(val(5,0,7)))%2))+4*(2*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/2)%2)+3*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/2)%2)-4*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/2)%2)*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/2)%2))+(2*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/4)%2)+3*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/4)%2)-4*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/4)%2)*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/4)%2)))+0.5)*255/64),val(3,0,1))?255:0)-ctl(6))",
+    "abs((clamp(((299*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),0)+587*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),1)+114*src(floor(x/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),floor(y/round(val(0,1,64)))*round(val(0,1,64))+floor((round(val(0,1,64))-1)/2),2))/1000-128)*val(2,0.5,2.5)+128+val(1,-128,128),0,255)>=lerp(127.5,(((16*(2*((floor(x/round(val(0,1,64)))+round(val(4,0,7)))%2)+3*((floor(y/round(val(0,1,64)))+round(val(5,0,7)))%2)-4*((floor(x/round(val(0,1,64)))+round(val(4,0,7)))%2)*((floor(y/round(val(0,1,64)))+round(val(5,0,7)))%2))+4*(2*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/2)%2)+3*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/2)%2)-4*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/2)%2)*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/2)%2))+(2*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/4)%2)+3*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/4)%2)-4*(floor((floor(x/round(val(0,1,64)))+round(val(4,0,7)))/4)%2)*(floor((floor(y/round(val(0,1,64)))+round(val(5,0,7)))/4)%2)))+0.5)*255/64),val(3,0,1))?255:0)-ctl(6))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Pixel Size",
+      "value": 12.142857142857142,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 64,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Exposure",
+      "value": 151.40625,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -128,
+        "displayMax": 128,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 89.25000000000003,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.5,
+        "displayMax": 2.5,
+        "step": 0.05,
+        "format": "number",
+        "unit": "×"
+      }
+    },
+    {
+      "label": "Dither Strength",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Pattern X",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 7,
+        "step": 1,
+        "format": "integer",
+        "unit": "cell"
+      }
+    },
+    {
+      "label": "Pattern Y",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 7,
+        "step": 1,
+        "format": "integer",
+        "unit": "cell"
+      }
+    },
+    {
+      "label": "Invert",
+      "value": 0,
+      "ui": {
+        "widget": "toggle",
+        "displayMin": 0,
+        "displayMax": 1,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 8",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}
