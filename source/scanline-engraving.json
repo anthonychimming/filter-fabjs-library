@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "scanline-engraving",
+  "tags": [
+    "Halftone",
+    "Monochrome",
+    "Print",
+    "Retro",
+    "Portrait"
+  ],
+  "mathMode": "float",
+  "name": "Scanline Engraving",
+  "description": "Converts source luminance into a monochrome horizontal line screen: darker regions thicken black scanlines while highlights retain narrow ink traces. The revised raster phase preserves a one-pixel paper separator at integer line spacing so deep shadows do not collapse into solid black. Tune spacing, highlight/shadow ink, tonal response, edge roughness, seed, inversion, and final mix.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,(min(repeat(y+(floor(val(0,4,24))%2==1?0.5:0),val(0,4,24)),val(0,4,24)-repeat(y+(floor(val(0,4,24))%2==1?0.5:0),val(0,4,24)))<=clamp(val(0,4,24)*(val(1,4,30)/100+(ctl(8)>127?clamp((i/255-0.5)*val(3,0.5,2.5)+0.5+val(4,-35,35)/100,0,1):1-clamp((i/255-0.5)*val(3,0.5,2.5)+0.5+val(4,-35,35)/100,0,1))*(val(2,65,98)/100-val(1,4,30)/100))/2+(hash2(floor(x/val(6,2,64)),floor((y+(floor(val(0,4,24))%2==1?0.5:0))/val(0,4,24)),val(7,1,9999))-0.5)*2*val(5,0,2.5),0.25,val(0,4,24)/2-0.25)?0:255),ctl(9))",
+    "lerp(c,(min(repeat(y+(floor(val(0,4,24))%2==1?0.5:0),val(0,4,24)),val(0,4,24)-repeat(y+(floor(val(0,4,24))%2==1?0.5:0),val(0,4,24)))<=clamp(val(0,4,24)*(val(1,4,30)/100+(ctl(8)>127?clamp((i/255-0.5)*val(3,0.5,2.5)+0.5+val(4,-35,35)/100,0,1):1-clamp((i/255-0.5)*val(3,0.5,2.5)+0.5+val(4,-35,35)/100,0,1))*(val(2,65,98)/100-val(1,4,30)/100))/2+(hash2(floor(x/val(6,2,64)),floor((y+(floor(val(0,4,24))%2==1?0.5:0))/val(0,4,24)),val(7,1,9999))-0.5)*2*val(5,0,2.5),0.25,val(0,4,24)/2-0.25)?0:255),ctl(9))",
+    "lerp(c,(min(repeat(y+(floor(val(0,4,24))%2==1?0.5:0),val(0,4,24)),val(0,4,24)-repeat(y+(floor(val(0,4,24))%2==1?0.5:0),val(0,4,24)))<=clamp(val(0,4,24)*(val(1,4,30)/100+(ctl(8)>127?clamp((i/255-0.5)*val(3,0.5,2.5)+0.5+val(4,-35,35)/100,0,1):1-clamp((i/255-0.5)*val(3,0.5,2.5)+0.5+val(4,-35,35)/100,0,1))*(val(2,65,98)/100-val(1,4,30)/100))/2+(hash2(floor(x/val(6,2,64)),floor((y+(floor(val(0,4,24))%2==1?0.5:0))/val(0,4,24)),val(7,1,9999))-0.5)*2*val(5,0,2.5),0.25,val(0,4,24)/2-0.25)?0:255),ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Line Spacing",
+      "value": 76.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 4,
+        "displayMax": 24,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Highlight Ink",
+      "value": 58.84615384615385,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 4,
+        "displayMax": 30,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Shadow Fill",
+      "value": 208.63636363636365,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 65,
+        "displayMax": 98,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Tone Contrast",
+      "value": 108.375,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.5,
+        "displayMax": 2.5,
+        "step": 0.05,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Tone Bias",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -35,
+        "displayMax": 35,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Edge Roughness",
+      "value": 51,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 2.5,
+        "step": 0.1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Roughness Scale",
+      "value": 65.80645161290322,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 2,
+        "displayMax": 64,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Seed",
+      "value": 69.29735947189438,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Invert Tone",
+      "value": 0,
+      "ui": {
+        "widget": "toggle",
+        "displayMin": 0,
+        "displayMax": 1,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

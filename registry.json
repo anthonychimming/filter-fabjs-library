@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 6,
+  "libraryVersion": 7,
   "filters": [
     {
       "id": "adaptive-rounded-mosaic",
@@ -17,6 +17,11 @@
       "id": "chromatic-signal-weave",
       "revision": 1,
       "publishedAt": "2026-10-09"
+    },
+    {
+      "id": "concentric-circles",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
     },
     {
       "id": "gpu-ordered-dither-mono-pixel",
@@ -37,6 +42,16 @@
       "id": "moon-instagram-inspired",
       "revision": 1,
       "publishedAt": "2026-10-09"
+    },
+    {
+      "id": "polka-dot-pattern",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "scanline-engraving",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
     },
     {
       "id": "turbulent-displace",
