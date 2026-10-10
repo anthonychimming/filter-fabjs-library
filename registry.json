@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 7,
+  "libraryVersion": 8,
   "filters": [
     {
       "id": "adaptive-rounded-mosaic",
@@ -39,9 +39,34 @@
       "publishedAt": "2026-09-23"
     },
     {
+      "id": "lomochrome-metropolis-100-400",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "lomochrome-turquoise-100-400",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "mondrian_modular_grid",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
       "id": "moon-instagram-inspired",
       "revision": 1,
       "publishedAt": "2026-10-09"
+    },
+    {
+      "id": "photoshop-exposure",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "photoshop-vibrance",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
     },
     {
       "id": "polka-dot-pattern",
@@ -49,7 +74,27 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "preset-082775b4-ab2c-43f2-9d99-5eaca56a8bd3",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "preset-639acccc-8c0e-4233-b815-89c2eef9826d",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "pseudo-thermal-imaging",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
       "id": "scanline-engraving",
+      "revision": 1,
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "studded-brick-mosaic",
       "revision": 1,
       "publishedAt": "2026-10-10"
     },

@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "lomochrome-turquoise-100-400",
+  "tags": [
+    "Film",
+    "Color",
+    "Retro",
+    "Tone",
+    "Noise"
+  ],
+  "mathMode": "float",
+  "name": "LomoChrome Turquoise 100-400",
+  "description": "One-pass photographic approximation of Lomography LomoChrome Turquoise 100-400. Warm reds and oranges shift toward cobalt/blue, yellows toward turquoise, blues and cyan toward gold-orange, greens and midtone neutrals toward emerald, bright pink-magenta toward purple, and darker purple toward brown. Film Rating models the milder, brighter ISO 100 rendering through deeper color shifts, denser shadows, stronger gold-orange skies, deeper emeralds and slightly stronger grain toward ISO 400. Color Shift interpolates from the source chroma into the Turquoise palette; the remaining controls tune the major film-response families while Effect Mix preserves reversibility.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(r,clamp(255*smoothstep(-0.06+0.05*((val(0,100,400)-100)/300),1.03+0.09*((val(0,100,400)-100)/300),clamp(((i-128)*(val(5,90,145)/100)*(1+0.14*((val(0,100,400)-100)/300))+128+15-31*((val(0,100,400)-100)/300))/255,0,1))+(r-i)+((0.06*r+0.10*g+0.84*b+clamp((b-max(r,g)-5)/90,0,1)*(42+38*((val(0,100,400)-100)/300))*(val(3,0,100)/100)-clamp((r-b-10)/110,0,1)*9*(val(2,0,100)/100)-clamp((min(r,g)-b-20)/100,0,1)*10*(val(2,0,100)/100)-clamp((g-max(r,b)-5)/90,0,1)*12*(val(4,0,100)/100)-clamp((85-(max(r,max(g,b))-min(r,min(g,b))))/85,0,1)*(1-smoothstep(0.82,1,i/255))*(0.25+0.75*smoothstep(0.04,0.55,i/255))*28*(val(4,0,100)/100)+clamp((min(r,b)-g-5)/45,0,1)*(i<85?18:-12))-r)*(val(1,0,1.2)*(0.80+0.25*((val(0,100,400)-100)/300)))+((hash2(x,y,val(7,1,9999))+hash2(x+37,y+17,val(7,1,9999)+173)-1)*0.55*val(6,0,20)*(0.80+0.45*((val(0,100,400)-100)/300))*(0.55+0.45*(1-i/255))),0,255),ctl(8))",
+    "lerp(g,clamp(255*smoothstep(-0.06+0.05*((val(0,100,400)-100)/300),1.03+0.09*((val(0,100,400)-100)/300),clamp(((i-128)*(val(5,90,145)/100)*(1+0.14*((val(0,100,400)-100)/300))+128+15-31*((val(0,100,400)-100)/300))/255,0,1))+(g-i)+((0.17*r+0.50*g+0.33*b+clamp((b-max(r,g)-5)/90,0,1)*(52+28*((val(0,100,400)-100)/300))*(val(3,0,100)/100)+clamp((r-b-10)/110,0,1)*14*(val(2,0,100)/100)+clamp((min(r,g)-b-20)/100,0,1)*18*(val(2,0,100)/100)+clamp((g-max(r,b)-5)/90,0,1)*(50+25*((val(0,100,400)-100)/300))*(val(4,0,100)/100)+clamp((85-(max(r,max(g,b))-min(r,min(g,b))))/85,0,1)*(1-smoothstep(0.82,1,i/255))*(0.25+0.75*smoothstep(0.04,0.55,i/255))*(32+14*((val(0,100,400)-100)/300))*(val(4,0,100)/100)+clamp((min(r,b)-g-5)/45,0,1)*(i<85?8:-72))-g)*(val(1,0,1.2)*(0.80+0.25*((val(0,100,400)-100)/300)))+((hash2(x,y,val(7,1,9999))+hash2(x+37,y+17,val(7,1,9999)+173)-1)*0.55*val(6,0,20)*(0.80+0.45*((val(0,100,400)-100)/300))*(0.55+0.45*(1-i/255))),0,255),ctl(8))",
+    "lerp(b,clamp(255*smoothstep(-0.06+0.05*((val(0,100,400)-100)/300),1.03+0.09*((val(0,100,400)-100)/300),clamp(((i-128)*(val(5,90,145)/100)*(1+0.14*((val(0,100,400)-100)/300))+128+15-31*((val(0,100,400)-100)/300))/255,0,1))+(b-i)+((0.74*r+0.22*g+0.04*b+clamp((b-max(r,g)-5)/90,0,1)*(-22-13*((val(0,100,400)-100)/300))*(val(3,0,100)/100)+clamp((r-b-10)/110,0,1)*20*(val(2,0,100)/100)+clamp((min(r,g)-b-20)/100,0,1)*10*(val(2,0,100)/100)+clamp((g-max(r,b)-5)/90,0,1)*(28+15*((val(0,100,400)-100)/300))*(val(4,0,100)/100)+clamp((85-(max(r,max(g,b))-min(r,min(g,b))))/85,0,1)*(1-smoothstep(0.82,1,i/255))*(0.25+0.75*smoothstep(0.04,0.55,i/255))*(14+8*((val(0,100,400)-100)/300))*(val(4,0,100)/100)+clamp((min(r,b)-g-5)/45,0,1)*(i<85?-38:22))-b)*(val(1,0,1.2)*(0.80+0.25*((val(0,100,400)-100)/300)))+((hash2(x,y,val(7,1,9999))+hash2(x+37,y+17,val(7,1,9999)+173)-1)*0.55*val(6,0,20)*(0.80+0.45*((val(0,100,400)-100)/300))*(0.55+0.45*(1-i/255))),0,255),ctl(8))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Film Rating",
+      "value": 85,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 100,
+        "displayMax": 400,
+        "step": 50,
+        "format": "integer",
+        "unit": "ISO"
+      }
+    },
+    {
+      "label": "Color Shift",
+      "value": 212.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 120,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Turquoise Shift",
+      "value": 209.1,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Gold-Orange Shift",
+      "value": 183.6,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Emerald Depth",
+      "value": 193.8,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 102,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 90,
+        "displayMax": 145,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Grain",
+      "value": 102,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 20,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Grain Seed",
+      "value": 108.16713342668533,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}
