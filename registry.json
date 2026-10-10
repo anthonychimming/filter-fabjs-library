@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 4,
+  "libraryVersion": 5,
   "filters": [
     {
       "id": "chromatic-neon-contour",
@@ -12,11 +12,6 @@
       "id": "chromatic-signal-weave",
       "revision": 1,
       "publishedAt": "2026-10-09"
-    },
-    {
-      "id": "crt-display",
-      "revision": 1,
-      "publishedAt": "2026-09-23"
     },
     {
       "id": "lens-distortion",
