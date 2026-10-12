@@ -1,0 +1,142 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "photoshop-emboss",
+  "tags": [
+    "Detail",
+    "Texture",
+    "Utility"
+  ],
+  "mathMode": "float",
+  "name": "Photoshop-Style Emboss",
+  "description": "Photoshop-style Emboss approximation with Angle, Height, and Amount controls. The filter compares two source copies separated by the requested Height along the selected Angle, centers their per-channel difference around 50% gray, and scales edge contrast with Amount. This produces neutral gray flat regions with colored highlight and shadow edges, matching the characteristic Photoshop Emboss look. Angle ranges from -360° to +360°, Height from 1 to 100 pixels, and Amount from 1% to 500%. Defaults are 135°, 3 px, and 100%. Source alpha is preserved. Exact Photoshop sampling, rounding, and edge handling are proprietary, so this is a high-fidelity single-pass approximation rather than a bit-exact clone.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "clamp(128+(srcLinear(x+r2x(-val(0,-1024,1024),val(1,1,100)/2),y+r2y(-val(0,-1024,1024),val(1,1,100)/2),z)-srcLinear(x-r2x(-val(0,-1024,1024),val(1,1,100)/2),y-r2y(-val(0,-1024,1024),val(1,1,100)/2),z))*val(2,1,500)/100,0,255)",
+    "clamp(128+(srcLinear(x+r2x(-val(0,-1024,1024),val(1,1,100)/2),y+r2y(-val(0,-1024,1024),val(1,1,100)/2),z)-srcLinear(x-r2x(-val(0,-1024,1024),val(1,1,100)/2),y-r2y(-val(0,-1024,1024),val(1,1,100)/2),z))*val(2,1,500)/100,0,255)",
+    "clamp(128+(srcLinear(x+r2x(-val(0,-1024,1024),val(1,1,100)/2),y+r2y(-val(0,-1024,1024),val(1,1,100)/2),z)-srcLinear(x-r2x(-val(0,-1024,1024),val(1,1,100)/2),y-r2y(-val(0,-1024,1024),val(1,1,100)/2),z))*val(2,1,500)/100,0,255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Angle",
+      "value": 175.3125,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -360,
+        "displayMax": 360,
+        "step": 1,
+        "format": "integer",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Height",
+      "value": 5.151515151515152,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Amount",
+      "value": 50.59118236472946,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 500,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 4",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 5",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 6",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 7",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 8",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "photoshop-crystallize",
+  "tags": [
+    "Pixelate",
+    "Color",
+    "Utility"
+  ],
+  "mathMode": "float",
+  "name": "Photoshop-Style Crystallize",
+  "description": "Photoshop-style Crystallize approximation. Cell Size ranges from 3 to 300 pixels, with a default of 10. The filter creates deterministic irregular Voronoi cells and fills each polygon with one source color sampled near that cell's feature point, producing hard-edged solid-color crystal facets. Source alpha is preserved. The feature-point reconstruction uses a scale-adaptive step for more stable cell colors across the full Cell Size range. Photoshop's exact internal random layout and cell-color selection are undocumented, so the polygon layout is not bit-identical to Adobe's filter.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "src(round(x-2048*val(0,3,300)*(sqr(worleyF1(x+val(0,3,300)/4096,y,val(0,3,300),911))-sqr(worleyF1(x-val(0,3,300)/4096,y,val(0,3,300),911)))),round(y-2048*val(0,3,300)*(sqr(worleyF1(x,y+val(0,3,300)/4096,val(0,3,300),911))-sqr(worleyF1(x,y-val(0,3,300)/4096,val(0,3,300),911)))),z)",
+    "src(round(x-2048*val(0,3,300)*(sqr(worleyF1(x+val(0,3,300)/4096,y,val(0,3,300),911))-sqr(worleyF1(x-val(0,3,300)/4096,y,val(0,3,300),911)))),round(y-2048*val(0,3,300)*(sqr(worleyF1(x,y+val(0,3,300)/4096,val(0,3,300),911))-sqr(worleyF1(x,y-val(0,3,300)/4096,val(0,3,300),911)))),z)",
+    "src(round(x-2048*val(0,3,300)*(sqr(worleyF1(x+val(0,3,300)/4096,y,val(0,3,300),911))-sqr(worleyF1(x-val(0,3,300)/4096,y,val(0,3,300),911)))),round(y-2048*val(0,3,300)*(sqr(worleyF1(x,y+val(0,3,300)/4096,val(0,3,300),911))-sqr(worleyF1(x,y-val(0,3,300)/4096,val(0,3,300),911)))),z)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Cell Size",
+      "value": 6.01010101010101,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 3,
+        "displayMax": 300,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Control 2",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 3",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 4",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 5",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 6",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 7",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 8",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}
