@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "contrast-channel-offset",
+  "tags": [
+    "Glitch",
+    "Color",
+    "Negative",
+    "Distortion"
+  ],
+  "mathMode": "float",
+  "name": "Contrast Channel Offset",
+  "description": "Edge-triggered RGB channel inversion, dropout and chromatic misregistration. Symmetric four-direction contrast detection surrounds both sides of contours, including thin details. Set each Red/Green/Blue Mode to 0 Keep, 1 Shift, 2 Invert or 3 Mute. Detection Radius determines contour scale; Edge Threshold selects contrast; Edge Softness ranges from almost hard to feathered. Channel Offset and Offset Angle control RGB separation (red forward, green perpendicular, blue opposite); Tone Bias favours shadows or highlights, and Effect Mix sets overall opacity. Ideal for hard-edged graphics, architecture, type, portraits and glitch art. Original alpha is preserved.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,(ctl(5)<42.5?c:(ctl(5)>212.5?0:abs((ctl(5)<127.5?0:255)-srcLinear(x+r2x(val(4,0,360)*1024/360,val(3,0,64)),y+r2y(val(4,0,360)*1024/360,val(3,0,64)),0)))),clamp(smoothstep(ctl(0),ctl(0)+max(0.01,val(1,0,100)),max(max(abs(c-src(x+val(2,1,12),y,z)),abs(c-src(x-val(2,1,12),y,z))),max(abs(c-src(x,y+val(2,1,12),z)),abs(c-src(x,y-val(2,1,12),z)))))*clamp(1+(i-127.5)*val(8,-100,100)/12750,0,2),0,1)*ctl(9)/255)",
+    "lerp(c,(ctl(6)<42.5?c:(ctl(6)>212.5?0:abs((ctl(6)<127.5?0:255)-srcLinear(x+r2x(val(4,0,360)*1024/360+256,val(3,0,64)),y+r2y(val(4,0,360)*1024/360+256,val(3,0,64)),1)))),clamp(smoothstep(ctl(0),ctl(0)+max(0.01,val(1,0,100)),max(max(abs(c-src(x+val(2,1,12),y,z)),abs(c-src(x-val(2,1,12),y,z))),max(abs(c-src(x,y+val(2,1,12),z)),abs(c-src(x,y-val(2,1,12),z)))))*clamp(1+(i-127.5)*val(8,-100,100)/12750,0,2),0,1)*ctl(9)/255)",
+    "lerp(c,(ctl(7)<42.5?c:(ctl(7)>212.5?0:abs((ctl(7)<127.5?0:255)-srcLinear(x+r2x(val(4,0,360)*1024/360+512,val(3,0,64)),y+r2y(val(4,0,360)*1024/360+512,val(3,0,64)),2)))),clamp(smoothstep(ctl(0),ctl(0)+max(0.01,val(1,0,100)),max(max(abs(c-src(x+val(2,1,12),y,z)),abs(c-src(x-val(2,1,12),y,z))),max(abs(c-src(x,y+val(2,1,12),z)),abs(c-src(x,y-val(2,1,12),z)))))*clamp(1+(i-127.5)*val(8,-100,100)/12750,0,2),0,1)*ctl(9)/255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Edge Threshold",
+      "value": 28,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Edge Softness",
+      "value": 45.9,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Detection Radius",
+      "value": 46.3636363636,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 12,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Channel Offset",
+      "value": 35.859375,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 64,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Offset Angle",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "integer",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Red Mode",
+      "value": 170,
+      "ui": {
+        "widget": "number",
+        "displayMin": 0,
+        "displayMax": 3,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Green Mode",
+      "value": 0,
+      "ui": {
+        "widget": "number",
+        "displayMin": 0,
+        "displayMax": 3,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Blue Mode",
+      "value": 170,
+      "ui": {
+        "widget": "number",
+        "displayMin": 0,
+        "displayMax": 3,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Tone Bias",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

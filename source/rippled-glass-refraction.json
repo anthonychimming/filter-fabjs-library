@@ -1,0 +1,142 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "rippled-glass-refraction",
+  "tags": [
+    "Distortion",
+    "Texture",
+    "Detail"
+  ],
+  "mathMode": "float",
+  "name": "Rippled Glass Refraction",
+  "description": "Refracts the source through layered, directional ripple bands for a rippled-glass or shallow-water look. Refraction Strength and Ripple Spacing set the dominant wave; Ripple Drift bends the bands organically; Cross Refraction adds perpendicular squeeze; Fine Ripples and Wave Shape control surface character; Ripple Angle rotates the glass grain. Use Effect Mix to blend the treatment back into the photograph.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,srcLinear(x+r2x(val(3,0,1024),((sin(((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))+(valueNoise(x,y,val(6,24,180),val(7,1,9999))-0.5)*2*val(2,0,30))*1024/val(1,18,140))/512)*val(0,0,48)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+192)/512)*val(0,0,48)*val(8,0,0.35)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*4096/val(1,18,140)+448)/512)*val(5,0,10)))+r2x(val(3,0,1024)+256,(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+96)/512)*val(4,0,18)),y+r2y(val(3,0,1024),((sin(((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))+(valueNoise(x,y,val(6,24,180),val(7,1,9999))-0.5)*2*val(2,0,30))*1024/val(1,18,140))/512)*val(0,0,48)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+192)/512)*val(0,0,48)*val(8,0,0.35)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*4096/val(1,18,140)+448)/512)*val(5,0,10)))+r2y(val(3,0,1024)+256,(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+96)/512)*val(4,0,18)),z),ctl(9))",
+    "lerp(c,srcLinear(x+r2x(val(3,0,1024),((sin(((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))+(valueNoise(x,y,val(6,24,180),val(7,1,9999))-0.5)*2*val(2,0,30))*1024/val(1,18,140))/512)*val(0,0,48)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+192)/512)*val(0,0,48)*val(8,0,0.35)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*4096/val(1,18,140)+448)/512)*val(5,0,10)))+r2x(val(3,0,1024)+256,(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+96)/512)*val(4,0,18)),y+r2y(val(3,0,1024),((sin(((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))+(valueNoise(x,y,val(6,24,180),val(7,1,9999))-0.5)*2*val(2,0,30))*1024/val(1,18,140))/512)*val(0,0,48)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+192)/512)*val(0,0,48)*val(8,0,0.35)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*4096/val(1,18,140)+448)/512)*val(5,0,10)))+r2y(val(3,0,1024)+256,(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+96)/512)*val(4,0,18)),z),ctl(9))",
+    "lerp(c,srcLinear(x+r2x(val(3,0,1024),((sin(((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))+(valueNoise(x,y,val(6,24,180),val(7,1,9999))-0.5)*2*val(2,0,30))*1024/val(1,18,140))/512)*val(0,0,48)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+192)/512)*val(0,0,48)*val(8,0,0.35)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*4096/val(1,18,140)+448)/512)*val(5,0,10)))+r2x(val(3,0,1024)+256,(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+96)/512)*val(4,0,18)),y+r2y(val(3,0,1024),((sin(((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))+(valueNoise(x,y,val(6,24,180),val(7,1,9999))-0.5)*2*val(2,0,30))*1024/val(1,18,140))/512)*val(0,0,48)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+192)/512)*val(0,0,48)*val(8,0,0.35)+(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*4096/val(1,18,140)+448)/512)*val(5,0,10)))+r2y(val(3,0,1024)+256,(sin((x*r2x(val(3,0,1024)+256,1)+y*r2y(val(3,0,1024)+256,1))*2048/val(1,18,140)+96)/512)*val(4,0,18)),z),ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Refraction Strength",
+      "value": 95.625,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 48,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Ripple Spacing",
+      "value": 91.9672131147541,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 18,
+        "displayMax": 140,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Ripple Drift",
+      "value": 68,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 30,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Ripple Angle",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "integer",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Cross Refraction",
+      "value": 70.83333333333334,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 18,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Fine Ripples",
+      "value": 63.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 10,
+        "step": 0.1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Drift Scale",
+      "value": 98.07692307692308,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 24,
+        "displayMax": 180,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Seed",
+      "value": 34.99299859971995,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Wave Shape",
+      "value": 89.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

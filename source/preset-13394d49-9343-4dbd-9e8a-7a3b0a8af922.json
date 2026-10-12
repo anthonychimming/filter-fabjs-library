@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "preset-13394d49-9343-4dbd-9e8a-7a3b0a8af922",
+  "tags": [
+    "Color",
+    "Tone",
+    "Film",
+    "Portrait"
+  ],
+  "mathMode": "float",
+  "name": "Complementary Split Toning",
+  "description": "Applies one hue to highlights and the opposing complementary tint to shadows while keeping the tonal handoff neutral at the Balance point. Highlight Hue rotates the color pair; Shadow Strength and Highlight Strength set each side independently; Balance positions the neutral crossover; Transition Softness controls how gradually each tint fades into the midpoint; Color Intensity sets chroma amplitude; Effect Mix blends the grade with the source. Source alpha is preserved.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,clamp(c+(cos(ctl(0)/255*1024)/512)*(ctl(5)/255*96)*(smoothstep(128-val(3,-50,50),128-val(3,-50,50)+val(4,8,96),i)*(ctl(2)/255)-(1-smoothstep(128-val(3,-50,50)-val(4,8,96),128-val(3,-50,50),i))*(ctl(1)/255)),0,255),ctl(6))",
+    "lerp(c,clamp(c+(cos(ctl(0)/255*1024-341.333333333)/512)*(ctl(5)/255*96)*(smoothstep(128-val(3,-50,50),128-val(3,-50,50)+val(4,8,96),i)*(ctl(2)/255)-(1-smoothstep(128-val(3,-50,50)-val(4,8,96),128-val(3,-50,50),i))*(ctl(1)/255)),0,255),ctl(6))",
+    "lerp(c,clamp(c+(cos(ctl(0)/255*1024+341.333333333)/512)*(ctl(5)/255*96)*(smoothstep(128-val(3,-50,50),128-val(3,-50,50)+val(4,8,96),i)*(ctl(2)/255)-(1-smoothstep(128-val(3,-50,50)-val(4,8,96),128-val(3,-50,50),i))*(ctl(1)/255)),0,255),ctl(6))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Highlight Hue",
+      "value": 26.916666666666668,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "integer",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Shadow Strength",
+      "value": 114.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Highlight Strength",
+      "value": 89.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Balance",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -50,
+        "displayMax": 50,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Transition Softness",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 8,
+        "displayMax": 96,
+        "step": 1,
+        "format": "integer",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Color Intensity",
+      "value": 122.39999999999999,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 8",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}

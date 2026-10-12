@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 8,
+  "libraryVersion": 9,
   "filters": [
     {
       "id": "adaptive-rounded-mosaic",
@@ -22,6 +22,16 @@
       "id": "concentric-circles",
       "revision": 1,
       "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "contrast-channel-offset",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "fragmented-photo-weave",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
     },
     {
       "id": "gpu-ordered-dither-mono-pixel",
@@ -59,6 +69,31 @@
       "publishedAt": "2026-10-09"
     },
     {
+      "id": "nebula-starfield",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "parametric-slice-glitch",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "photoshop-black-and-white",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "photoshop-crystallize",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "photoshop-emboss",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
       "id": "photoshop-exposure",
       "revision": 1,
       "publishedAt": "2026-10-10"
@@ -67,6 +102,11 @@
       "id": "photoshop-vibrance",
       "revision": 1,
       "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "pixel-melt-original-colour",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
     },
     {
       "id": "polka-dot-pattern",
@@ -79,6 +119,16 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "preset-13394d49-9343-4dbd-9e8a-7a3b0a8af922",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "preset-1e3c440b-225f-4591-ac39-04382389084b",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
       "id": "preset-639acccc-8c0e-4233-b815-89c2eef9826d",
       "revision": 1,
       "publishedAt": "2026-10-10"
@@ -89,6 +139,11 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "rippled-glass-refraction",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
+    },
+    {
       "id": "scanline-engraving",
       "revision": 1,
       "publishedAt": "2026-10-10"
@@ -97,6 +152,11 @@
       "id": "studded-brick-mosaic",
       "revision": 1,
       "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "synthwave-signal-neon-chromatic-grade",
+      "revision": 1,
+      "publishedAt": "2026-10-11"
     },
     {
       "id": "turbulent-displace",

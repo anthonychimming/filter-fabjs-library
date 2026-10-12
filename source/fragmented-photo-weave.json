@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "fragmented-photo-weave",
+  "tags": [
+    "Distortion",
+    "Pattern",
+    "Textile",
+    "Portrait",
+    "Texture"
+  ],
+  "mathMode": "float",
+  "name": "Fragmented Photo Weave",
+  "description": "A broken photo-weave collage with alternating horizontal and vertical source strips, tile-local shifts, randomly oriented triangular paper folds, directional paper-edge highlights, and fine seams. Weave Coverage now governs the whole treatment, including relief and seams. Adjust Strip Slip and Tile Jitter for fragmentation; Fold Corners for triangular interruptions; Paper Relief and Seam Darkness for physical depth. Original alpha is retained. Best on clean portrait or editorial photographs.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+71)<val(4,0,100)/100) ? clamp(((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+163)>0.60 && ((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+203)>0.5 ? fract(x/val(0,10,64)) : 1-fract(x/val(0,10,64)))+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+237)>0.5 ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : 1-fract(y/(val(0,10,64)*val(1,0.6,1.6))))>2-val(5,0,75)/100)) ? c*(1+val(6,0,50)/100*0.28)-val(7,0,36)*grid(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)),0.8,0)*0.4 : srcLinear(x+((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? (hash2(0,floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999))-0.5)*2*val(2,0,72) : 0)+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+19)-0.5)*val(3,0,30),y+((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? 0 : (hash2(floor(x/val(0,10,64)),0,val(8,1,9999)+33)-0.5)*2*val(2,0,72))+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+41)-0.5)*val(3,0,30),z)*(1-val(6,0,50)/100*(1-smoothstep(0,0.18,((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : fract(x/val(0,10,64)))))+val(6,0,50)/100*0.42*smoothstep(0.80,0.99,((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : fract(x/val(0,10,64)))))-val(7,0,36)*grid(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)),0.8,0)),0,255) : c),ctl(9))",
+    "lerp(c,((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+71)<val(4,0,100)/100) ? clamp(((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+163)>0.60 && ((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+203)>0.5 ? fract(x/val(0,10,64)) : 1-fract(x/val(0,10,64)))+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+237)>0.5 ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : 1-fract(y/(val(0,10,64)*val(1,0.6,1.6))))>2-val(5,0,75)/100)) ? c*(1+val(6,0,50)/100*0.28)-val(7,0,36)*grid(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)),0.8,0)*0.4 : srcLinear(x+((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? (hash2(0,floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999))-0.5)*2*val(2,0,72) : 0)+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+19)-0.5)*val(3,0,30),y+((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? 0 : (hash2(floor(x/val(0,10,64)),0,val(8,1,9999)+33)-0.5)*2*val(2,0,72))+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+41)-0.5)*val(3,0,30),z)*(1-val(6,0,50)/100*(1-smoothstep(0,0.18,((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : fract(x/val(0,10,64)))))+val(6,0,50)/100*0.42*smoothstep(0.80,0.99,((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : fract(x/val(0,10,64)))))-val(7,0,36)*grid(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)),0.8,0)),0,255) : c),ctl(9))",
+    "lerp(c,((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+71)<val(4,0,100)/100) ? clamp(((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+163)>0.60 && ((hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+203)>0.5 ? fract(x/val(0,10,64)) : 1-fract(x/val(0,10,64)))+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+237)>0.5 ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : 1-fract(y/(val(0,10,64)*val(1,0.6,1.6))))>2-val(5,0,75)/100)) ? c*(1+val(6,0,50)/100*0.28)-val(7,0,36)*grid(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)),0.8,0)*0.4 : srcLinear(x+((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? (hash2(0,floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999))-0.5)*2*val(2,0,72) : 0)+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+19)-0.5)*val(3,0,30),y+((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? 0 : (hash2(floor(x/val(0,10,64)),0,val(8,1,9999)+33)-0.5)*2*val(2,0,72))+(hash2(floor(x/val(0,10,64)),floor(y/(val(0,10,64)*val(1,0.6,1.6))),val(8,1,9999)+41)-0.5)*val(3,0,30),z)*(1-val(6,0,50)/100*(1-smoothstep(0,0.18,((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : fract(x/val(0,10,64)))))+val(6,0,50)/100*0.42*smoothstep(0.80,0.99,((checker(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)))>0.5) ? fract(y/(val(0,10,64)*val(1,0.6,1.6))) : fract(x/val(0,10,64)))))-val(7,0,36)*grid(x,y,val(0,10,64),(val(0,10,64)*val(1,0.6,1.6)),0.8,0)),0,255) : c),ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Tile Size",
+      "value": 118.05555555555556,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 10,
+        "displayMax": 64,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Tile Aspect",
+      "value": 102,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.6,
+        "displayMax": 1.6,
+        "step": 0.05,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Strip Slip",
+      "value": 106.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 72,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Tile Jitter",
+      "value": 68,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 30,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Weave Coverage",
+      "value": 229.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Fold Corners",
+      "value": 163.2,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 75,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Paper Relief",
+      "value": 112.2,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 50,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Seam Darkness",
+      "value": 49.58333333,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 36,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Pattern Seed",
+      "value": 68.63422684536907,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

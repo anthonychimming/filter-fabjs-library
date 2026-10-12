@@ -1,0 +1,142 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "parametric-slice-glitch",
+  "tags": [
+    "Glitch",
+    "Distortion",
+    "Noise"
+  ],
+  "mathMode": "float",
+  "name": "Parametric Slice Glitch",
+  "description": "Seeded, hard-edged rectangular image fragments jump along a rotatable glitch axis, with per-fragment angle variation for less mechanical digital break-up. Density controls the proportion of corrupted cells; Displacement sets the maximum pixel shift; Angle rotates the fragment grid; Angle Scatter independently varies each active fragment’s movement direction. Band Height and Fragment Width set block geometry; RGB Separation offsets red and blue; Micro Tear adds smaller discontinuities. Seed locks a repeatable pattern and Effect Mix blends with the original. Nearest-neighbour wrapped sampling creates deliberate boundary seams. Source alpha is unchanged. Suitable for poster typography, portraits and signal-corruption graphics.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999))<val(0,0,1))?srcWrap(x+r2x((((val(2,0,360)%360)*1024/360)+(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+731)*2-1)*val(9,0,90)*1024/360),(((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+137)*2-1)*val(1,0,160))+((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/max(1,val(3,2,48)/3)),val(7,1,9999)+339)*2-1)*val(6,0,14))+(z==0?val(5,0,28):(z==2?-val(5,0,28):0)))),y+r2y((((val(2,0,360)%360)*1024/360)+(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+731)*2-1)*val(9,0,90)*1024/360),(((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+137)*2-1)*val(1,0,160))+((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/max(1,val(3,2,48)/3)),val(7,1,9999)+339)*2-1)*val(6,0,14))+(z==0?val(5,0,28):(z==2?-val(5,0,28):0)))),z):c,ctl(8)/255)",
+    "lerp(c,(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999))<val(0,0,1))?srcWrap(x+r2x((((val(2,0,360)%360)*1024/360)+(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+731)*2-1)*val(9,0,90)*1024/360),(((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+137)*2-1)*val(1,0,160))+((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/max(1,val(3,2,48)/3)),val(7,1,9999)+339)*2-1)*val(6,0,14))+(z==0?val(5,0,28):(z==2?-val(5,0,28):0)))),y+r2y((((val(2,0,360)%360)*1024/360)+(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+731)*2-1)*val(9,0,90)*1024/360),(((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+137)*2-1)*val(1,0,160))+((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/max(1,val(3,2,48)/3)),val(7,1,9999)+339)*2-1)*val(6,0,14))+(z==0?val(5,0,28):(z==2?-val(5,0,28):0)))),z):c,ctl(8)/255)",
+    "lerp(c,(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999))<val(0,0,1))?srcWrap(x+r2x((((val(2,0,360)%360)*1024/360)+(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+731)*2-1)*val(9,0,90)*1024/360),(((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+137)*2-1)*val(1,0,160))+((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/max(1,val(3,2,48)/3)),val(7,1,9999)+339)*2-1)*val(6,0,14))+(z==0?val(5,0,28):(z==2?-val(5,0,28):0)))),y+r2y((((val(2,0,360)%360)*1024/360)+(hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+731)*2-1)*val(9,0,90)*1024/360),(((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/val(3,2,48)),val(7,1,9999)+137)*2-1)*val(1,0,160))+((hash2(floor((r2x(((val(2,0,360)%360)*1024/360),x-X/2)+r2y(((val(2,0,360)%360)*1024/360),y-Y/2))/val(4,24,640)),floor((r2x(((val(2,0,360)%360)*1024/360),y-Y/2)-r2y(((val(2,0,360)%360)*1024/360),x-X/2))/max(1,val(3,2,48)/3)),val(7,1,9999)+339)*2-1)*val(6,0,14))+(z==0?val(5,0,28):(z==2?-val(5,0,28):0)))),z):c,ctl(8)/255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Glitch Density",
+      "value": 40.800000000000004,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Displacement",
+      "value": 35.0625,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 160,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Angle",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "number",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Band Height",
+      "value": 33.26086956521739,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 2,
+        "displayMax": 48,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Fragment Width",
+      "value": 89.41558441558442,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 24,
+        "displayMax": 640,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "RGB Separation",
+      "value": 100.17857142857143,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 28,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Micro Tear",
+      "value": 109.28571428571428,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 14,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Random Seed",
+      "value": 42.006901380276055,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Angle Scatter",
+      "value": 68,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 90,
+        "step": 1,
+        "format": "number",
+        "unit": "deg"
+      }
+    }
+  ]
+}
