@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "kineticlines",
+  "tags": [
+    "Distortion",
+    "Glitch",
+    "Color",
+    "Motion"
+  ],
+  "mathMode": "float",
+  "name": "Kinetic Lines",
+  "description": "Directional scanline displacement for motion-graphics and poster treatments. A wave field running perpendicular to the chosen direction combines with source luminance to push bright and dark image regions along one axis. Low settings create controlled editorial streaking; stronger displacement, wave, contrast, and RGB split produce speed-line and contemporary music-poster effects.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(r,clamp((srcLinear(x+r2x(val(0,0,1024),1)*((val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1))+val(4,0,24)),y+r2y(val(0,0,1024),1)*((val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1))+val(4,0,24)),0)-128)*val(5,0.6,2.2)+128,0,255),ctl(7))",
+    "lerp(g,clamp((srcLinear(x+r2x(val(0,0,1024),1)*(val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1)),y+r2y(val(0,0,1024),1)*(val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1)),1)-128)*val(5,0.6,2.2)+128,0,255),ctl(7))",
+    "lerp(b,clamp((srcLinear(x+r2x(val(0,0,1024),1)*((val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1))-val(4,0,24)),y+r2y(val(0,0,1024),1)*((val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1))-val(4,0,24)),2)-128)*val(5,0.6,2.2)+128,0,255),ctl(7))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Direction",
+      "value": 143.79166666666666,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "number",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Line Frequency",
+      "value": 76.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 4,
+        "displayMax": 64,
+        "step": 1,
+        "format": "integer",
+        "unit": "lines"
+      }
+    },
+    {
+      "label": "Displacement",
+      "value": 113.33333333333333,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 90,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Wave Amount",
+      "value": 123.85714285714286,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 175,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "RGB Split",
+      "value": 170,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 24,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 102,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 60,
+        "displayMax": 220,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Phase",
+      "value": 16.291666666666664,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "number",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}

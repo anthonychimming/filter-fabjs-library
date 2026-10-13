@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "neon-flow-contours",
+  "tags": [
+    "procedural",
+    "contour",
+    "psychedelic",
+    "stripes",
+    "abstract"
+  ],
+  "mathMode": "float",
+  "name": "Neon Flow Contours",
+  "description": "Interlocking psychedelic op-art ribbons with flowing S-curve distortion, hard black negative space, and repeating magenta–yellow–white–cyan–violet colour bands. Generates procedural artwork independently of the image content; Image Mix blends it with the input. Try changing Flow Variation, Bend Frequency, and Ribbon Coverage for different graphic compositions.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(r,lerp((255*(smoothstep(0,0.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(4.925,5.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))),(255*(smoothstep(0,0.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(2.925,3.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))+65*(smoothstep(3.925,4.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(4.925,5.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))),ctl(9)),ctl(8))",
+    "lerp(g,lerp((255*(smoothstep(0,0.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(4.925,5.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))),(255*(smoothstep(0.925,1.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(3.925,4.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))),ctl(9)),ctl(8))",
+    "lerp(b,lerp((255*(smoothstep(0,0.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(4.925,5.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))),(130*(smoothstep(0,0.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(0.925,1.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))+255*(smoothstep(1.925,2.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82)))-smoothstep(4.925,5.075,(fract((val(0,8,24)*(nx+((y-Y/2)/X)*val(6,-1.15,1.15))+val(1,0,3.5)*sin(1024*(val(2,0.45,2.7)*((y-Y/2)/X)+0.18*nx+0.28*sin(1024*(0.9*nx-0.6*((y-Y/2)/X)))/512+val(7,0,1)))/512+val(3,0,1.5)*sin(1024*(1.05*nx+0.62*((y-Y/2)/X)+val(7,0,1)))/512)+val(5,0,1))*5/val(4,0.35,0.82))))),ctl(9)),ctl(8))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Stripe Density",
+      "value": 146.62500000000006,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 8,
+        "displayMax": 24,
+        "step": 0.1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Flow Distortion",
+      "value": 189.42857142857144,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 3.5,
+        "step": 0.05,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Bend Frequency",
+      "value": 187.00000000000003,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.45,
+        "displayMax": 2.7,
+        "step": 0.05,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Fine Distortion",
+      "value": 246.50000000000003,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 1.5,
+        "step": 0.05,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Ribbon Coverage",
+      "value": 59.68085106382979,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 35,
+        "displayMax": 82,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Stripe Phase",
+      "value": 98.45833333333334,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "number",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Diagonal Slant",
+      "value": 105.32608695652175,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -1.15,
+        "displayMax": 1.15,
+        "step": 0.05,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Flow Variation",
+      "value": 248,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Image Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Neon Colour",
+      "value": 211.64999999999998,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "preset-48af1931-c4ee-4515-a4cf-434e7e7a0f67",
+  "tags": [
+    "Distortion",
+    "Fractal",
+    "Procedural",
+    "Texture"
+  ],
+  "mathMode": "float",
+  "name": "Julia Fractal Displacement",
+  "description": "Warps the complete source image, including alpha, with two related Julia escape-time fields used as hidden X/Y displacement maps. The default Julia constant is tuned for filamentary boundary structure rather than a literal fractal picture, producing sharp contour-driven folds and tearing-like bends while remaining deterministic. Strength sets displacement in pixels; Field Scale and Detail control fractal density; Angle rotates the field; Julia Real and Julia Imag change the Julia-set topology; Contour Bands increases fold frequency; Field Split decorrelates the X/Y maps; Direction Bias favors one displacement axis; Effect Mix blends back to the source.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,srcLinear(x+sin((julia((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),(r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1+val(8,-1,1)*0.65),y+sin((julia(((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))+val(7,0,0.75),((r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))-val(7,0,0.75)*0.73,val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1-val(8,-1,1)*0.65),z),ctl(9))",
+    "lerp(c,srcLinear(x+sin((julia((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),(r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1+val(8,-1,1)*0.65),y+sin((julia(((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))+val(7,0,0.75),((r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))-val(7,0,0.75)*0.73,val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1-val(8,-1,1)*0.65),z),ctl(9))",
+    "lerp(c,srcLinear(x+sin((julia((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),(r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1+val(8,-1,1)*0.65),y+sin((julia(((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))+val(7,0,0.75),((r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))-val(7,0,0.75)*0.73,val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1-val(8,-1,1)*0.65),z),ctl(9))",
+    "lerp(c,srcLinear(x+sin((julia((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),(r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2),val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1+val(8,-1,1)*0.65),y+sin((julia(((r2x(val(3,0,360)*1024/360,cx*X/min(X,Y))-r2y(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))+val(7,0,0.75),((r2y(val(3,0,360)*1024/360,cx*X/min(X,Y))+r2x(val(3,0,360)*1024/360,cy*Y/min(X,Y)))*val(1,0.2,1.2))-val(7,0,0.75)*0.73,val(4,-1,0.3),val(5,-0.6,0.6),round(val(2,24,256))))*round(val(6,1,8))*1024)/512*val(0,0,120)*(1-val(8,-1,1)*0.65),z),ctl(9))"
+  ],
+  "controls": [
+    {
+      "label": "Strength",
+      "value": 144.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 120,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Field Scale",
+      "value": 178.50000000000006,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.2,
+        "displayMax": 1.2,
+        "step": 0.01,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Detail",
+      "value": 37.37068965517241,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 24,
+        "displayMax": 256,
+        "step": 1,
+        "format": "integer",
+        "unit": "iter"
+      }
+    },
+    {
+      "label": "Angle",
+      "value": 182.04166666666666,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "integer",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Julia Real",
+      "value": 125.53846153846153,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -1,
+        "displayMax": 0.3,
+        "step": 0.01,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Julia Imag",
+      "value": 16.999999999999993,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -0.6,
+        "displayMax": 0.6,
+        "step": 0.01,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Contour Bands",
+      "value": 218.57142857142856,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 8,
+        "step": 1,
+        "format": "integer",
+        "unit": "bands"
+      }
+    },
+    {
+      "label": "Field Split",
+      "value": 88.4,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 0.75,
+        "step": 0.01,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Direction Bias",
+      "value": 112.2,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}
