@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "lomochrome-color-92-balanced",
+  "tags": [
+    "Film",
+    "Color",
+    "Retro",
+    "Tone",
+    "Texture"
+  ],
+  "mathMode": "float",
+  "name": "LomoChrome Color 92",
+  "description": "A approximation of the original LomoChrome Color '92 ISO 400 negative film. Keeps soft creamy highlights, moderately lifted shadows, a restrained blue/cyan shadow cast, natural skin midtones, red/yellow accents and muted olive greens. Luminance-dependent grain combines correlated and fine components with very low chromatic speckle, scaled relative to the smaller image dimension. Defaults were corrected after comparison of the previous Refined preset against a color portrait. Exposure and Contrast shape tone; Color Density controls source chroma; Cool Cast, Warm Accents and Olive Greens tune color separation; Grain Strength/Size and Film Softness set texture. Effect Mix blends with the source. Transparency preserved. Does not model true film halation, processing or scanner response.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "clamp(lerp(c,(gradient4(clamp((((i+(lerp(c,cnv(1,1,1,1,4,1,1,1,1,12),val(8,0,0.5))-i)*val(2,0.6,1.1))-127.5)*val(1,0.8,1.18)+127.5+val(0,-24,24))/255,0,1),11,94,177,245)-0.14*val(3,0,34)*(clamp((180-i)/180,0,1)*smoothstep(7,58,i))-0.03*val(3,0,34)*clamp(1-abs(i-130)/125,0,1)+0.83*val(4,0,34)*clamp((r-max(g,b)-18)/110,0,1)+0.42*val(4,0,34)*clamp((min(r,g)-b-14)/105,0,1)+0.22*val(5,0,34)*clamp((g-max(r,b)-9)/88,0,1)+2.0*smoothstep(170,247,i)+(val(6,0,50)*((valueNoise(x,y,(val(7,0.8,4.2)*max(0.5,min(X,Y)/950)),1992)-0.5)*1.18+(hash2(x,y,1993)-0.5)*0.32)*(1.0-0.45*i/255))+(val(6,0,50)*0.038*(hash2(x+79,y+23,2017)-0.5))),ctl(9)),0,255)",
+    "clamp(lerp(c,(gradient4(clamp((((i+(lerp(c,cnv(1,1,1,1,4,1,1,1,1,12),val(8,0,0.5))-i)*val(2,0.6,1.1))-127.5)*val(1,0.8,1.18)+127.5+val(0,-24,24))/255,0,1),11,94,177,245)+0.19*val(3,0,34)*(clamp((180-i)/180,0,1)*smoothstep(7,58,i))+0.01*val(3,0,34)*clamp(1-abs(i-130)/125,0,1)-0.10*val(4,0,34)*clamp((r-max(g,b)-18)/110,0,1)+0.13*val(4,0,34)*clamp((min(r,g)-b-14)/105,0,1)-0.45*val(5,0,34)*clamp((g-max(r,b)-9)/88,0,1)-0.6*smoothstep(170,247,i)+(val(6,0,50)*((valueNoise(x,y,(val(7,0.8,4.2)*max(0.5,min(X,Y)/950)),1992)-0.5)*1.18+(hash2(x,y,1993)-0.5)*0.32)*(1.0-0.45*i/255))+(val(6,0,50)*0.032*(hash2(x+11,y+107,2018)-0.5))),ctl(9)),0,255)",
+    "clamp(lerp(c,(gradient4(clamp((((i+(lerp(c,cnv(1,1,1,1,4,1,1,1,1,12),val(8,0,0.5))-i)*val(2,0.6,1.1))-127.5)*val(1,0.8,1.18)+127.5+val(0,-24,24))/255,0,1),11,94,177,245)+0.43*val(3,0,34)*(clamp((180-i)/180,0,1)*smoothstep(7,58,i))+0.14*val(3,0,34)*clamp(1-abs(i-130)/125,0,1)-0.13*val(4,0,34)*clamp((r-max(g,b)-18)/110,0,1)-0.34*val(4,0,34)*clamp((min(r,g)-b-14)/105,0,1)-0.24*val(5,0,34)*clamp((g-max(r,b)-9)/88,0,1)+0.25*val(4,0,34)*clamp((b-r-5)/120,0,1)+1.0*smoothstep(170,247,i)+(val(6,0,50)*((valueNoise(x,y,(val(7,0.8,4.2)*max(0.5,min(X,Y)/950)),1992)-0.5)*1.18+(hash2(x,y,1993)-0.5)*0.32)*(1.0-0.45*i/255))+(val(6,0,50)*0.048*(hash2(x+151,y+41,2019)-0.5))),ctl(9)),0,255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Exposure",
+      "value": 148.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -24,
+        "displayMax": 24,
+        "step": 1,
+        "format": "number",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 107.36842105263156,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.8,
+        "displayMax": 1.18,
+        "step": 0.01,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Color Density",
+      "value": 142.79999999999998,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.6,
+        "displayMax": 1.1,
+        "step": 0.01,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Cool Cast",
+      "value": 75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 34,
+        "step": 1,
+        "format": "number",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Warm Accents",
+      "value": 120,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 34,
+        "step": 1,
+        "format": "number",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Olive Greens",
+      "value": 67.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 34,
+        "step": 1,
+        "format": "number",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Grain Strength",
+      "value": 61.2,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 50,
+        "step": 1,
+        "format": "number",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Grain Size",
+      "value": 74.99999999999999,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.8,
+        "displayMax": 4.2,
+        "step": 0.1,
+        "format": "number",
+        "unit": "px@950"
+      }
+    },
+    {
+      "label": "Film Softness",
+      "value": 40.800000000000004,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 0.5,
+        "step": 0.01,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    }
+  ]
+}

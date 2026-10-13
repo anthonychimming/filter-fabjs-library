@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "lomochrome-purple-xr-spectrum-v2",
+  "tags": [
+    "Film",
+    "Color",
+    "Foliage",
+    "Retro"
+  ],
+  "mathMode": "float",
+  "name": "LomoChrome Purple XR",
+  "description": "Color-negative false-color emulation inspired by LomoChrome Purple XR 100–400. Selective foliage greens become violet or indigo, blue skies shift toward cyan, yellow becomes pink and pink becomes yellow. Warm skin, orange lighting and neutrals are protected by narrower color masks. XR ISO approximates paler ISO 100 to deeper ISO 400 via density and purple-hue adjustments; it is not a physical exposure simulation. Fine monochrome grain, film-like contrast, and final source blending are adjustable. Best for outdoor photographs with natural greens, yellow flowers, blue skies and people.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,clamp((lerp(lerp(lerp(lerp(gradient4(clamp(((c-128)*val(6,0.8,1.4)+128+val(4,7,-10))/255,0,1),12,90,180,249),clamp(i*(0.95-0.13*val(4,0,1))+60-10*val(4,0,1),0,255),smoothstep(max(1,val(1,-12,13)),val(1,16,76),g-max(r,b*0.96))*clamp(val(0,0,1)*(0.82+0.18*val(4,0,1)),0,1)),clamp(i*0.16+18,0,255),smoothstep(8,82,b-max(r,g))*val(2,0,1)),clamp(i*0.98+68,0,255),(smoothstep(16,83,min(r,g)-b)*smoothstep(0.70,0.93,g/max(r,1))*(1-smoothstep(0.44,0.65,b/max(r,1))))*val(3,0,1)),min(252,i*1.05+80),(smoothstep(20,95,(r+b)/2-g)*smoothstep(0.52,0.68,b/max(r,1))*(1-smoothstep(0.96,1.24,b/max(r,1)))*smoothstep(55,145,i))*val(8,0,1)))+(val(5,0,30)*((hash2(x,y,917)-0.5)*0.72+(valueNoise(x,y,max(1,min(X,Y)/750*1.4),919)-0.5)*0.63)*(1.18-0.58*i/255)),0,255),ctl(7))",
+    "lerp(c,clamp((lerp(lerp(lerp(lerp(gradient4(clamp(((c-128)*val(6,0.8,1.4)+128+val(4,7,-10))/255,0,1),12,90,180,249),clamp(i*(0.30-0.12*val(4,0,1))+16-6*val(4,0,1),0,255),smoothstep(max(1,val(1,-12,13)),val(1,16,76),g-max(r,b*0.96))*clamp(val(0,0,1)*(0.82+0.18*val(4,0,1)),0,1)),clamp(i*0.90+49,0,255),smoothstep(8,82,b-max(r,g))*val(2,0,1)),clamp(i*0.19+30,0,255),(smoothstep(16,83,min(r,g)-b)*smoothstep(0.70,0.93,g/max(r,1))*(1-smoothstep(0.44,0.65,b/max(r,1))))*val(3,0,1)),min(244,i*1.05+70),(smoothstep(20,95,(r+b)/2-g)*smoothstep(0.52,0.68,b/max(r,1))*(1-smoothstep(0.96,1.24,b/max(r,1)))*smoothstep(55,145,i))*val(8,0,1)))+(val(5,0,30)*((hash2(x,y,917)-0.5)*0.72+(valueNoise(x,y,max(1,min(X,Y)/750*1.4),919)-0.5)*0.63)*(1.18-0.58*i/255)),0,255),ctl(7))",
+    "lerp(c,clamp((lerp(lerp(lerp(lerp(gradient4(clamp(((c-128)*val(6,0.8,1.4)+128+val(4,7,-10))/255,0,1),12,90,180,249),clamp(i*(1.06-0.06*val(4,0,1))+57+3*val(4,0,1),0,255),smoothstep(max(1,val(1,-12,13)),val(1,16,76),g-max(r,b*0.96))*clamp(val(0,0,1)*(0.82+0.18*val(4,0,1)),0,1)),clamp(i*0.72+42,0,255),smoothstep(8,82,b-max(r,g))*val(2,0,1)),clamp(i*0.84+48,0,255),(smoothstep(16,83,min(r,g)-b)*smoothstep(0.70,0.93,g/max(r,1))*(1-smoothstep(0.44,0.65,b/max(r,1))))*val(3,0,1)),clamp(i*0.22+18,0,255),(smoothstep(20,95,(r+b)/2-g)*smoothstep(0.52,0.68,b/max(r,1))*(1-smoothstep(0.96,1.24,b/max(r,1)))*smoothstep(55,145,i))*val(8,0,1)))+(val(5,0,30)*((hash2(x,y,917)-0.5)*0.72+(valueNoise(x,y,max(1,min(X,Y)/750*1.4),919)-0.5)*0.63)*(1.18-0.58*i/255)),0,255),ctl(7))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Purple Strength",
+      "value": 193.8,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Green Selectivity",
+      "value": 10.200000000000001,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Blue → Cyan",
+      "value": 178.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Yellow → Pink",
+      "value": 216.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "XR ISO",
+      "value": 85,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 100,
+        "displayMax": 400,
+        "step": 1,
+        "format": "integer",
+        "unit": "ISO"
+      }
+    },
+    {
+      "label": "Film Grain",
+      "value": 76.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 89.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 80,
+        "displayMax": 140,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Pink → Yellow",
+      "value": 178.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}

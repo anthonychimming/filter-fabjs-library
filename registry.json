@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 9,
+  "libraryVersion": 10,
   "filters": [
     {
       "id": "adaptive-rounded-mosaic",
@@ -24,6 +24,11 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "contour-flow-halftone",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
+    },
+    {
       "id": "contrast-channel-offset",
       "revision": 1,
       "publishedAt": "2026-10-11"
@@ -39,6 +44,11 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "kineticlines",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
+    },
+    {
       "id": "lens-distortion",
       "revision": 1,
       "publishedAt": "2026-09-23"
@@ -49,9 +59,24 @@
       "publishedAt": "2026-09-23"
     },
     {
+      "id": "lomo-cn400-film-scan",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
+    },
+    {
+      "id": "lomochrome-color-92-balanced",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
+    },
+    {
       "id": "lomochrome-metropolis-100-400",
       "revision": 1,
       "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "lomochrome-purple-xr-spectrum-v2",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
     },
     {
       "id": "lomochrome-turquoise-100-400",
@@ -72,6 +97,11 @@
       "id": "nebula-starfield",
       "revision": 1,
       "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "neon-flow-contours",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
     },
     {
       "id": "parametric-slice-glitch",
@@ -129,6 +159,11 @@
       "publishedAt": "2026-10-11"
     },
     {
+      "id": "preset-48af1931-c4ee-4515-a4cf-434e7e7a0f67",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
+    },
+    {
       "id": "preset-639acccc-8c0e-4233-b815-89c2eef9826d",
       "revision": 1,
       "publishedAt": "2026-10-10"
@@ -137,6 +172,11 @@
       "id": "pseudo-thermal-imaging",
       "revision": 1,
       "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "redscale-xr-120",
+      "revision": 1,
+      "publishedAt": "2026-10-13"
     },
     {
       "id": "rippled-glass-refraction",
