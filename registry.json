@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 10,
+  "libraryVersion": 11,
   "filters": [
     {
       "id": "adaptive-rounded-mosaic",
@@ -9,9 +9,24 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "amiga-ehb-32-plus-32",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
+      "id": "carved-shadow-crosshatch-v3",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
       "id": "chromatic-neon-contour",
       "revision": 1,
       "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "chromatic-overprint-two-ink-press",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
     },
     {
       "id": "chromatic-signal-weave",
@@ -32,6 +47,16 @@
       "id": "contrast-channel-offset",
       "revision": 1,
       "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "dynamic-contrast-photographic-detail",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
+      "id": "editorial-ink-cinematic-colour",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
     },
     {
       "id": "fragmented-photo-weave",
@@ -102,6 +127,16 @@
       "id": "neon-flow-contours",
       "revision": 1,
       "publishedAt": "2026-10-13"
+    },
+    {
+      "id": "organic-film-gate-leak",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
+      "id": "organic-low-poly-facets",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
     },
     {
       "id": "parametric-slice-glitch",
@@ -189,6 +224,11 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "silver-gelatin-noir",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
       "id": "studded-brick-mosaic",
       "revision": 1,
       "publishedAt": "2026-10-10"
@@ -199,9 +239,29 @@
       "publishedAt": "2026-10-11"
     },
     {
+      "id": "tension-mesh-grid",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
+      "id": "tension-mesh-rgb-checker",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
       "id": "turbulent-displace",
       "revision": 1,
       "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "valencia-instagram-inspired",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
+    },
+    {
+      "id": "wavy-halftone-lines",
+      "revision": 1,
+      "publishedAt": "2026-10-16"
     }
   ]
 }

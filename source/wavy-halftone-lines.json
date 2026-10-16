@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "wavy-halftone-lines",
+  "tags": [
+    "Halftone",
+    "Pattern",
+    "Monochrome",
+    "Distortion",
+    "Print"
+  ],
+  "mathMode": "float",
+  "name": "Wavy Halftone Lines",
+  "description": "Converts the source image into fine black-and-white wavy halftone lines. Wave direction and deformation are procedural, not image-contoured; photograph luminance controls only the black stripe widths. The waves remain coherent across adjacent lines, with a gentle secondary organic drift. Line Spacing sets print density; Tonal Depth and Ink Balance shape shadow coverage; Image Simplify smooths detail along the stripes.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,255*smoothstep(-(0.7/(2*val(0,3,16))),(0.7/(2*val(0,3,16))),abs(fract(((x*r2x((val(7,0,180)*1024/360),1)+y*r2y((val(7,0,180)*1024/360),1))+(sin((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1))*1024/val(5,40,260)+(valueNoise((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1)),0,val(5,40,260)*1.25,913)-0.5)*280)/512)*val(4,0,28)+(perlin((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1))*0.7,(x*r2x((val(7,0,180)*1024/360),1)+y*r2y((val(7,0,180)*1024/360),1))*0.14,val(5,40,260)*0.75,1777)-0.5)*2*val(6,0,16))/val(0,3,16)+0.5)-0.5)-0.5*clamp(val(1,0.18,0.82)+val(2,0,0.95)*(0.5-clamp(((2*i+0.299*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),0)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),0))+0.587*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),1)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),1))+0.114*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),2)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),2)))/1020-0.5)*val(3,0.5,2)+0.5,0,1)),0.04,0.96)),ctl(9)/255)",
+    "lerp(c,255*smoothstep(-(0.7/(2*val(0,3,16))),(0.7/(2*val(0,3,16))),abs(fract(((x*r2x((val(7,0,180)*1024/360),1)+y*r2y((val(7,0,180)*1024/360),1))+(sin((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1))*1024/val(5,40,260)+(valueNoise((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1)),0,val(5,40,260)*1.25,913)-0.5)*280)/512)*val(4,0,28)+(perlin((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1))*0.7,(x*r2x((val(7,0,180)*1024/360),1)+y*r2y((val(7,0,180)*1024/360),1))*0.14,val(5,40,260)*0.75,1777)-0.5)*2*val(6,0,16))/val(0,3,16)+0.5)-0.5)-0.5*clamp(val(1,0.18,0.82)+val(2,0,0.95)*(0.5-clamp(((2*i+0.299*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),0)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),0))+0.587*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),1)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),1))+0.114*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),2)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),2)))/1020-0.5)*val(3,0.5,2)+0.5,0,1)),0.04,0.96)),ctl(9)/255)",
+    "lerp(c,255*smoothstep(-(0.7/(2*val(0,3,16))),(0.7/(2*val(0,3,16))),abs(fract(((x*r2x((val(7,0,180)*1024/360),1)+y*r2y((val(7,0,180)*1024/360),1))+(sin((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1))*1024/val(5,40,260)+(valueNoise((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1)),0,val(5,40,260)*1.25,913)-0.5)*280)/512)*val(4,0,28)+(perlin((y*r2x((val(7,0,180)*1024/360),1)-x*r2y((val(7,0,180)*1024/360),1))*0.7,(x*r2x((val(7,0,180)*1024/360),1)+y*r2y((val(7,0,180)*1024/360),1))*0.14,val(5,40,260)*0.75,1777)-0.5)*2*val(6,0,16))/val(0,3,16)+0.5)-0.5)-0.5*clamp(val(1,0.18,0.82)+val(2,0,0.95)*(0.5-clamp(((2*i+0.299*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),0)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),0))+0.587*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),1)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),1))+0.114*(srcLinear((x+r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y+r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),2)+srcLinear((x-r2x((val(7,0,180)*1024/360)+256,val(8,0,8))),(y-r2y((val(7,0,180)*1024/360)+256,val(8,0,8))),2)))/1020-0.5)*val(3,0.5,2)+0.5,0,1)),0.04,0.96)),ctl(9)/255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Line Spacing",
+      "value": 94.15384615384617,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 3,
+        "displayMax": 16,
+        "step": 0.1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Ink Balance",
+      "value": 127.50000000000003,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.18,
+        "displayMax": 0.82,
+        "step": 0.01,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Tonal Depth",
+      "value": 193.263157894737,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 0.95,
+        "step": 0.01,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Tone Contrast",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.5,
+        "displayMax": 2,
+        "step": 0.05,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Wave Amount",
+      "value": 163.928571428571,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 28,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Wave Length",
+      "value": 173.863636363636,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 40,
+        "displayMax": 260,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Flow Variation",
+      "value": 95.625,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 16,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Line Angle",
+      "value": 205.41666666666669,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 180,
+        "step": 1,
+        "format": "number",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Image Simplify",
+      "value": 47.8125,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 8,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    }
+  ]
+}

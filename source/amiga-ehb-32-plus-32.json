@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "amiga-ehb-32-plus-32",
+  "tags": [
+    "Retro",
+    "Pixelate",
+    "Dither",
+    "Color"
+  ],
+  "mathMode": "float",
+  "name": "Amiga Extra Half-Brite",
+  "description": "Amiga EHB-inspired source-image treatment. A fixed 32-register RGB12 palette uses eight hue families with four stepped RGB12 brightness tiers each; RGB12 components have 16 levels. The 6th-bitplane decision is independent from the 5-bit base register and shifts each 4-bit channel right by one (0xFFF becomes 0x777). Pixel Size selects centre-of-cell source samples; Dither Strength and Seed control deterministic pixel-grid dithering for tone and half-bright transitions; Exposure and Contrast shape palette selection; Neutral Range chooses colour versus neutral families. Halfbrite Cutoff and Enable Halfbrite affect only the half-bright bit, not the selected base register. Palette Temperature adjusts the red and blue register nibbles before the hardware-style half-bright shift. Effect Mix 100% keeps outputs in the fixed EHB palette (except alpha); partial blending introduces additional colours. Fixed-palette single-pass approximation, not a per-image palette optimizer, native bitplane format, or CRT simulation.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(r,floor(clamp(round(((max(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0),max(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1),src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)))-min(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0),min(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1),src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))))<val(3,0,72)?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?15:( clamp(floor(clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)/64),0,3)<0.5?0:15 )):((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)&&src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?15:15):((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)&&src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?12:5):(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)?5:14))))*(0.3+0.23333333333333333*clamp(floor(clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)/64),0,3)))+val(6,-3,3),0,15)/((ctl(8)>127&&clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)<val(4,64,192))?2:1))*17,ctl(9))",
+    "lerp(g,floor(clamp(round(((max(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0),max(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1),src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)))-min(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0),min(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1),src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))))<val(3,0,72)?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?14:( clamp(floor(clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)/64),0,3)<0.5?0:15 )):((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)&&src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?11:7):((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)&&src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?15:15):(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)?11:8))))*(0.3+0.23333333333333333*clamp(floor(clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)/64),0,3))),0,15)/((ctl(8)>127&&clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)<val(4,64,192))?2:1))*17,ctl(9))",
+    "lerp(b,floor(clamp(round(((max(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0),max(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1),src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)))-min(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0),min(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1),src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))))<val(3,0,72)?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?12:( clamp(floor(clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)/64),0,3)<0.5?0:15 )):((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)&&src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?4:10):((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)&&src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>=src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2))?(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)?6:11):(src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)>src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)?15:15))))*(0.3+0.23333333333333333*clamp(floor(clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)/64),0,3)))-val(6,-3,3),0,15)/((ctl(8)>127&&clamp(((src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),0)*0.299+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),1)*0.587+src((x-x%val(0,1,24)+floor(val(0,1,24)/2)),(y-y%val(0,1,24)+floor(val(0,1,24)/2)),2)*0.114)-128)*val(5,0.75,1.6)+128+val(2,-48,48)+(hash2(floor(x/val(0,1,24)),floor(y/val(0,1,24)),val(7,1,9999))-0.5)*val(1,0,96),0,255)<val(4,64,192))?2:1))*17,ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Pixel Size",
+      "value": 22.17391304347826,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 24,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Dither Strength",
+      "value": 103.59375,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 96,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Exposure",
+      "value": 191.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -48,
+        "displayMax": 48,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Neutral Range",
+      "value": 120.41666666666666,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 72,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Halfbrite Cutoff",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 64,
+        "displayMax": 192,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Contrast",
+      "value": 96.00000000000001,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.75,
+        "displayMax": 1.6,
+        "step": 0.01,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Palette Temperature",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -3,
+        "displayMax": 3,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Dither Seed",
+      "value": 87.125425085017,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Enable Halfbrite",
+      "value": 255,
+      "ui": {
+        "widget": "toggle",
+        "displayMin": 0,
+        "displayMax": 1,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}
