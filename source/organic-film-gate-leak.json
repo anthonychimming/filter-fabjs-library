@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "organic-film-gate-leak",
+  "tags": [
+    "Film",
+    "Warm",
+    "Gradient",
+    "Procedural",
+    "Color"
+  ],
+  "mathMode": "float",
+  "name": "Organic Film-Gate Leak",
+  "description": "Analogue film-gate exposure entering from a selected frame edge. A wide crimson veil changes to hot orange and amber toward the film gate, while Hot Core selectively burns the brightest area toward warm off-white. A seeded low-frequency field breaks up the boundary without flare rings. Entry Position moves the dominant lobe along the edge; Reach adjusts penetration and Softness spreads the transition about a stable midpoint. Entry Side: 0=seeded Auto, 1=Left, 2=Right, 3=Top, 4=Bottom. Secondary Leak optionally adds a weaker opposite-edge fog. Exposure at 0 restores the source; original alpha is preserved.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "screen(r,gradient4(clamp(max((1-smoothstep(val(3,0.06,0.65)*0.10-val(4,0.02,0.22)*0.50,val(3,0.06,0.65)*1.10+val(4,0.02,0.22)*0.50,(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<1?nx:1-nx):((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<3?ny:1-ny))+smoothstep(0.10,0.72,abs(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?ny:nx)-val(2,0,1)))*val(3,0.06,0.65)*0.97+(fbm(x,y,min(X,Y)*0.34,3,2,0.5,val(9,1,9999))-0.5)*val(5,0,0.20)*0.78))),(ctl(8)>0?(1-smoothstep(val(3,0.06,0.65)*0.06-val(4,0.02,0.22)*0.22,val(3,0.06,0.65)*0.66+val(4,0.02,0.22)*0.38,((1-((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<1?nx:1-nx):((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<3?ny:1-ny)))+smoothstep(0.08,0.65,abs(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?ny:nx)-hash2(27,41,val(9,1,9999))))*val(3,0.06,0.65)*0.66+(fbm(x+373,y+913,min(X,Y)*0.45,2,2,0.5,val(9,1,9999)+17)-0.5)*val(5,0,0.20)*0.53)))*val(8,0,0.72):0)),0,1),0,132,238,255),ctl(0))",
+    "screen(g,gradient4(clamp(max((1-smoothstep(val(3,0.06,0.65)*0.10-val(4,0.02,0.22)*0.50,val(3,0.06,0.65)*1.10+val(4,0.02,0.22)*0.50,(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<1?nx:1-nx):((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<3?ny:1-ny))+smoothstep(0.10,0.72,abs(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?ny:nx)-val(2,0,1)))*val(3,0.06,0.65)*0.97+(fbm(x,y,min(X,Y)*0.34,3,2,0.5,val(9,1,9999))-0.5)*val(5,0,0.20)*0.78))),(ctl(8)>0?(1-smoothstep(val(3,0.06,0.65)*0.06-val(4,0.02,0.22)*0.22,val(3,0.06,0.65)*0.66+val(4,0.02,0.22)*0.38,((1-((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<1?nx:1-nx):((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<3?ny:1-ny)))+smoothstep(0.08,0.65,abs(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?ny:nx)-hash2(27,41,val(9,1,9999))))*val(3,0.06,0.65)*0.66+(fbm(x+373,y+913,min(X,Y)*0.45,2,2,0.5,val(9,1,9999)+17)-0.5)*val(5,0,0.20)*0.53)))*val(8,0,0.72):0)),0,1),0,2+7*val(6,0,1),30+110*val(6,0,1),(115+120*val(6,0,1))*(1-val(7,0,1))+248*val(7,0,1)),ctl(0))",
+    "screen(b,gradient4(clamp(max((1-smoothstep(val(3,0.06,0.65)*0.10-val(4,0.02,0.22)*0.50,val(3,0.06,0.65)*1.10+val(4,0.02,0.22)*0.50,(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<1?nx:1-nx):((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<3?ny:1-ny))+smoothstep(0.10,0.72,abs(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?ny:nx)-val(2,0,1)))*val(3,0.06,0.65)*0.97+(fbm(x,y,min(X,Y)*0.34,3,2,0.5,val(9,1,9999))-0.5)*val(5,0,0.20)*0.78))),(ctl(8)>0?(1-smoothstep(val(3,0.06,0.65)*0.06-val(4,0.02,0.22)*0.22,val(3,0.06,0.65)*0.66+val(4,0.02,0.22)*0.38,((1-((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<1?nx:1-nx):((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<3?ny:1-ny)))+smoothstep(0.08,0.65,abs(((val(1,0,4)<0.5?floor(hash2(13,29,val(9,1,9999))*4):floor(val(1,0,4)+0.5)-1)<2?ny:nx)-hash2(27,41,val(9,1,9999))))*val(3,0.06,0.65)*0.66+(fbm(x+373,y+913,min(X,Y)*0.45,2,2,0.5,val(9,1,9999)+17)-0.5)*val(5,0,0.20)*0.53)))*val(8,0,0.72):0)),0,1),0,0,2+7*val(6,0,1),(4+14*val(6,0,1))*(1-val(7,0,1))+244*val(7,0,1)),ctl(0))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Exposure",
+      "value": 198.9,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Entry Side",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 4,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Entry Position",
+      "value": 150.45,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Reach",
+      "value": 99.406779661,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 6,
+        "displayMax": 65,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Softness",
+      "value": 63.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 2,
+        "displayMax": 22,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Irregularity",
+      "value": 95.625,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 20,
+        "step": 0.5,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Colour Temperature",
+      "value": 170.85,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Hot Core",
+      "value": 40.8,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Secondary Leak",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Seed",
+      "value": 47.082416483,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    }
+  ]
+}

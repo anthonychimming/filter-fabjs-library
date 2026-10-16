@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "editorial-ink-cinematic-colour",
+  "tags": [
+    "Print",
+    "Color",
+    "Tone",
+    "Portrait",
+    "Detail"
+  ],
+  "mathMode": "float",
+  "name": "Editorial Ink — Cinematic Colour",
+  "description": "Creates a cinematic editorial-ink illustration from photographs using simplified colour planes, selective black contours, and controlled shadow masses. Local luminance smoothing and softly separated tone bands reduce fine photographic texture while retaining skin tones and material colours. Ink Strength and Edge Threshold define contour contrast; Contour Scale adjusts the sampling distance in pixels. Tone Steps determines tonal separation, Colour Intensity adjusts colour contrast, and Shadow Fill and Shadow Threshold shape dark ink regions. Region Smoothing governs local colour and tonal averaging, Paper Texture adds fine deterministic grain, and Effect Mix balances the original and treated image. Designed for portraits, editorial artwork, posters, and architectural photography. Original alpha is preserved.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "lerp(c,lerp(clamp(((floor((lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)*(val(3,3,6)-1)/255))+smoothstep(0.39,0.78,fract((lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)*(val(3,3,6)-1)/255))))*255/(val(3,3,6)-1))+(lerp(c,cnv(1,2,1,2,4,2,1,2,1,16),ctl(8)/255)-lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255))*val(4,0,1.8)+(hash2(x,y,1949)-0.5)*val(7,0,14),0,255),7,clamp(max((smoothstep(val(1,10,95)-7,val(1,10,95)+13,sqrt(sqr(((299*srcLinear(x+val(2,1,4),y,0)+587*srcLinear(x+val(2,1,4),y,1)+114*srcLinear(x+val(2,1,4),y,2))/1000)-((299*srcLinear(x-val(2,1,4),y,0)+587*srcLinear(x-val(2,1,4),y,1)+114*srcLinear(x-val(2,1,4),y,2))/1000))+sqr(((299*srcLinear(x,y+val(2,1,4),0)+587*srcLinear(x,y+val(2,1,4),1)+114*srcLinear(x,y+val(2,1,4),2))/1000)-((299*srcLinear(x,y-val(2,1,4),0)+587*srcLinear(x,y-val(2,1,4),1)+114*srcLinear(x,y-val(2,1,4),2))/1000))))*val(0,0,1)),((1-smoothstep(val(6,25,135)-13,val(6,25,135)+12,lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)))*val(5,0,1))),0,1)),ctl(9)/255)",
+    "lerp(c,lerp(clamp(((floor((lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)*(val(3,3,6)-1)/255))+smoothstep(0.39,0.78,fract((lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)*(val(3,3,6)-1)/255))))*255/(val(3,3,6)-1))+(lerp(c,cnv(1,2,1,2,4,2,1,2,1,16),ctl(8)/255)-lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255))*val(4,0,1.8)+(hash2(x,y,1949)-0.5)*val(7,0,14),0,255),7,clamp(max((smoothstep(val(1,10,95)-7,val(1,10,95)+13,sqrt(sqr(((299*srcLinear(x+val(2,1,4),y,0)+587*srcLinear(x+val(2,1,4),y,1)+114*srcLinear(x+val(2,1,4),y,2))/1000)-((299*srcLinear(x-val(2,1,4),y,0)+587*srcLinear(x-val(2,1,4),y,1)+114*srcLinear(x-val(2,1,4),y,2))/1000))+sqr(((299*srcLinear(x,y+val(2,1,4),0)+587*srcLinear(x,y+val(2,1,4),1)+114*srcLinear(x,y+val(2,1,4),2))/1000)-((299*srcLinear(x,y-val(2,1,4),0)+587*srcLinear(x,y-val(2,1,4),1)+114*srcLinear(x,y-val(2,1,4),2))/1000))))*val(0,0,1)),((1-smoothstep(val(6,25,135)-13,val(6,25,135)+12,lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)))*val(5,0,1))),0,1)),ctl(9)/255)",
+    "lerp(c,lerp(clamp(((floor((lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)*(val(3,3,6)-1)/255))+smoothstep(0.39,0.78,fract((lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)*(val(3,3,6)-1)/255))))*255/(val(3,3,6)-1))+(lerp(c,cnv(1,2,1,2,4,2,1,2,1,16),ctl(8)/255)-lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255))*val(4,0,1.8)+(hash2(x,y,1949)-0.5)*val(7,0,14),0,255),7,clamp(max((smoothstep(val(1,10,95)-7,val(1,10,95)+13,sqrt(sqr(((299*srcLinear(x+val(2,1,4),y,0)+587*srcLinear(x+val(2,1,4),y,1)+114*srcLinear(x+val(2,1,4),y,2))/1000)-((299*srcLinear(x-val(2,1,4),y,0)+587*srcLinear(x-val(2,1,4),y,1)+114*srcLinear(x-val(2,1,4),y,2))/1000))+sqr(((299*srcLinear(x,y+val(2,1,4),0)+587*srcLinear(x,y+val(2,1,4),1)+114*srcLinear(x,y+val(2,1,4),2))/1000)-((299*srcLinear(x,y-val(2,1,4),0)+587*srcLinear(x,y-val(2,1,4),1)+114*srcLinear(x,y-val(2,1,4),2))/1000))))*val(0,0,1)),((1-smoothstep(val(6,25,135)-13,val(6,25,135)+12,lerp(i,((3*i+((299*src(x+2,y,0)+587*src(x+2,y,1)+114*src(x+2,y,2))/1000)+((299*src(x-2,y,0)+587*src(x-2,y,1)+114*src(x-2,y,2))/1000)+((299*src(x,y+2,0)+587*src(x,y+2,1)+114*src(x,y+2,2))/1000)+((299*src(x,y-2,0)+587*src(x,y-2,1)+114*src(x,y-2,2))/1000))/7),ctl(8)/255)))*val(5,0,1))),0,1)),ctl(9)/255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Ink Strength",
+      "value": 214.2,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Edge Threshold",
+      "value": 102,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 10,
+        "displayMax": 95,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Contour Scale",
+      "value": 34,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 4,
+        "step": 0.05,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Tone Steps",
+      "value": 170,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 3,
+        "displayMax": 6,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Colour Intensity",
+      "value": 154.416666666667,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 1.8,
+        "step": 0.01,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Shadow Fill",
+      "value": 178.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Shadow Threshold",
+      "value": 64.909090909091,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 25,
+        "displayMax": 135,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Paper Texture",
+      "value": 9.107142857143,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 14,
+        "step": 0.5,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Region Smoothing",
+      "value": 214.2,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    }
+  ]
+}

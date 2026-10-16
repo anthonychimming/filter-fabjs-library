@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "dynamic-contrast-photographic-detail",
+  "tags": [
+    "Detail",
+    "Texture",
+    "Tone",
+    "Utility"
+  ],
+  "mathMode": "float",
+  "name": "Dynamic Contrast — Photographic Detail",
+  "description": "Three-band photographic local contrast with smooth-radius, two-ring neighbourhood sampling. Fine Detail changes one-pixel microcontrast; Medium Texture emphasizes surface structure; Large Structure shapes broader depth. Texture Radius sets the outer medium-band sampling radius in source pixels; the large-band radius is four times larger. Shadow/Highlight Protect progressively attenuate detail near tonal endpoints, Midtone Focus prioritizes midtones, Halo Limit caps per-channel correction, and Color Guard reduces enhancement on highly saturated pixels. Effect Mix adjusts overall intensity. Negative Detail values soften their band. Use for landscape, architecture and natural textures; moderate Large Structure to minimize wide edge halos. This is a single-pass approximation using sparse neighbourhood samples, not a true edge-aware Gaussian pyramid or RAW highlight recovery.",
+  "author": "Anthony Chimming",
+  "formulas": [
+    "clamp(c+clamp(clamp((c*(val(0,-100,100)*0.0125)+cnv(1,2,1,2,4,2,1,2,1,16)*((val(1,-100,100)*0.01)-(val(0,-100,100)*0.0125))+(((8*c+2*(srcLinear(x+((val(3,2,24))*0.5),y,z)+srcLinear(x-((val(3,2,24))*0.5),y,z)+srcLinear(x,y+((val(3,2,24))*0.5),z)+srcLinear(x,y-((val(3,2,24))*0.5),z))+(srcLinear(x+(val(3,2,24)),y,z)+srcLinear(x-(val(3,2,24)),y,z)+srcLinear(x,y+(val(3,2,24)),z)+srcLinear(x,y-(val(3,2,24)),z))+(srcLinear(x+((val(3,2,24))*0.70710678),y+((val(3,2,24))*0.70710678),z)+srcLinear(x-((val(3,2,24))*0.70710678),y+((val(3,2,24))*0.70710678),z)+srcLinear(x+((val(3,2,24))*0.70710678),y-((val(3,2,24))*0.70710678),z)+srcLinear(x-((val(3,2,24))*0.70710678),y-((val(3,2,24))*0.70710678),z)))/24))*((val(2,-100,100)*0.008)-(val(1,-100,100)*0.01))-(((8*c+2*(srcLinear(x+(((val(3,2,24))*4)*0.5),y,z)+srcLinear(x-(((val(3,2,24))*4)*0.5),y,z)+srcLinear(x,y+(((val(3,2,24))*4)*0.5),z)+srcLinear(x,y-(((val(3,2,24))*4)*0.5),z))+(srcLinear(x+((val(3,2,24))*4),y,z)+srcLinear(x-((val(3,2,24))*4),y,z)+srcLinear(x,y+((val(3,2,24))*4),z)+srcLinear(x,y-((val(3,2,24))*4),z))+(srcLinear(x+(((val(3,2,24))*4)*0.70710678),y+(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x-(((val(3,2,24))*4)*0.70710678),y+(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x+(((val(3,2,24))*4)*0.70710678),y-(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x-(((val(3,2,24))*4)*0.70710678),y-(((val(3,2,24))*4)*0.70710678),z)))/24))*(val(2,-100,100)*0.008)),-val(6,4,64),val(6,4,64))*smoothstep(0,1+val(4,0,100),i)*(1-smoothstep(254-val(5,0,100),255,i))*(1-val(7,0,100)/100*(1-4*i*(255-i)/65025))*(1-val(9,0,100)/100*smoothstep(20,160,max(r,max(g,b))-min(r,min(g,b))))*(val(8,0,100)/100),-c*0.95,(255-c)*0.95),0,255)",
+    "clamp(c+clamp(clamp((c*(val(0,-100,100)*0.0125)+cnv(1,2,1,2,4,2,1,2,1,16)*((val(1,-100,100)*0.01)-(val(0,-100,100)*0.0125))+(((8*c+2*(srcLinear(x+((val(3,2,24))*0.5),y,z)+srcLinear(x-((val(3,2,24))*0.5),y,z)+srcLinear(x,y+((val(3,2,24))*0.5),z)+srcLinear(x,y-((val(3,2,24))*0.5),z))+(srcLinear(x+(val(3,2,24)),y,z)+srcLinear(x-(val(3,2,24)),y,z)+srcLinear(x,y+(val(3,2,24)),z)+srcLinear(x,y-(val(3,2,24)),z))+(srcLinear(x+((val(3,2,24))*0.70710678),y+((val(3,2,24))*0.70710678),z)+srcLinear(x-((val(3,2,24))*0.70710678),y+((val(3,2,24))*0.70710678),z)+srcLinear(x+((val(3,2,24))*0.70710678),y-((val(3,2,24))*0.70710678),z)+srcLinear(x-((val(3,2,24))*0.70710678),y-((val(3,2,24))*0.70710678),z)))/24))*((val(2,-100,100)*0.008)-(val(1,-100,100)*0.01))-(((8*c+2*(srcLinear(x+(((val(3,2,24))*4)*0.5),y,z)+srcLinear(x-(((val(3,2,24))*4)*0.5),y,z)+srcLinear(x,y+(((val(3,2,24))*4)*0.5),z)+srcLinear(x,y-(((val(3,2,24))*4)*0.5),z))+(srcLinear(x+((val(3,2,24))*4),y,z)+srcLinear(x-((val(3,2,24))*4),y,z)+srcLinear(x,y+((val(3,2,24))*4),z)+srcLinear(x,y-((val(3,2,24))*4),z))+(srcLinear(x+(((val(3,2,24))*4)*0.70710678),y+(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x-(((val(3,2,24))*4)*0.70710678),y+(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x+(((val(3,2,24))*4)*0.70710678),y-(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x-(((val(3,2,24))*4)*0.70710678),y-(((val(3,2,24))*4)*0.70710678),z)))/24))*(val(2,-100,100)*0.008)),-val(6,4,64),val(6,4,64))*smoothstep(0,1+val(4,0,100),i)*(1-smoothstep(254-val(5,0,100),255,i))*(1-val(7,0,100)/100*(1-4*i*(255-i)/65025))*(1-val(9,0,100)/100*smoothstep(20,160,max(r,max(g,b))-min(r,min(g,b))))*(val(8,0,100)/100),-c*0.95,(255-c)*0.95),0,255)",
+    "clamp(c+clamp(clamp((c*(val(0,-100,100)*0.0125)+cnv(1,2,1,2,4,2,1,2,1,16)*((val(1,-100,100)*0.01)-(val(0,-100,100)*0.0125))+(((8*c+2*(srcLinear(x+((val(3,2,24))*0.5),y,z)+srcLinear(x-((val(3,2,24))*0.5),y,z)+srcLinear(x,y+((val(3,2,24))*0.5),z)+srcLinear(x,y-((val(3,2,24))*0.5),z))+(srcLinear(x+(val(3,2,24)),y,z)+srcLinear(x-(val(3,2,24)),y,z)+srcLinear(x,y+(val(3,2,24)),z)+srcLinear(x,y-(val(3,2,24)),z))+(srcLinear(x+((val(3,2,24))*0.70710678),y+((val(3,2,24))*0.70710678),z)+srcLinear(x-((val(3,2,24))*0.70710678),y+((val(3,2,24))*0.70710678),z)+srcLinear(x+((val(3,2,24))*0.70710678),y-((val(3,2,24))*0.70710678),z)+srcLinear(x-((val(3,2,24))*0.70710678),y-((val(3,2,24))*0.70710678),z)))/24))*((val(2,-100,100)*0.008)-(val(1,-100,100)*0.01))-(((8*c+2*(srcLinear(x+(((val(3,2,24))*4)*0.5),y,z)+srcLinear(x-(((val(3,2,24))*4)*0.5),y,z)+srcLinear(x,y+(((val(3,2,24))*4)*0.5),z)+srcLinear(x,y-(((val(3,2,24))*4)*0.5),z))+(srcLinear(x+((val(3,2,24))*4),y,z)+srcLinear(x-((val(3,2,24))*4),y,z)+srcLinear(x,y+((val(3,2,24))*4),z)+srcLinear(x,y-((val(3,2,24))*4),z))+(srcLinear(x+(((val(3,2,24))*4)*0.70710678),y+(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x-(((val(3,2,24))*4)*0.70710678),y+(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x+(((val(3,2,24))*4)*0.70710678),y-(((val(3,2,24))*4)*0.70710678),z)+srcLinear(x-(((val(3,2,24))*4)*0.70710678),y-(((val(3,2,24))*4)*0.70710678),z)))/24))*(val(2,-100,100)*0.008)),-val(6,4,64),val(6,4,64))*smoothstep(0,1+val(4,0,100),i)*(1-smoothstep(254-val(5,0,100),255,i))*(1-val(7,0,100)/100*(1-4*i*(255-i)/65025))*(1-val(9,0,100)/100*smoothstep(20,160,max(r,max(g,b))-min(r,min(g,b))))*(val(8,0,100)/100),-c*0.95,(255-c)*0.95),0,255)",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Fine Detail",
+      "value": 163.2,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Medium Texture",
+      "value": 173.4,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Large Structure",
+      "value": 150.45,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Texture Radius",
+      "value": 46.363636363636,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 2,
+        "displayMax": 24,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Shadow Protect",
+      "value": 132.6,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Highlight Protect",
+      "value": 147.9,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Halo Limit",
+      "value": 93.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 4,
+        "displayMax": 64,
+        "step": 1,
+        "format": "integer",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Midtone Focus",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Color Guard",
+      "value": 140.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}
