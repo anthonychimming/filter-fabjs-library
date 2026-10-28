@@ -12,7 +12,7 @@
   "mathMode": "float",
   "name": "Valencia",
   "description": "Single-pass approximation of Instagram's classic Valencia look, calibrated to the public CSSgram Valencia construction. At the reference defaults, a 50% purple exclusion fade (#3a0339) is composited with the source first, then 108% contrast, 108% brightness, and 8% sepia are applied in CSS filter order. The result is bright, warm, slightly faded, and nostalgic, with a soft yellow-golden bias suited to portraits, nature, travel, and early-2010s lifestyle imagery. Filter Strength mixes the processed result with the original. Contrast, Brightness, Sepia Tone, and Vintage Fade provide controlled departures from the reference while preserving source alpha. Independent recreation; not affiliated with Instagram or Meta.",
-  "author": "Anthony CHimming",
+  "author": "ChromaMeld",
   "formulas": [
     "lerp(r,clamp((clamp(clamp((((r*(1-116*ctl(4)/65025)+58*ctl(4)/255))-127.5)*val(1,0.8,1.3)+127.5,0,255)*val(2,0.8,1.3),0,255))*(1-0.607*val(3,0,0.25))+(clamp(clamp((((g*(1-6*ctl(4)/65025)+3*ctl(4)/255))-127.5)*val(1,0.8,1.3)+127.5,0,255)*val(2,0.8,1.3),0,255))*(0.769*val(3,0,0.25))+(clamp(clamp((((b*(1-114*ctl(4)/65025)+57*ctl(4)/255))-127.5)*val(1,0.8,1.3)+127.5,0,255)*val(2,0.8,1.3),0,255))*(0.189*val(3,0,0.25)),0,255),ctl(0))",
     "lerp(g,clamp((clamp(clamp((((r*(1-116*ctl(4)/65025)+58*ctl(4)/255))-127.5)*val(1,0.8,1.3)+127.5,0,255)*val(2,0.8,1.3),0,255))*(0.349*val(3,0,0.25))+(clamp(clamp((((g*(1-6*ctl(4)/65025)+3*ctl(4)/255))-127.5)*val(1,0.8,1.3)+127.5,0,255)*val(2,0.8,1.3),0,255))*(1-0.314*val(3,0,0.25))+(clamp(clamp((((b*(1-114*ctl(4)/65025)+57*ctl(4)/255))-127.5)*val(1,0.8,1.3)+127.5,0,255)*val(2,0.8,1.3),0,255))*(0.168*val(3,0,0.25)),0,255),ctl(0))",

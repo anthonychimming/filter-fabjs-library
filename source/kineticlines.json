@@ -11,7 +11,7 @@
   "mathMode": "float",
   "name": "Kinetic Lines",
   "description": "Directional scanline displacement for motion-graphics and poster treatments. A wave field running perpendicular to the chosen direction combines with source luminance to push bright and dark image regions along one axis. Low settings create controlled editorial streaking; stronger displacement, wave, contrast, and RGB split produce speed-line and contemporary music-poster effects.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "lerp(r,clamp((srcLinear(x+r2x(val(0,0,1024),1)*((val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1))+val(4,0,24)),y+r2y(val(0,0,1024),1)*((val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1))+val(4,0,24)),0)-128)*val(5,0.6,2.2)+128,0,255),ctl(7))",
     "lerp(g,clamp((srcLinear(x+r2x(val(0,0,1024),1)*(val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1)),y+r2y(val(0,0,1024),1)*(val(2,0,90)*clamp(((clamp((i-128)*val(5,0.6,2.2)+128,0,255)-128)/128)+(sin(((x*r2x(val(0,0,1024)+256,1)+y*r2y(val(0,0,1024)+256,1))/min(X,Y))*val(1,4,64)*1024+val(6,0,1024))/512)*val(3,0,1.75),-1,1)),1)-128)*val(5,0.6,2.2)+128,0,255),ctl(7))",

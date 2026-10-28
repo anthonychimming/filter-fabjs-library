@@ -11,7 +11,7 @@
   "mathMode": "float",
   "name": "Complementary Split Toning",
   "description": "Applies one hue to highlights and the opposing complementary tint to shadows while keeping the tonal handoff neutral at the Balance point. Highlight Hue rotates the color pair; Shadow Strength and Highlight Strength set each side independently; Balance positions the neutral crossover; Transition Softness controls how gradually each tint fades into the midpoint; Color Intensity sets chroma amplitude; Effect Mix blends the grade with the source. Source alpha is preserved.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "lerp(c,clamp(c+(cos(ctl(0)/255*1024)/512)*(ctl(5)/255*96)*(smoothstep(128-val(3,-50,50),128-val(3,-50,50)+val(4,8,96),i)*(ctl(2)/255)-(1-smoothstep(128-val(3,-50,50)-val(4,8,96),128-val(3,-50,50),i))*(ctl(1)/255)),0,255),ctl(6))",
     "lerp(c,clamp(c+(cos(ctl(0)/255*1024-341.333333333)/512)*(ctl(5)/255*96)*(smoothstep(128-val(3,-50,50),128-val(3,-50,50)+val(4,8,96),i)*(ctl(2)/255)-(1-smoothstep(128-val(3,-50,50)-val(4,8,96),128-val(3,-50,50),i))*(ctl(1)/255)),0,255),ctl(6))",

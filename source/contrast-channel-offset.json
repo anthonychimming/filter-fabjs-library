@@ -11,7 +11,7 @@
   "mathMode": "float",
   "name": "Contrast Channel Offset",
   "description": "Edge-triggered RGB channel inversion, dropout and chromatic misregistration. Symmetric four-direction contrast detection surrounds both sides of contours, including thin details. Set each Red/Green/Blue Mode to 0 Keep, 1 Shift, 2 Invert or 3 Mute. Detection Radius determines contour scale; Edge Threshold selects contrast; Edge Softness ranges from almost hard to feathered. Channel Offset and Offset Angle control RGB separation (red forward, green perpendicular, blue opposite); Tone Bias favours shadows or highlights, and Effect Mix sets overall opacity. Ideal for hard-edged graphics, architecture, type, portraits and glitch art. Original alpha is preserved.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "lerp(c,(ctl(5)<42.5?c:(ctl(5)>212.5?0:abs((ctl(5)<127.5?0:255)-srcLinear(x+r2x(val(4,0,360)*1024/360,val(3,0,64)),y+r2y(val(4,0,360)*1024/360,val(3,0,64)),0)))),clamp(smoothstep(ctl(0),ctl(0)+max(0.01,val(1,0,100)),max(max(abs(c-src(x+val(2,1,12),y,z)),abs(c-src(x-val(2,1,12),y,z))),max(abs(c-src(x,y+val(2,1,12),z)),abs(c-src(x,y-val(2,1,12),z)))))*clamp(1+(i-127.5)*val(8,-100,100)/12750,0,2),0,1)*ctl(9)/255)",
     "lerp(c,(ctl(6)<42.5?c:(ctl(6)>212.5?0:abs((ctl(6)<127.5?0:255)-srcLinear(x+r2x(val(4,0,360)*1024/360+256,val(3,0,64)),y+r2y(val(4,0,360)*1024/360+256,val(3,0,64)),1)))),clamp(smoothstep(ctl(0),ctl(0)+max(0.01,val(1,0,100)),max(max(abs(c-src(x+val(2,1,12),y,z)),abs(c-src(x-val(2,1,12),y,z))),max(abs(c-src(x,y+val(2,1,12),z)),abs(c-src(x,y-val(2,1,12),z)))))*clamp(1+(i-127.5)*val(8,-100,100)/12750,0,2),0,1)*ctl(9)/255)",

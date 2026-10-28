@@ -10,7 +10,7 @@
   "mathMode": "float",
   "name": "Photoshop-Style Crystallize",
   "description": "Photoshop-style Crystallize approximation. Cell Size ranges from 3 to 300 pixels, with a default of 10. The filter creates deterministic irregular Voronoi cells and fills each polygon with one source color sampled near that cell's feature point, producing hard-edged solid-color crystal facets. Source alpha is preserved. The feature-point reconstruction uses a scale-adaptive step for more stable cell colors across the full Cell Size range. Photoshop's exact internal random layout and cell-color selection are undocumented, so the polygon layout is not bit-identical to Adobe's filter.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "src(round(x-2048*val(0,3,300)*(sqr(worleyF1(x+val(0,3,300)/4096,y,val(0,3,300),911))-sqr(worleyF1(x-val(0,3,300)/4096,y,val(0,3,300),911)))),round(y-2048*val(0,3,300)*(sqr(worleyF1(x,y+val(0,3,300)/4096,val(0,3,300),911))-sqr(worleyF1(x,y-val(0,3,300)/4096,val(0,3,300),911)))),z)",
     "src(round(x-2048*val(0,3,300)*(sqr(worleyF1(x+val(0,3,300)/4096,y,val(0,3,300),911))-sqr(worleyF1(x-val(0,3,300)/4096,y,val(0,3,300),911)))),round(y-2048*val(0,3,300)*(sqr(worleyF1(x,y+val(0,3,300)/4096,val(0,3,300),911))-sqr(worleyF1(x,y-val(0,3,300)/4096,val(0,3,300),911)))),z)",
