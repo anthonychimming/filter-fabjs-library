@@ -8,7 +8,7 @@
   "mathMode": "float",
   "name": "Digital Block Glitch",
   "description": "Displaces RGB channels in deterministic rectangular blocks. Block dimensions, displacement, and seed control the glitch structure.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "srcWrap(x+(hash2(floor(x/val(1,8,96)),floor(y/val(2,4,48)),val(3,1,9999))-0.5)*val(0,0,100),y,0)",
     "srcWrap(x+(hash2(floor(x/val(1,8,96))+11,floor(y/val(2,4,48)),val(3,1,9999))-0.5)*val(0,0,70),y,1)",

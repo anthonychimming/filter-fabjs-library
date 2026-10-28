@@ -9,7 +9,7 @@
   "mathMode": "float",
   "name": "Photoshop Style Exposure",
   "description": "Photoshop-style Exposure adjustment for bounded gamma-2.2 RGB imagery. Exposure applies stop-based gain in a gamma-1.0 working domain, Offset adds a linear shift in that domain, and Gamma Correction applies Photoshop-style power-curve scaling. The implemented model is y=[clamp((x^2.2)*2^Exposure+Offset,0,1)]^(1/(2.2*Gamma)), with x and y normalized to 0..1. Controls match Photoshop's current ranges and neutral defaults: Exposure -20..20 (0), Offset -0.5..0.5 (0), Gamma Correction 0.01..9.99 (1). Source alpha is preserved. The filter does not expose document ICC transfer functions or unbounded 32-bit HDR pixels, so exact profile-dependent/HDR parity is outside this filter.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "255*pow(clamp(pow(c/255,2.2)*pow(2,val(0,-20,20))+val(1,-0.5,0.5),0,1),1/(2.2*val(2,0.01,9.99)))",
     "255*pow(clamp(pow(c/255,2.2)*pow(2,val(0,-20,20))+val(1,-0.5,0.5),0,1),1/(2.2*val(2,0.01,9.99)))",

@@ -10,7 +10,7 @@
   "mathMode": "float",
   "name": "Photoshop-Style Black and White",
   "description": "Photoshop-style Black & White adjustment using six color-family controls: Reds, Yellows, Greens, Cyans, Blues, and Magentas. Each slider ranges from -200% to +300%; moving a slider left darkens areas that contained that color and moving it right lightens them. Defaults match Photoshop's standard mix: Red 40, Yellow 60, Green 40, Cyan 60, Blue 20, Magenta 80. The conversion decomposes each RGB pixel into one neutral component plus the two adjacent primary/secondary hue components, applies the corresponding slider weights, clamps to 0..255, and preserves source alpha. Tint and Auto are intentionally not included.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "clamp(min(r,min(g,b))+((r>=g&&r>=b)?(g>=b?(r-g)*val(0,-200,300)+(g-b)*val(1,-200,300):(r-b)*val(0,-200,300)+(b-g)*val(5,-200,300)):(g>=b?(r>=b?(g-r)*val(2,-200,300)+(r-b)*val(1,-200,300):(g-b)*val(2,-200,300)+(b-r)*val(3,-200,300)):(g>=r?(b-g)*val(4,-200,300)+(g-r)*val(3,-200,300):(b-r)*val(4,-200,300)+(r-g)*val(5,-200,300))))/100,0,255)",
     "clamp(min(r,min(g,b))+((r>=g&&r>=b)?(g>=b?(r-g)*val(0,-200,300)+(g-b)*val(1,-200,300):(r-b)*val(0,-200,300)+(b-g)*val(5,-200,300)):(g>=b?(r>=b?(g-r)*val(2,-200,300)+(r-b)*val(1,-200,300):(g-b)*val(2,-200,300)+(b-r)*val(3,-200,300)):(g>=r?(b-g)*val(4,-200,300)+(g-r)*val(3,-200,300):(b-r)*val(4,-200,300)+(r-g)*val(5,-200,300))))/100,0,255)",

@@ -11,7 +11,7 @@
   "mathMode": "float",
   "name": "Chromatic Neon Contour",
   "description": "Builds bright chromatic contour lines from near- and wider-radius source differences, with adjustable RGB separation, threshold, background retention, line brightness, and final effect mix.",
-  "author": "Anthony Chimming",
+  "author": "ChromaMeld",
   "formulas": [
     "lerp(c,max(c*val(4,0,35)/100,min(255,clamp((abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+1,y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-1,y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+1,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-1,z)))*val(0,50,500)/100+(abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+val(2,1,6),y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-val(2,1,6),y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+val(2,1,6),z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-val(2,1,6),z)))*val(3,0,250)/100-val(1,0,180),0,255)*val(6,50,250)/100)),ctl(7))",
     "lerp(c,max(c*val(4,0,35)/100,min(255,clamp((abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+1,y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-1,y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+1,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-1,z)))*val(0,50,500)/100+(abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))+val(2,1,6),y,z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6))-val(2,1,6),y,z))+abs(src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y+val(2,1,6),z)-src(x+(z==0?val(5,0,6):z==1?0:-val(5,0,6)),y-val(2,1,6),z)))*val(3,0,250)/100-val(1,0,180),0,255)*val(6,50,250)/100)),ctl(7))",

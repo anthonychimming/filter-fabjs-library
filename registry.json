@@ -1,266 +1,266 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 11,
+  "libraryVersion": 12,
   "filters": [
     {
       "id": "adaptive-rounded-mosaic",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "amiga-ehb-32-plus-32",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "carved-shadow-crosshatch-v3",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "chromatic-neon-contour",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-09-23"
     },
     {
       "id": "chromatic-overprint-two-ink-press",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "chromatic-signal-weave",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-09"
     },
     {
       "id": "concentric-circles",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "contour-flow-halftone",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "contrast-channel-offset",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "dynamic-contrast-photographic-detail",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "editorial-ink-cinematic-colour",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "fragmented-photo-weave",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "gpu-ordered-dither-mono-pixel",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "kineticlines",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "lens-distortion",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-09-23"
     },
     {
       "id": "levels-midtone",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-09-23"
     },
     {
       "id": "lomo-cn400-film-scan",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "lomochrome-color-92-balanced",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "lomochrome-metropolis-100-400",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "lomochrome-purple-xr-spectrum-v2",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "lomochrome-turquoise-100-400",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "mondrian_modular_grid",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "moon-instagram-inspired",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-09"
     },
     {
       "id": "nebula-starfield",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "neon-flow-contours",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "organic-film-gate-leak",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "organic-low-poly-facets",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "parametric-slice-glitch",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "photoshop-black-and-white",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "photoshop-crystallize",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "photoshop-emboss",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "photoshop-exposure",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "photoshop-vibrance",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "pixel-melt-original-colour",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "polka-dot-pattern",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "preset-082775b4-ab2c-43f2-9d99-5eaca56a8bd3",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "preset-13394d49-9343-4dbd-9e8a-7a3b0a8af922",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "preset-1e3c440b-225f-4591-ac39-04382389084b",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "preset-48af1931-c4ee-4515-a4cf-434e7e7a0f67",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "preset-639acccc-8c0e-4233-b815-89c2eef9826d",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "pseudo-thermal-imaging",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "redscale-xr-120",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-13"
     },
     {
       "id": "rippled-glass-refraction",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "scanline-engraving",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "silver-gelatin-noir",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "studded-brick-mosaic",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-10"
     },
     {
       "id": "synthwave-signal-neon-chromatic-grade",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-11"
     },
     {
       "id": "tension-mesh-grid",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "tension-mesh-rgb-checker",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "turbulent-displace",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-09-23"
     },
     {
       "id": "valencia-instagram-inspired",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
       "id": "wavy-halftone-lines",
-      "revision": 1,
+      "revision": 2,
       "publishedAt": "2026-10-16"
     }
   ]
