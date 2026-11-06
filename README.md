@@ -1,6 +1,6 @@
-# Filter FabJS Online Filter Library
+# ChromaMeld RGBA Online Filter Library
 
-Official static distribution repository for Filter FabJS native v2 filters.
+Official static distribution repository for ChromaMeld RGBA native v2 filters.
 The application remains the primary browser. Built-in filters are not migrated.
 
 - `registry.json`: only publication ID, revision and date, plus catalogue version.
