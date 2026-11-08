@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "authentic-pencil-sketch",
+  "tags": [
+    "Monochrome",
+    "Texture",
+    "Detail",
+    "Print"
+  ],
+  "mathMode": "float",
+  "name": "Pencil Sketch",
+  "description": "Graphite-pencil sketch treatment with organic, warped multi-angle hatching, source-aware soft contours, pressure-modulated pencil marks, deep-shadow graphite buildup, and fine/coarse paper tooth. Stroke Width measures the approximate full mark width in output pixels. Shading Strength at zero removes tonal fill and hatching while preserving outlined structure. Stroke Spacing and Hatch Angle set the linework; Tone Contrast and Tone Bias adapt image exposure. Original alpha is preserved; Effect Mix provides a non-destructive blend. A single-pass stylization rather than a physical simulation of graphite or stroke-following hand drawing.",
+  "author": "ChromaMeld",
+  "formulas": [
+    "lerp(c,clamp((z==0?251:z==1?249:245)+((z==0?29:z==1?29:28)-(z==0?251:z==1?249:245))*clamp((val(2,0,1)*(0.12*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)+0.34*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)+0.34*smoothstep(0.65,0.99,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))))+(val(2,0,1)*((smoothstep(0.10,0.59,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*1.0*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*1.0*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+256,x)+r2y((val(8,0,180)*1024/360)+256,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*1)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+256-256,x)+r2y((val(8,0,180)*1024/360)+256-256,y)+97,r2x((val(8,0,180)*1024/360)+256,x)+r2y((val(8,0,180)*1024/360)+256,y)+138,val(0,3,16)*3.2,809)))*0.62)+(smoothstep(0.51,0.88,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*0.89*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*0.89*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+0,x)+r2y((val(8,0,180)*1024/360)+0,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*0.76)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+0-256,x)+r2y((val(8,0,180)*1024/360)+0-256,y)+137,r2x((val(8,0,180)*1024/360)+0,x)+r2y((val(8,0,180)*1024/360)+0,y)+178,val(0,3,16)*3.2,849)))*0.42)+(smoothstep(0.79,0.99,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*0.80*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*0.80*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+384,x)+r2y((val(8,0,180)*1024/360)+384,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*-0.62)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+384-256,x)+r2y((val(8,0,180)*1024/360)+384-256,y)+217,r2x((val(8,0,180)*1024/360)+384,x)+r2y((val(8,0,180)*1024/360)+384,y)+258,val(0,3,16)*3.2,929)))*0.34)))+(0.42*smoothstep(0.022,0.25,(abs(((299*srcLinear(x+1.25,y,0)+587*srcLinear(x+1.25,y,1)+114*srcLinear(x+1.25,y,2))/255000) - ((299*srcLinear(x-1.25,y,0)+587*srcLinear(x-1.25,y,1)+114*srcLinear(x-1.25,y,2))/255000))+abs(((299*srcLinear(x,y+1.25,0)+587*srcLinear(x,y+1.25,1)+114*srcLinear(x,y+1.25,2))/255000) - ((299*srcLinear(x,y-1.25,0)+587*srcLinear(x,y-1.25,1)+114*srcLinear(x,y-1.25,2))/255000)))*val(3,0,3.5)))+((hash2(floor(x),floor(y),1733)-0.5)*0.10*val(6,0,1)*val(2,0,1)*smoothstep(0.03,0.85,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))),0,1)+(val(6,0,1)*((valueNoise(x+197,y+47,val(7,2,24),2277)-0.5)*11+(hash2(floor(x),floor(y),1009)-0.5)*9)*(1-0.35*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))),0,255),ctl(9))",
+    "lerp(c,clamp((z==0?251:z==1?249:245)+((z==0?29:z==1?29:28)-(z==0?251:z==1?249:245))*clamp((val(2,0,1)*(0.12*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)+0.34*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)+0.34*smoothstep(0.65,0.99,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))))+(val(2,0,1)*((smoothstep(0.10,0.59,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*1.0*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*1.0*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+256,x)+r2y((val(8,0,180)*1024/360)+256,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*1)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+256-256,x)+r2y((val(8,0,180)*1024/360)+256-256,y)+97,r2x((val(8,0,180)*1024/360)+256,x)+r2y((val(8,0,180)*1024/360)+256,y)+138,val(0,3,16)*3.2,809)))*0.62)+(smoothstep(0.51,0.88,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*0.89*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*0.89*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+0,x)+r2y((val(8,0,180)*1024/360)+0,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*0.76)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+0-256,x)+r2y((val(8,0,180)*1024/360)+0-256,y)+137,r2x((val(8,0,180)*1024/360)+0,x)+r2y((val(8,0,180)*1024/360)+0,y)+178,val(0,3,16)*3.2,849)))*0.42)+(smoothstep(0.79,0.99,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*0.80*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*0.80*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+384,x)+r2y((val(8,0,180)*1024/360)+384,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*-0.62)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+384-256,x)+r2y((val(8,0,180)*1024/360)+384-256,y)+217,r2x((val(8,0,180)*1024/360)+384,x)+r2y((val(8,0,180)*1024/360)+384,y)+258,val(0,3,16)*3.2,929)))*0.34)))+(0.42*smoothstep(0.022,0.25,(abs(((299*srcLinear(x+1.25,y,0)+587*srcLinear(x+1.25,y,1)+114*srcLinear(x+1.25,y,2))/255000) - ((299*srcLinear(x-1.25,y,0)+587*srcLinear(x-1.25,y,1)+114*srcLinear(x-1.25,y,2))/255000))+abs(((299*srcLinear(x,y+1.25,0)+587*srcLinear(x,y+1.25,1)+114*srcLinear(x,y+1.25,2))/255000) - ((299*srcLinear(x,y-1.25,0)+587*srcLinear(x,y-1.25,1)+114*srcLinear(x,y-1.25,2))/255000)))*val(3,0,3.5)))+((hash2(floor(x),floor(y),1733)-0.5)*0.10*val(6,0,1)*val(2,0,1)*smoothstep(0.03,0.85,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))),0,1)+(val(6,0,1)*((valueNoise(x+197,y+47,val(7,2,24),2277)-0.5)*11+(hash2(floor(x),floor(y),1009)-0.5)*9)*(1-0.35*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))),0,255),ctl(9))",
+    "lerp(c,clamp((z==0?251:z==1?249:245)+((z==0?29:z==1?29:28)-(z==0?251:z==1?249:245))*clamp((val(2,0,1)*(0.12*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)+0.34*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1)+0.34*smoothstep(0.65,0.99,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))))+(val(2,0,1)*((smoothstep(0.10,0.59,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*1.0*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*1.0*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+256,x)+r2y((val(8,0,180)*1024/360)+256,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*1)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+256-256,x)+r2y((val(8,0,180)*1024/360)+256-256,y)+97,r2x((val(8,0,180)*1024/360)+256,x)+r2y((val(8,0,180)*1024/360)+256,y)+138,val(0,3,16)*3.2,809)))*0.62)+(smoothstep(0.51,0.88,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*0.89*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*0.89*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+0,x)+r2y((val(8,0,180)*1024/360)+0,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*0.76)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+0-256,x)+r2y((val(8,0,180)*1024/360)+0-256,y)+137,r2x((val(8,0,180)*1024/360)+0,x)+r2y((val(8,0,180)*1024/360)+0,y)+178,val(0,3,16)*3.2,849)))*0.42)+(smoothstep(0.79,0.99,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))*(1-smoothstep(max(0.03,(val(1,0.35,2.2)*0.5*0.80*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))-0.30),(val(1,0.35,2.2)*0.5*0.80*(0.60+0.83*valueNoise(x+83,y+27,val(0,3,16)*2.1,6241)))+0.30,(abs(fract(((r2x((val(8,0,180)*1024/360)+384,x)+r2y((val(8,0,180)*1024/360)+384,y))+((valueNoise(x+41,y+59,val(0,3,16)*4.2,3187)-0.5)*val(0,3,16)*(0.52+1.20*val(6,0,1)))*-0.62)/val(0,3,16))-0.5)*val(0,3,16))))*(smoothstep(0.13,0.70,valueNoise(r2x((val(8,0,180)*1024/360)+384-256,x)+r2y((val(8,0,180)*1024/360)+384-256,y)+217,r2x((val(8,0,180)*1024/360)+384,x)+r2y((val(8,0,180)*1024/360)+384,y)+258,val(0,3,16)*3.2,929)))*0.34)))+(0.42*smoothstep(0.022,0.25,(abs(((299*srcLinear(x+1.25,y,0)+587*srcLinear(x+1.25,y,1)+114*srcLinear(x+1.25,y,2))/255000) - ((299*srcLinear(x-1.25,y,0)+587*srcLinear(x-1.25,y,1)+114*srcLinear(x-1.25,y,2))/255000))+abs(((299*srcLinear(x,y+1.25,0)+587*srcLinear(x,y+1.25,1)+114*srcLinear(x,y+1.25,2))/255000) - ((299*srcLinear(x,y-1.25,0)+587*srcLinear(x,y-1.25,1)+114*srcLinear(x,y-1.25,2))/255000)))*val(3,0,3.5)))+((hash2(floor(x),floor(y),1733)-0.5)*0.10*val(6,0,1)*val(2,0,1)*smoothstep(0.03,0.85,clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))),0,1)+(val(6,0,1)*((valueNoise(x+197,y+47,val(7,2,24),2277)-0.5)*11+(hash2(floor(x),floor(y),1009)-0.5)*9)*(1-0.35*clamp(0.5+(128-i)*val(4,0.6,2.2)/255+val(5,-35,35)/255,0,1))),0,255),ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Stroke Spacing",
+      "value": 19.615384615384617,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 3,
+        "displayMax": 16,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Stroke Width",
+      "value": 48.24324324324324,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.35,
+        "displayMax": 2.2,
+        "step": 0.05,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Shading Strength",
+      "value": 229.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Outline Strength",
+      "value": 68.48571428571428,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 350,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Tone Contrast",
+      "value": 95.62500000000003,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.6,
+        "displayMax": 2.2,
+        "step": 0.05,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Tone Bias",
+      "value": 69.21428571428571,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -35,
+        "displayMax": 35,
+        "step": 1,
+        "format": "integer",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Paper Tooth",
+      "value": 211.64999999999998,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Tooth Scale",
+      "value": 104.31818181818183,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 2,
+        "displayMax": 24,
+        "step": 0.5,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Hatch Angle",
+      "value": 31.166666666666664,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 180,
+        "step": 1,
+        "format": "integer",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

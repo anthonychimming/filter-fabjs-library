@@ -1,0 +1,142 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "zoom-canvas-tile",
+  "tags": [
+    "Utility",
+    "Distortion",
+    "Pattern"
+  ],
+  "mathMode": "float",
+  "name": "Zoom & Rotate Canvas",
+  "description": "Scale, reposition and rotate a source image within its original canvas. Zoom 10–400%; Rotation −180° to +180° about the pixel-grid centre (clockwise positive); Position X/Y translate in canvas axes after rotation. Canvas Mode 0 repeats the image, Mode 1 flattens it against opaque black, and Mode 2 makes uncovered areas transparent. Mirror Tiles flips alternate tiles; Smooth Sampling selects bilinear or crisp nearest-neighbour sampling; Edge Softness adds a 0–8 px feather to non-tiled artwork edges. Both sampled RGB and alpha follow the same inverse rotation. The GPU-oriented repeat-smooth branch uses one bilinear source read per channel instead of four wrapped neighbours: this retains every source pixel and the source dimensions in a tile, but bilinear interpolation clamps inside each tile rather than blending its final pixel into the next tile across the edge. Visible seams may therefore remain in non-seamless input images. Nearest repeat and mirror tiling use full-image periods, and other non-tiled modes retain the original geometry and alpha behaviour. Strong downscaling uses bilinear rather than true mipmap/area filtering and may alias.",
+  "author": "ChromaMeld",
+  "formulas": [
+    "((ctl(5)>127?srcLinear((ctl(3)<64?((ctl(4)>127?max(1,X-1):X)-abs(wrap(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,X-1):X))-(ctl(4)>127?max(1,X-1):X))):((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4))),(ctl(3)<64?((ctl(4)>127?max(1,Y-1):Y)-abs(wrap(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,Y-1):Y))-(ctl(4)>127?max(1,Y-1):Y))):((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4))),z):src((ctl(3)<64?(X-abs(wrap(round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*X)-X)-(ctl(4)>127?0.5:0)):round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))),(ctl(3)<64?(Y-abs(wrap(round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*Y)-Y)-(ctl(4)>127?0.5:0)):round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))),z))*(ctl(3)<64||ctl(3)>=192?1:(ctl(5)>127?srcLinear(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)),((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)),3):src(round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4))),round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4))),3))/255*sdfFill(sdfBox(x,y,(X-1)/2+val(1,-1,1)*X,(Y-1)/2+val(2,-1,1)*Y,X*val(0,0.1,4),Y*val(0,0.1,4),(val(7,-180,180)*1024/360))+val(6,0,8)/2,val(6,0,8))))",
+    "((ctl(5)>127?srcLinear((ctl(3)<64?((ctl(4)>127?max(1,X-1):X)-abs(wrap(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,X-1):X))-(ctl(4)>127?max(1,X-1):X))):((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4))),(ctl(3)<64?((ctl(4)>127?max(1,Y-1):Y)-abs(wrap(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,Y-1):Y))-(ctl(4)>127?max(1,Y-1):Y))):((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4))),z):src((ctl(3)<64?(X-abs(wrap(round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*X)-X)-(ctl(4)>127?0.5:0)):round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))),(ctl(3)<64?(Y-abs(wrap(round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*Y)-Y)-(ctl(4)>127?0.5:0)):round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))),z))*(ctl(3)<64||ctl(3)>=192?1:(ctl(5)>127?srcLinear(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)),((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)),3):src(round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4))),round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4))),3))/255*sdfFill(sdfBox(x,y,(X-1)/2+val(1,-1,1)*X,(Y-1)/2+val(2,-1,1)*Y,X*val(0,0.1,4),Y*val(0,0.1,4),(val(7,-180,180)*1024/360))+val(6,0,8)/2,val(6,0,8))))",
+    "((ctl(5)>127?srcLinear((ctl(3)<64?((ctl(4)>127?max(1,X-1):X)-abs(wrap(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,X-1):X))-(ctl(4)>127?max(1,X-1):X))):((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4))),(ctl(3)<64?((ctl(4)>127?max(1,Y-1):Y)-abs(wrap(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,Y-1):Y))-(ctl(4)>127?max(1,Y-1):Y))):((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4))),z):src((ctl(3)<64?(X-abs(wrap(round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*X)-X)-(ctl(4)>127?0.5:0)):round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))),(ctl(3)<64?(Y-abs(wrap(round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*Y)-Y)-(ctl(4)>127?0.5:0)):round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))),z))*(ctl(3)<64||ctl(3)>=192?1:(ctl(5)>127?srcLinear(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)),((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)),3):src(round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4))),round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4))),3))/255*sdfFill(sdfBox(x,y,(X-1)/2+val(1,-1,1)*X,(Y-1)/2+val(2,-1,1)*Y,X*val(0,0.1,4),Y*val(0,0.1,4),(val(7,-180,180)*1024/360))+val(6,0,8)/2,val(6,0,8))))",
+    "(ctl(3)>=64&&ctl(3)<192?255:(ctl(5)>127?srcLinear((ctl(3)<64?((ctl(4)>127?max(1,X-1):X)-abs(wrap(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,X-1):X))-(ctl(4)>127?max(1,X-1):X))):((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4))),(ctl(3)<64?((ctl(4)>127?max(1,Y-1):Y)-abs(wrap(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)),(ctl(4)>127?2:1)*(ctl(4)>127?max(1,Y-1):Y))-(ctl(4)>127?max(1,Y-1):Y))):((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4))),3):src((ctl(3)<64?(X-abs(wrap(round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*X)-X)-(ctl(4)>127?0.5:0)):round(((X-1)/2+(r2x((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X)+r2y((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y))/val(0,0.1,4)))),(ctl(3)<64?(Y-abs(wrap(round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))+(ctl(4)>127?0.5:0),(ctl(4)>127?2:1)*Y)-Y)-(ctl(4)>127?0.5:0)):round(((Y-1)/2+(r2x((val(7,-180,180)*1024/360),y-(Y-1)/2-val(2,-1,1)*Y)-r2y((val(7,-180,180)*1024/360),x-(X-1)/2-val(1,-1,1)*X))/val(0,0.1,4)))),3))*(ctl(3)<64?1:sdfFill(sdfBox(x,y,(X-1)/2+val(1,-1,1)*X,(Y-1)/2+val(2,-1,1)*Y,X*val(0,0.1,4),Y*val(0,0.1,4),(val(7,-180,180)*1024/360))+val(6,0,8)/2,val(6,0,8))))"
+  ],
+  "controls": [
+    {
+      "label": "Zoom",
+      "value": 33.34615384615385,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 10,
+        "displayMax": 400,
+        "step": 0.5,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Position X",
+      "value": 117.555,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 0.1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Position Y",
+      "value": 111.30750000000002,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -100,
+        "displayMax": 100,
+        "step": 0.1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Canvas Mode (0 Tile / 1 Black / 2 Clear)",
+      "value": 0,
+      "ui": {
+        "widget": "number",
+        "displayMin": 0,
+        "displayMax": 2,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Mirror Tiles",
+      "value": 0,
+      "ui": {
+        "widget": "toggle",
+        "displayMin": 0,
+        "displayMax": 1,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Smooth Sampling",
+      "value": 255,
+      "ui": {
+        "widget": "toggle",
+        "displayMin": 0,
+        "displayMax": 1,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Edge Softness",
+      "value": 223.125,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 8,
+        "step": 0.25,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Rotation",
+      "value": 121.83333333333334,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -180,
+        "displayMax": 180,
+        "step": 0.5,
+        "format": "number",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Control 9",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Control 10",
+      "value": 128,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 255,
+        "step": 1,
+        "format": "number",
+        "unit": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "black-mist-cinematic-diffusion",
+  "tags": [
+    "Film",
+    "Blur",
+    "Portrait",
+    "Tone",
+    "Detail"
+  ],
+  "mathMode": "float",
+  "name": "Black Mist — Cinematic Diffusion",
+  "description": "Black Mist / Black Pro-Mist-inspired photographic diffusion. A graduated highlight extractor retains luminous source strength even at high Highlight Threshold values; a normalized 16-tap, four-radius bilinear scattering kernel spreads their colour to nearby pixels. Bloom adds light around highlights without subtracting their bright cores, avoiding dark edge halos. Fine Detail Softness blends a larger two-scale blur while protecting prominent edges. Diffusion Density scales scattering and detail softness; Scatter Strength adjusts bloom transfer; Bloom Radius is measured in pixels at a 1080px short edge; Wide Halo adds the distant tail; Halo Warmth, Shadow Lift, Highlight Compression and Effect Mix complete the grade. A stateless, single-pass approximation, not a calibrated optical diffusion measurement or true Gaussian PSF. At maximum settings isolated light sources may show faint sampling directions; use on opaque photos. Defaults favour a clearly visible, moderate cinematic diffusion treatment.",
+  "author": "ChromaMeld",
+  "formulas": [
+    "lerp(c,clamp(lerp(c,(0.36*cnv(1,2,1,2,4,2,1,2,1,16)+0.16*(srcLinear(x+(2*min(X,Y)/512),y,z)+srcLinear(x-(2*min(X,Y)/512),y,z)+srcLinear(x,y+(2*min(X,Y)/512),z)+srcLinear(x,y-(2*min(X,Y)/512),z))),(0.68*(val(0,0,100)/100)*(val(5,0,100)/100)*(1-smoothstep(18,72,abs(c-cnv(1,2,1,2,4,2,1,2,1,16))))*(1-0.35*smoothstep(180,250,i))))+((0.70*(val(0,0,100)/100)*(val(3,0,220)/100))*((((0.12*clamp((c-val(1,130,235)+42)*4,0,255))+(0.08*(clamp((srcLinear(x+0.105*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.105*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y+0.105*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y-0.105*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.055*(clamp((srcLinear(x+0.2*(val(2,8,76)*min(X,Y)/1080),y+0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.2*(val(2,8,76)*min(X,Y)/1080),y+0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x+0.2*(val(2,8,76)*min(X,Y)/1080),y-0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.2*(val(2,8,76)*min(X,Y)/1080),y-0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.035*(clamp((srcLinear(x+0.46*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.46*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y+0.46*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y-0.46*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.045*(val(4,0,100)/100)*(clamp((srcLinear(x+0.63*(val(2,8,76)*min(X,Y)/1080),y+0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.63*(val(2,8,76)*min(X,Y)/1080),y+0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x+0.63*(val(2,8,76)*min(X,Y)/1080),y-0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.63*(val(2,8,76)*min(X,Y)/1080),y-0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255))))/(0.80+0.18*(val(4,0,100)/100))))*(1-clamp((c-val(1,130,235)+42)*4,0,255)/255)*(1-c/255)*(z==0?1+(val(7,-20,20)/100):z==2?1-(val(7,-20,20)/100):1))+val(6,0,12)*(val(0,0,100)/100)*(1-smoothstep(8,110,i))-c*(val(8,0,12)/100)*(val(0,0,100)/100)*smoothstep(170,250,i),0,255),ctl(9))",
+    "lerp(c,clamp(lerp(c,(0.36*cnv(1,2,1,2,4,2,1,2,1,16)+0.16*(srcLinear(x+(2*min(X,Y)/512),y,z)+srcLinear(x-(2*min(X,Y)/512),y,z)+srcLinear(x,y+(2*min(X,Y)/512),z)+srcLinear(x,y-(2*min(X,Y)/512),z))),(0.68*(val(0,0,100)/100)*(val(5,0,100)/100)*(1-smoothstep(18,72,abs(c-cnv(1,2,1,2,4,2,1,2,1,16))))*(1-0.35*smoothstep(180,250,i))))+((0.70*(val(0,0,100)/100)*(val(3,0,220)/100))*((((0.12*clamp((c-val(1,130,235)+42)*4,0,255))+(0.08*(clamp((srcLinear(x+0.105*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.105*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y+0.105*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y-0.105*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.055*(clamp((srcLinear(x+0.2*(val(2,8,76)*min(X,Y)/1080),y+0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.2*(val(2,8,76)*min(X,Y)/1080),y+0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x+0.2*(val(2,8,76)*min(X,Y)/1080),y-0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.2*(val(2,8,76)*min(X,Y)/1080),y-0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.035*(clamp((srcLinear(x+0.46*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.46*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y+0.46*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y-0.46*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.045*(val(4,0,100)/100)*(clamp((srcLinear(x+0.63*(val(2,8,76)*min(X,Y)/1080),y+0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.63*(val(2,8,76)*min(X,Y)/1080),y+0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x+0.63*(val(2,8,76)*min(X,Y)/1080),y-0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.63*(val(2,8,76)*min(X,Y)/1080),y-0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255))))/(0.80+0.18*(val(4,0,100)/100))))*(1-clamp((c-val(1,130,235)+42)*4,0,255)/255)*(1-c/255)*(z==0?1+(val(7,-20,20)/100):z==2?1-(val(7,-20,20)/100):1))+val(6,0,12)*(val(0,0,100)/100)*(1-smoothstep(8,110,i))-c*(val(8,0,12)/100)*(val(0,0,100)/100)*smoothstep(170,250,i),0,255),ctl(9))",
+    "lerp(c,clamp(lerp(c,(0.36*cnv(1,2,1,2,4,2,1,2,1,16)+0.16*(srcLinear(x+(2*min(X,Y)/512),y,z)+srcLinear(x-(2*min(X,Y)/512),y,z)+srcLinear(x,y+(2*min(X,Y)/512),z)+srcLinear(x,y-(2*min(X,Y)/512),z))),(0.68*(val(0,0,100)/100)*(val(5,0,100)/100)*(1-smoothstep(18,72,abs(c-cnv(1,2,1,2,4,2,1,2,1,16))))*(1-0.35*smoothstep(180,250,i))))+((0.70*(val(0,0,100)/100)*(val(3,0,220)/100))*((((0.12*clamp((c-val(1,130,235)+42)*4,0,255))+(0.08*(clamp((srcLinear(x+0.105*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.105*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y+0.105*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y-0.105*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.055*(clamp((srcLinear(x+0.2*(val(2,8,76)*min(X,Y)/1080),y+0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.2*(val(2,8,76)*min(X,Y)/1080),y+0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x+0.2*(val(2,8,76)*min(X,Y)/1080),y-0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.2*(val(2,8,76)*min(X,Y)/1080),y-0.2*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.035*(clamp((srcLinear(x+0.46*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.46*(val(2,8,76)*min(X,Y)/1080),y,z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y+0.46*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x,y-0.46*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)))+(0.045*(val(4,0,100)/100)*(clamp((srcLinear(x+0.63*(val(2,8,76)*min(X,Y)/1080),y+0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.63*(val(2,8,76)*min(X,Y)/1080),y+0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x+0.63*(val(2,8,76)*min(X,Y)/1080),y-0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255)+clamp((srcLinear(x-0.63*(val(2,8,76)*min(X,Y)/1080),y-0.63*(val(2,8,76)*min(X,Y)/1080),z)-val(1,130,235)+42)*4,0,255))))/(0.80+0.18*(val(4,0,100)/100))))*(1-clamp((c-val(1,130,235)+42)*4,0,255)/255)*(1-c/255)*(z==0?1+(val(7,-20,20)/100):z==2?1-(val(7,-20,20)/100):1))+val(6,0,12)*(val(0,0,100)/100)*(1-smoothstep(8,110,i))-c*(val(8,0,12)/100)*(val(0,0,100)/100)*smoothstep(170,250,i),0,255),ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Diffusion Density",
+      "value": 165.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Highlight Threshold",
+      "value": 87.42857142857143,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 130,
+        "displayMax": 235,
+        "step": 1,
+        "format": "integer",
+        "unit": "level"
+      }
+    },
+    {
+      "label": "Bloom Radius",
+      "value": 183.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 8,
+        "displayMax": 76,
+        "step": 1,
+        "format": "integer",
+        "unit": "px@1080"
+      }
+    },
+    {
+      "label": "Scatter Strength",
+      "value": 197.04545454545453,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 220,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Wide Halo",
+      "value": 140.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Fine Detail Softness",
+      "value": 102,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Shadow Lift",
+      "value": 159.375,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 12,
+        "step": 0.5,
+        "format": "number",
+        "unit": "levels"
+      }
+    },
+    {
+      "label": "Halo Warmth",
+      "value": 159.375,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -20,
+        "displayMax": 20,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Highlight Compression",
+      "value": 170,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 12,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}

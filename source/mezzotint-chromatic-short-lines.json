@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "mezzotint-chromatic-short-lines",
+  "tags": [
+    "Halftone",
+    "Print",
+    "Color",
+    "Texture"
+  ],
+  "mathMode": "float",
+  "name": "Chromatic Mezzotint — Lines",
+  "description": "Photoshop Mezzotint Short Lines-inspired colour treatment, revised against a direct reference comparison. Shared horizontal stochastic stroke fields preserve coherent blue/cyan, red/yellow and white/black marks, while a small independent RGB component adds saturated colour flecks. Each segment uses predominantly cell-centred source sampling to suppress unintended per-pixel fragmentation. Short-scale breakup adds uneven stroke endings without erasing major dark masses. Tone Contrast, Exposure, Shadow Crush and Colour Separation control coverage. Line Length and Row Height are output-pixel dimensions, with Fragmentation, Fine Grain and Seed controlling marks. Eight-colour RGB output at Effect Mix 100%; source alpha preserved. Deterministic single-pass approximation, not an exact Photoshop algorithm.",
+  "author": "ChromaMeld",
+  "formulas": [
+    "lerp(c,(clamp(128-128*val(2,0.8,3)+(0.85*(0.299*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,0)+0.587*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,1)+0.114*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,2))+0.15*i)*(val(2,0.8,3)-val(5,0.5,2.5))+(0.85*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,z)+0.15*c)*val(5,0.5,2.5)+val(3,-80,80)-val(4,0,95)*(1-smoothstep(15,165,i)),3,252)>clamp(255*(0.78*hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32)),floor(y/val(1,1,4)),val(8,1,9999)+73)+0.22*hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32)),floor(y/val(1,1,4)),val(8,1,9999)+z*131+871))+220*val(6,0,0.8)*(hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/(val(0,3,32)*0.31)),floor(y/val(1,1,4)),val(8,1,9999)+z*131+917)-0.5)+val(7,0,85)*(hash2(x,y,val(8,1,9999)+z*47+293)-0.5),0,255)?255:0),ctl(9))",
+    "lerp(c,(clamp(128-128*val(2,0.8,3)+(0.85*(0.299*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,0)+0.587*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,1)+0.114*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,2))+0.15*i)*(val(2,0.8,3)-val(5,0.5,2.5))+(0.85*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,z)+0.15*c)*val(5,0.5,2.5)+val(3,-80,80)-val(4,0,95)*(1-smoothstep(15,165,i)),3,252)>clamp(255*(0.78*hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32)),floor(y/val(1,1,4)),val(8,1,9999)+73)+0.22*hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32)),floor(y/val(1,1,4)),val(8,1,9999)+z*131+871))+220*val(6,0,0.8)*(hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/(val(0,3,32)*0.31)),floor(y/val(1,1,4)),val(8,1,9999)+z*131+917)-0.5)+val(7,0,85)*(hash2(x,y,val(8,1,9999)+z*47+293)-0.5),0,255)?255:0),ctl(9))",
+    "lerp(c,(clamp(128-128*val(2,0.8,3)+(0.85*(0.299*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,0)+0.587*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,1)+0.114*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,2))+0.15*i)*(val(2,0.8,3)-val(5,0.5,2.5))+(0.85*src(((floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32))+0.5)*val(0,3,32)-(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5))),y,z)+0.15*c)*val(5,0.5,2.5)+val(3,-80,80)-val(4,0,95)*(1-smoothstep(15,165,i)),3,252)>clamp(255*(0.78*hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32)),floor(y/val(1,1,4)),val(8,1,9999)+73)+0.22*hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/val(0,3,32)),floor(y/val(1,1,4)),val(8,1,9999)+z*131+871))+220*val(6,0,0.8)*(hash2(floor((x+(val(0,3,32)*(hash2(0,floor(y/val(1,1,4)),val(8,1,9999)+19)-0.5)))/(val(0,3,32)*0.31)),floor(y/val(1,1,4)),val(8,1,9999)+z*131+917)-0.5)+val(7,0,85)*(hash2(x,y,val(8,1,9999)+z*47+293)-0.5),0,255)?255:0),ctl(9))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Line Length",
+      "value": 35.172413793103445,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 3,
+        "displayMax": 32,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Row Height",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 4,
+        "step": 0.25,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Tone Contrast",
+      "value": 11.590909090909088,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.8,
+        "displayMax": 3,
+        "step": 0.05,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Exposure",
+      "value": 124.3125,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -80,
+        "displayMax": 80,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Shadow Crush",
+      "value": 5.368421052631579,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 95,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Colour Separation",
+      "value": 63.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.5,
+        "displayMax": 2.5,
+        "step": 0.05,
+        "format": "number",
+        "unit": "x"
+      }
+    },
+    {
+      "label": "Stroke Fragmentation",
+      "value": 51,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 0.8,
+        "step": 0.02,
+        "format": "number",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Fine Grain",
+      "value": 36,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 85,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Seed",
+      "value": 43.05261052210442,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Effect Mix",
+      "value": 255,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}
