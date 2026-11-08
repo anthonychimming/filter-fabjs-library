@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "old-black-white-tv-signal-decay",
+  "tags": [
+    "Retro",
+    "Monochrome",
+    "Glitch",
+    "Noise",
+    "Distortion"
+  ],
+  "mathMode": "float",
+  "name": "Old Black & White TV — Signal Decay",
+  "description": "Monochrome analog-TV reception treatment with seeded salt-and-pepper snow, brightness-only multipath echo, intermittent noisy tearing bands with line-level micro-jitter, individual static streaks, resolution-scaled CRT scanlines, two-sided spatial highlight bloom, barrel-style glass curvature, corner vignette, and opposing top/bottom tracking skew. Snow / Signal Loss blends between source picture and off-air snow. Ghost Strength/Delay adjust the delayed echo; Tear Density/Displacement shape unstable reception; Scanline Depth and Phosphor Bloom control display texture; Glass Curvature adjusts both screen bulge and vignette; Tracking Skew bends upper and lower edges. Interference Seed generates repeatable patterns. Snow progressively fills alpha, becoming opaque at full no-signal. Deterministic still-image approximation; no temporal persistence, rolling animation, RF simulation, or motion afterimages. Strong remapping clamps source edges.",
+  "author": "ChromaMeld",
+  "formulas": [
+    "clamp(lerp(((((0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),2))+val(1,0,0.60)*max(0,(0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),2))-125))-128)*1.10+128+(val(6,0,0.65)*max(0,((0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),2))+(0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),2)))/2-140))),(255*(0.88*step(0.50,hash2(floor(x),floor(y),val(9,1,9999)+91))+0.12*hash2(floor(x/2),floor(y/2),val(9,1,9999)+92))),clamp(val(0,0,1)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?0.45:0)+((hash2(5,floor(y/max(1,Y/820)),val(9,1,9999)+76)<0.12*sqr(val(3,0,1)))?0.70:0),0,1))*(1-val(5,0,0.80)*(512-cos(y*1024/max(2,Y/270)))/1024)*(1-(0.12+val(7,0,0.32))*smoothstep(0.28,1,m/M)-val(7,0,0.5)*smoothstep(0.88,1.02,m/M)),0,255)",
+    "clamp(lerp(((((0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),2))+val(1,0,0.60)*max(0,(0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),2))-125))-128)*1.10+128+(val(6,0,0.65)*max(0,((0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),2))+(0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),2)))/2-140))),(255*(0.88*step(0.50,hash2(floor(x),floor(y),val(9,1,9999)+91))+0.12*hash2(floor(x/2),floor(y/2),val(9,1,9999)+92))),clamp(val(0,0,1)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?0.45:0)+((hash2(5,floor(y/max(1,Y/820)),val(9,1,9999)+76)<0.12*sqr(val(3,0,1)))?0.70:0),0,1))*(1-val(5,0,0.80)*(512-cos(y*1024/max(2,Y/270)))/1024)*(1-(0.12+val(7,0,0.32))*smoothstep(0.28,1,m/M)-val(7,0,0.5)*smoothstep(0.88,1.02,m/M)),0,255)",
+    "clamp(lerp(((((0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),2))+val(1,0,0.60)*max(0,(0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0))-val(2,2,80),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),2))-125))-128)*1.10+128+(val(6,0,0.65)*max(0,((0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))-max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))-max(1,Y/540),2))+(0.299*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),0)+0.587*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),1)+0.114*srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M))+max(2,Y/360),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M))+max(1,Y/540),2)))/2-140))),(255*(0.88*step(0.50,hash2(floor(x),floor(y),val(9,1,9999)+91))+0.12*hash2(floor(x/2),floor(y/2),val(9,1,9999)+92))),clamp(val(0,0,1)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?0.45:0)+((hash2(5,floor(y/max(1,Y/820)),val(9,1,9999)+76)<0.12*sqr(val(3,0,1)))?0.70:0),0,1))*(1-val(5,0,0.80)*(512-cos(y*1024/max(2,Y/270)))/1024)*(1-(0.12+val(7,0,0.32))*smoothstep(0.28,1,m/M)-val(7,0,0.5)*smoothstep(0.88,1.02,m/M)),0,255)",
+    "lerp(srcLinear((x+(x-X/2)*val(7,0,0.18)*sqr(m/M)+val(8,0,100)*cy*sqr(cy)+((hash2(17,floor(y/max(2,Y/105)),val(9,1,9999)+29)<0.85*sqr(val(3,0,1)))?((hash2(29,floor(y/max(1,Y/710)),val(9,1,9999)+31)-0.5)*2)*val(4,0,100):0)),(y+(y-Y/2)*val(7,0,0.18)*sqr(m/M)),3),255,val(0,0,1))"
+  ],
+  "controls": [
+    {
+      "label": "Snow / Signal Loss",
+      "value": 22.95,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Ghost Strength",
+      "value": 174.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 60,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Ghost Delay",
+      "value": 39.23076923076923,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 2,
+        "displayMax": 80,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Tear Density",
+      "value": 56.1,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Tear Displacement",
+      "value": 150.45,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Scanline Depth",
+      "value": 102,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 80,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Phosphor Bloom",
+      "value": 145.35,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Glass Curvature",
+      "value": 81.60000000000001,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Tracking Skew",
+      "value": 43.35,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "number",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Interference Seed",
+      "value": 47.18443688737747,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    }
+  ]
+}

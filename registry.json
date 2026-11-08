@@ -1,7 +1,7 @@
 {
   "schema": "filter-fab-js/library-registry",
   "schemaVersion": 1,
-  "libraryVersion": 12,
+  "libraryVersion": 13,
   "filters": [
     {
       "id": "adaptive-rounded-mosaic",
@@ -9,14 +9,39 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "alternating-radial-stripes",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
+    },
+    {
       "id": "amiga-ehb-32-plus-32",
       "revision": 2,
       "publishedAt": "2026-10-16"
     },
     {
+      "id": "aurora-silk-chromatic-flow",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
+    },
+    {
+      "id": "authentic-pencil-sketch",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
+    },
+    {
+      "id": "black-mist-cinematic-diffusion",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
+    },
+    {
       "id": "carved-shadow-crosshatch-v3",
       "revision": 2,
       "publishedAt": "2026-10-16"
+    },
+    {
+      "id": "chromatic-modular-stripe-collage",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
     },
     {
       "id": "chromatic-neon-contour",
@@ -69,6 +94,11 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "instant-photo-frame",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
+    },
+    {
       "id": "kineticlines",
       "revision": 2,
       "publishedAt": "2026-10-13"
@@ -109,6 +139,11 @@
       "publishedAt": "2026-10-10"
     },
     {
+      "id": "mezzotint-chromatic-short-lines",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
+    },
+    {
       "id": "mondrian_modular_grid",
       "revision": 2,
       "publishedAt": "2026-10-10"
@@ -127,6 +162,11 @@
       "id": "neon-flow-contours",
       "revision": 2,
       "publishedAt": "2026-10-13"
+    },
+    {
+      "id": "old-black-white-tv-signal-decay",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
     },
     {
       "id": "organic-film-gate-leak",
@@ -162,6 +202,11 @@
       "id": "photoshop-exposure",
       "revision": 2,
       "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "photoshop-style-threshold",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
     },
     {
       "id": "photoshop-vibrance",
@@ -262,6 +307,11 @@
       "id": "wavy-halftone-lines",
       "revision": 2,
       "publishedAt": "2026-10-16"
+    },
+    {
+      "id": "zoom-canvas-tile",
+      "revision": 1,
+      "publishedAt": "2026-11-08"
     }
   ]
 }

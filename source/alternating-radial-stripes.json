@@ -1,0 +1,143 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "alternating-radial-stripes",
+  "tags": [
+    "Pattern",
+    "Shapes",
+    "Procedural",
+    "Monochrome"
+  ],
+  "mathMode": "float",
+  "name": "Alternating Radial Stripes",
+  "description": "Alternating black-and-white radial spokes radiating from a movable center, with customizable spoke count, coverage, rotation, nonlinear spiral twist, and bounded wave distortion. Automatically suppresses subpixel aliasing near the origin by blending unresolved spoke detail toward average coverage, while retaining sharp high-contrast stripes outside the resolution-limited core. Edge Softness retains its existing pixel-based control. Outputs procedural RGB and preserves the source alpha.",
+  "author": "",
+  "formulas": [
+    "(255*((1-(val(1,10,90)/100))+((1-smoothstep((cos(512*(val(1,10,90)/100))/512)-(clamp(max(val(9,0,3),0.03)*round(val(0,4,64))*(sin(512*(val(1,10,90)/100))/512)/max(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100)),2),0.0001,0.80*(1-abs((cos(512*(val(1,10,90)/100))/512))))),(cos(512*(val(1,10,90)/100))/512)+(clamp(max(val(9,0,3),0.03)*round(val(0,4,64))*(sin(512*(val(1,10,90)/100))/512)/max(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100)),2),0.0001,0.80*(1-abs((cos(512*(val(1,10,90)/100))/512))))),(cos((round(val(0,4,64))*(c2d((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))-val(4,0,360)*1024/360-(val(5,-720,720)*1024/360*1.32*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))/(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))+0.16*min(X,Y))))+(sin(c2d((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))*round(val(7,1,24))+1024*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))/val(8,24,480))/512*val(6,0,100)/100*1024*min(0.45,0.9*round(val(0,4,64))/(6.283185307*round(val(7,1,24))))*smoothstep(0,0.18*min(X,Y),c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))))))/512)))-(1-(val(1,10,90)/100)))*smoothstep(0.45,1.70,(6.283185307*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))*min((val(1,10,90)/100),1-(val(1,10,90)/100))/(round(val(0,4,64))+6.283185307*(val(6,0,100)/100*min(0.45,0.9*round(val(0,4,64))/(6.283185307*round(val(7,1,24))))*smoothstep(0,0.18*min(X,Y),c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))))*round(val(7,1,24)))))))",
+    "(255*((1-(val(1,10,90)/100))+((1-smoothstep((cos(512*(val(1,10,90)/100))/512)-(clamp(max(val(9,0,3),0.03)*round(val(0,4,64))*(sin(512*(val(1,10,90)/100))/512)/max(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100)),2),0.0001,0.80*(1-abs((cos(512*(val(1,10,90)/100))/512))))),(cos(512*(val(1,10,90)/100))/512)+(clamp(max(val(9,0,3),0.03)*round(val(0,4,64))*(sin(512*(val(1,10,90)/100))/512)/max(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100)),2),0.0001,0.80*(1-abs((cos(512*(val(1,10,90)/100))/512))))),(cos((round(val(0,4,64))*(c2d((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))-val(4,0,360)*1024/360-(val(5,-720,720)*1024/360*1.32*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))/(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))+0.16*min(X,Y))))+(sin(c2d((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))*round(val(7,1,24))+1024*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))/val(8,24,480))/512*val(6,0,100)/100*1024*min(0.45,0.9*round(val(0,4,64))/(6.283185307*round(val(7,1,24))))*smoothstep(0,0.18*min(X,Y),c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))))))/512)))-(1-(val(1,10,90)/100)))*smoothstep(0.45,1.70,(6.283185307*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))*min((val(1,10,90)/100),1-(val(1,10,90)/100))/(round(val(0,4,64))+6.283185307*(val(6,0,100)/100*min(0.45,0.9*round(val(0,4,64))/(6.283185307*round(val(7,1,24))))*smoothstep(0,0.18*min(X,Y),c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))))*round(val(7,1,24)))))))",
+    "(255*((1-(val(1,10,90)/100))+((1-smoothstep((cos(512*(val(1,10,90)/100))/512)-(clamp(max(val(9,0,3),0.03)*round(val(0,4,64))*(sin(512*(val(1,10,90)/100))/512)/max(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100)),2),0.0001,0.80*(1-abs((cos(512*(val(1,10,90)/100))/512))))),(cos(512*(val(1,10,90)/100))/512)+(clamp(max(val(9,0,3),0.03)*round(val(0,4,64))*(sin(512*(val(1,10,90)/100))/512)/max(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100)),2),0.0001,0.80*(1-abs((cos(512*(val(1,10,90)/100))/512))))),(cos((round(val(0,4,64))*(c2d((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))-val(4,0,360)*1024/360-(val(5,-720,720)*1024/360*1.32*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))/(c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))+0.16*min(X,Y))))+(sin(c2d((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))*round(val(7,1,24))+1024*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))/val(8,24,480))/512*val(6,0,100)/100*1024*min(0.45,0.9*round(val(0,4,64))/(6.283185307*round(val(7,1,24))))*smoothstep(0,0.18*min(X,Y),c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))))))/512)))-(1-(val(1,10,90)/100)))*smoothstep(0.45,1.70,(6.283185307*c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))*min((val(1,10,90)/100),1-(val(1,10,90)/100))/(round(val(0,4,64))+6.283185307*(val(6,0,100)/100*min(0.45,0.9*round(val(0,4,64))/(6.283185307*round(val(7,1,24))))*smoothstep(0,0.18*min(X,Y),c2m((x-val(2,-50,150)*X/100),(y-val(3,-50,150)*Y/100))))*round(val(7,1,24)))))))",
+    "a"
+  ],
+  "controls": [
+    {
+      "label": "Black Spokes",
+      "value": 51,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 4,
+        "displayMax": 64,
+        "step": 1,
+        "format": "integer",
+        "unit": "stripes"
+      }
+    },
+    {
+      "label": "Black Coverage",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 10,
+        "displayMax": 90,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Center X",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -50,
+        "displayMax": 150,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Center Y",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -50,
+        "displayMax": 150,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Clockwise Rotation",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 360,
+        "step": 1,
+        "format": "integer",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Spiral Twist",
+      "value": 139.89583333333334,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -720,
+        "displayMax": 720,
+        "step": 1,
+        "format": "integer",
+        "unit": "°"
+      }
+    },
+    {
+      "label": "Wave Depth",
+      "value": 0,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Wave Frequency",
+      "value": 99.78260869565217,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1,
+        "displayMax": 24,
+        "step": 1,
+        "format": "integer",
+        "unit": "cycles"
+      }
+    },
+    {
+      "label": "Wave Wavelength",
+      "value": 76.05263157894737,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 24,
+        "displayMax": 480,
+        "step": 1,
+        "format": "integer",
+        "unit": "px"
+      }
+    },
+    {
+      "label": "Edge Softness",
+      "value": 55.25,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 3,
+        "step": 0.05,
+        "format": "number",
+        "unit": "px"
+      }
+    }
+  ]
+}

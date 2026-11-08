@@ -1,0 +1,144 @@
+{
+  "format": "filter-fab-js",
+  "version": 2,
+  "id": "chromatic-modular-stripe-collage",
+  "tags": [
+    "Pattern",
+    "Procedural",
+    "Shapes",
+    "Color",
+    "Textile"
+  ],
+  "mathMode": "float",
+  "name": "Chromatic Modular Stripe Collage",
+  "description": "Opaque seeded three-colour abstract block collage inspired by modernist textile and editorial geometry. Aligned vertical modules split into irregular stacked rectangles, with intermittent full- or half-width stripe panels that form clean T-junctions and comb-like interruptions. Most stripe panels alternate a colour with black; selected panels alternate blue and pink for additional rhythm. Module Width (percent of shorter side) and Block Height establish the grid; Vertical Breakup adds per-column subdivisions; Stripe Pitch and Weight control the horizontal lines; Striped Blocks controls where they appear. Black Coverage controls base black rectangles, Blue / Pink Balance determines chromatic distribution (0 = pink, 100 = blue), Hue Rotation rotates both accent hues while retaining black, and Seed creates repeatable variations. The effect is fully procedural: ignores source RGB and generates opaque output.",
+  "author": "ChromaMeld",
+  "formulas": [
+    "(((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+97)<val(5,0,85)/100)&&((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+307)<0.34)||(((floor(x/(min(X,Y)*val(0,6,18)/100))%2)<1)?(fract(x/(min(X,Y)*val(0,6,18)/100))<0.56):(fract(x/(min(X,Y)*val(0,6,18)/100))>0.44)))&&(fract(y/max(3,min(X,Y)*val(3,0.5,4)/100)+hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+137))<val(4,10,90)/100))?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+47)<val(6,0,90)/100)?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0)*6-3)-1,0,1)):(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0)*6-3)-1,0,1))):((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+349)<0.27)?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0)*6-3)-1,0,1)):(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0)*6-3)-1,0,1))):0)):((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+47)<val(6,0,90)/100)?0:((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0)*6-3)-1,0,1)):(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0)*6-3)-1,0,1)))))",
+    "(((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+97)<val(5,0,85)/100)&&((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+307)<0.34)||(((floor(x/(min(X,Y)*val(0,6,18)/100))%2)<1)?(fract(x/(min(X,Y)*val(0,6,18)/100))<0.56):(fract(x/(min(X,Y)*val(0,6,18)/100))>0.44)))&&(fract(y/max(3,min(X,Y)*val(3,0.5,4)/100)+hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+137))<val(4,10,90)/100))?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+47)<val(6,0,90)/100)?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0.666666667)*6-3)-1,0,1)):(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0.666666667)*6-3)-1,0,1))):((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+349)<0.27)?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0.666666667)*6-3)-1,0,1)):(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0.666666667)*6-3)-1,0,1))):0)):((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+47)<val(6,0,90)/100)?0:((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0.666666667)*6-3)-1,0,1)):(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0.666666667)*6-3)-1,0,1)))))",
+    "(((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+97)<val(5,0,85)/100)&&((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+307)<0.34)||(((floor(x/(min(X,Y)*val(0,6,18)/100))%2)<1)?(fract(x/(min(X,Y)*val(0,6,18)/100))<0.56):(fract(x/(min(X,Y)*val(0,6,18)/100))>0.44)))&&(fract(y/max(3,min(X,Y)*val(3,0.5,4)/100)+hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+137))<val(4,10,90)/100))?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+47)<val(6,0,90)/100)?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0.333333333)*6-3)-1,0,1)):(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0.333333333)*6-3)-1,0,1))):((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+349)<0.27)?((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0.333333333)*6-3)-1,0,1)):(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0.333333333)*6-3)-1,0,1))):0)):((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+47)<val(6,0,90)/100)?0:((hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),(5*floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))+floor(fract(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8)))*(1+floor(hash2(floor(x/(min(X,Y)*val(0,6,18)/100)),floor(y/((min(X,Y)*val(0,6,18)/100)*val(1,1.6,4.8))),round(val(8,1,9999))+19)*val(2,0,3))))),round(val(8,1,9999))+223)<val(9,0,100)/100)?(241-219+219*clamp(abs(fract(0.598934551+val(7,-180,180)/360+0.333333333)*6-3)-1,0,1)):(255-127+127*clamp(abs(fract(0.896325459+val(7,-180,180)/360+0.333333333)*6-3)-1,0,1)))))",
+    "255"
+  ],
+  "controls": [
+    {
+      "label": "Module Width",
+      "value": 37.1875,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 6,
+        "displayMax": 18,
+        "step": 0.25,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Block Height",
+      "value": 79.6875,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 1.6,
+        "displayMax": 4.8,
+        "step": 0.1,
+        "format": "number",
+        "unit": "× width"
+      }
+    },
+    {
+      "label": "Vertical Breakup",
+      "value": 153,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 3,
+        "step": 0.1,
+        "format": "number",
+        "unit": "level"
+      }
+    },
+    {
+      "label": "Stripe Pitch",
+      "value": 200.35714285714286,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0.5,
+        "displayMax": 4,
+        "step": 0.05,
+        "format": "number",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Stripe Weight",
+      "value": 63.75,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 10,
+        "displayMax": 90,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Striped Blocks",
+      "value": 138,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 85,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Black Coverage",
+      "value": 116.16666666666667,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 90,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    },
+    {
+      "label": "Hue Rotation",
+      "value": 92.08333333333333,
+      "ui": {
+        "widget": "slider",
+        "displayMin": -180,
+        "displayMax": 180,
+        "step": 1,
+        "format": "integer",
+        "unit": "deg"
+      }
+    },
+    {
+      "label": "Seed",
+      "value": 159.6364272854571,
+      "ui": {
+        "widget": "seed",
+        "displayMin": 1,
+        "displayMax": 9999,
+        "step": 1,
+        "format": "integer",
+        "unit": ""
+      }
+    },
+    {
+      "label": "Blue / Pink Balance",
+      "value": 127.5,
+      "ui": {
+        "widget": "slider",
+        "displayMin": 0,
+        "displayMax": 100,
+        "step": 1,
+        "format": "integer",
+        "unit": "%"
+      }
+    }
+  ]
+}
