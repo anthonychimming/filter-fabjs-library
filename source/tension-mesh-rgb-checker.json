@@ -6,7 +6,7 @@
     "Procedural",
     "Pattern",
     "Distortion",
-    "RGBSplit",
+    "RGB Shift",
     "Checker"
   ],
   "mathMode": "float",

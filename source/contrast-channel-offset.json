@@ -6,7 +6,8 @@
     "Glitch",
     "Color",
     "Negative",
-    "Distortion"
+    "Distortion",
+    "Edge"
   ],
   "mathMode": "float",
   "name": "Contrast Channel Offset",

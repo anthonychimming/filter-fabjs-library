@@ -3,15 +3,11 @@
   "version": 2,
   "id": "turbulent-displace",
   "tags": [
-    "distortion",
-    "displacement",
-    "warp",
-    "organic",
-    "noise",
-    "liquid",
-    "heat haze",
-    "marbling",
-    "damaged print"
+    "Distortion",
+    "Displacement",
+    "Warp",
+    "Noise",
+    "Liquid"
   ],
   "mathMode": "float",
   "name": "Turbulent Displace",

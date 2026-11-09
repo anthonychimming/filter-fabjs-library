@@ -4,10 +4,10 @@
   "id": "black-mist-cinematic-diffusion",
   "tags": [
     "Film",
+    "Diffusion",
+    "Glow",
     "Blur",
-    "Portrait",
-    "Tone",
-    "Detail"
+    "Tone"
   ],
   "mathMode": "float",
   "name": "Black Mist — Cinematic Diffusion",

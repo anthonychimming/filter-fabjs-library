@@ -4,9 +4,9 @@
   "id": "concentric-circles",
   "tags": [
     "Pattern",
+    "Radial",
     "Shapes",
-    "Procedural",
-    "Retro"
+    "Procedural"
   ],
   "mathMode": "float",
   "name": "Concentric Circles",
