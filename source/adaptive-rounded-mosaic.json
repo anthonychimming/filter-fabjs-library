@@ -4,10 +4,10 @@
   "id": "adaptive-rounded-mosaic",
   "tags": [
     "Pixelate",
-    "Halftone",
+    "Mosaic",
     "Monochrome",
-    "Portrait",
-    "Pattern"
+    "Pattern",
+    "Halftone"
   ],
   "mathMode": "float",
   "name": "Adaptive Rounded Mosaic",

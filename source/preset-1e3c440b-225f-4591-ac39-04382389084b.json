@@ -3,7 +3,10 @@
   "version": 2,
   "id": "preset-1e3c440b-225f-4591-ac39-04382389084b",
   "tags": [
-    "Glitch"
+    "Glitch",
+    "Distortion",
+    "Pixelate",
+    "Color"
   ],
   "mathMode": "float",
   "name": "Digital Block Glitch",

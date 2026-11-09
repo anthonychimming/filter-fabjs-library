@@ -3,10 +3,11 @@
   "version": 2,
   "id": "authentic-pencil-sketch",
   "tags": [
+    "Sketch",
+    "Artistic",
     "Monochrome",
     "Texture",
-    "Detail",
-    "Print"
+    "Detail"
   ],
   "mathMode": "float",
   "name": "Pencil Sketch",

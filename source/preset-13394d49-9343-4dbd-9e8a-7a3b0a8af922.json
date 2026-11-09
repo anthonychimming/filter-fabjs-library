@@ -6,7 +6,7 @@
     "Color",
     "Tone",
     "Film",
-    "Portrait"
+    "Split Toning"
   ],
   "mathMode": "float",
   "name": "Complementary Split Toning",

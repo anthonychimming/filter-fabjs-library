@@ -6,7 +6,8 @@
     "Procedural",
     "Texture",
     "Noise",
-    "Color"
+    "Color",
+    "Space"
   ],
   "mathMode": "float",
   "name": "Nebula Starfield",

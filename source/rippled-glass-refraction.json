@@ -4,8 +4,9 @@
   "id": "rippled-glass-refraction",
   "tags": [
     "Distortion",
-    "Texture",
-    "Detail"
+    "Refraction",
+    "Glass",
+    "Texture"
   ],
   "mathMode": "float",
   "name": "Rippled Glass Refraction",

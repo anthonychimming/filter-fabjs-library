@@ -6,8 +6,8 @@
     "Print",
     "Monochrome",
     "Texture",
-    "Portrait",
-    "Detail"
+    "Engraving",
+    "Hatching"
   ],
   "mathMode": "float",
   "name": "Carved Shadow Crosshatch",

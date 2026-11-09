@@ -4,6 +4,8 @@
   "id": "zoom-canvas-tile",
   "tags": [
     "Utility",
+    "Transform",
+    "Tile",
     "Distortion",
     "Pattern"
   ],

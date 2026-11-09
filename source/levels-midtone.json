@@ -5,7 +5,8 @@
   "tags": [
     "Tone",
     "Utility",
-    "Levels"
+    "Levels",
+    "Color"
   ],
   "mathMode": "float",
   "name": "Levels / Midtone",

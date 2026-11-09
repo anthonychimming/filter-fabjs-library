@@ -6,7 +6,8 @@
     "Color",
     "Gradient",
     "Tone",
-    "Thermal"
+    "Thermal",
+    "False Color"
   ],
   "mathMode": "float",
   "name": "Pseudo Thermal Imaging",

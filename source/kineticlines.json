@@ -6,7 +6,8 @@
     "Distortion",
     "Glitch",
     "Color",
-    "Motion"
+    "Motion",
+    "Scanlines"
   ],
   "mathMode": "float",
   "name": "Kinetic Lines",

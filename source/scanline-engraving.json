@@ -6,8 +6,8 @@
     "Halftone",
     "Monochrome",
     "Print",
-    "Retro",
-    "Portrait"
+    "Engraving",
+    "Line Art"
   ],
   "mathMode": "float",
   "name": "Scanline Engraving",
