@@ -140,5 +140,23 @@
         "unit": ""
       }
     }
+  ],
+  "colorGroups": [
+    {
+      "label": "Dot Colour",
+      "channels": {
+        "red": 4,
+        "green": 5,
+        "blue": 6
+      }
+    },
+    {
+      "label": "Background Colour",
+      "channels": {
+        "red": 7,
+        "green": 8,
+        "blue": 9
+      }
+    }
   ]
 }
